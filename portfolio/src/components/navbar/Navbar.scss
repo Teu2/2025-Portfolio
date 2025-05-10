@@ -18,23 +18,23 @@
         &:hover{
             color: #46cb77 !important;
             transition: all 0.3s ease;
+
+            p{
+                color: #46cb77 !important;
+                transition: all 0.3s ease;
+            }
         }
 
         p{
             font-size: 14px;
             color: #86868f;
-
-            &:hover{
-                color: #46cb77 !important;
-                transition: all 0.3s ease;
-            }
         }
     }
 
     .left{
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 1.8rem;
     }
 
     .right{

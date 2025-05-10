@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { projects } from './Projects'
 import "./ProfileProjects.scss"
 
-// components
+// icons
 import { IoLogoJavascript } from "react-icons/io5";
 import { SiTypescript } from "react-icons/si";
 import { BiLogoTypescript } from "react-icons/bi";
@@ -18,14 +18,20 @@ import { PiFilmSlateFill } from "react-icons/pi";
 import { IoFilm } from "react-icons/io5";
 import { SiDavinciresolve } from "react-icons/si";
 
+// icons
+import dotnetSvg from "../../assets/tech stack icons/dotnet.svg"
+import pythonSvg from "../../assets/tech stack icons/python.svg"
+import jsSvg from "../../assets/tech stack icons/javascript.svg"
+import aPro from "../../assets/tech stack icons/apro.svg"
+
 export const ProfileProjects = () => {
 
     const filters = [
         { label: "All Projects", value: "all", icon: <FaLayerGroup /> },
-        { label: "Python", value: "python", icon: <FaPython /> },
-        { label: ".NET", value: "csharp", icon: <FaHashtag /> },
-        { label: "JavaScript", value: "javascript", icon: <IoLogoJavascript /> },
-        { label: "Video Editing", value: "editing", icon: <SiDavinciresolve /> },
+        { label: "Python", value: "python", icon: pythonSvg },
+        { label: ".NET", value: "csharp", icon: dotnetSvg },
+        { label: "JavaScript", value: "javascript", icon: jsSvg },
+        // { label: "Video Editing", value: "editing", icon: aPro },
     ];
 
     const [activeFilter, setActiveFilter] = useState("all");
@@ -38,7 +44,9 @@ export const ProfileProjects = () => {
             <div className="filter-bar">
                 {filters.map(filter => (
                     <div key={filter.value} onClick={() => setActiveFilter(filter.value)} className={`filter-button ${activeFilter === filter.value ? "active" : ""}`}>
-                        {filter.icon} {filter.label}
+                        {console.log(`${typeof filter.icon} - ${filter.label}`)}
+                        {typeof filter.icon === "string" ? <img src={filter.icon} alt="icon" className="skill-icon"/> : filter.icon}
+                        {filter.label}
                     </div>
                 ))}
             </div>

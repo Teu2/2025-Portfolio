@@ -1,16 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "./ProfileExperience.scss"
 
 export const ProfileExperience = () => {
+
+    const [tooltipVisible, setTooltipVisible] = useState(false);
+    const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (e) => {
+        setTooltipPos({ x: e.clientX + 5, y: e.clientY - 40}); // small offset
+    };
+
     return (
         <div className="profile-experience-parent">
             <div className="content">
                 <div className="content-header">
                     <h1>Experience</h1>
-                    <p>Want to see my work history? I got you, I've been very fortunate to work with some amazing 
+                    <p>Want to see my {' '}
+                        <span span className="green hover" onMouseEnter={() => setTooltipVisible(true)} onMouseLeave={() => setTooltipVisible(false)} onMouseMove={handleMouseMove}><a href="https://www.linkedin.com/in/dominic-y-6376b2277/" target='_blank' className='link'>{"{Work History}"}</a></span>
+                        {'? '}
+                        I got you, I've been very fortunate to work with some amazing 
                         teams and incredible mentors to develop my skills in different areas of development during my 
                         time at these companies! 💪</p>
                 </div>
+
+                {tooltipVisible && (
+                    <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>5 Experiences</div>
+                )}
+
                 <div className="experience-section">
                     <div className="experience">
                         <div className="green-dot"></div>

@@ -11,6 +11,8 @@ import { ProfileServices } from "./components/profile services/ProfileServices.j
 import { Footer } from "./components/footer/Footer.jsx";
 import { ProfileExperience } from "./components/profile experience/ProfileExperience.jsx";
 import { ProfileProjects } from "./components/profile projects/ProfileProjects.jsx";
+import { ProfileContact } from "./components/profile contact/ProfileContact.jsx";
+import { ProfileSpotify } from "./components/profile spotify/ProfileSpotify.jsx";
 
 function App() {
 
@@ -60,7 +62,7 @@ function App() {
 				<div className="app-container">
 					<Navbar />
 					<div className="content">
-						<h1>Listening</h1>
+						<ProfileSpotify />
 					</div>
 					<Footer />
 				</div>
@@ -72,7 +74,7 @@ function App() {
 				<div className="app-container">
 					<Navbar />
 					<div className="content">
-						<h1>Contact me</h1>
+						<ProfileContact />
 					</div>
 					<Footer />
 				</div>
