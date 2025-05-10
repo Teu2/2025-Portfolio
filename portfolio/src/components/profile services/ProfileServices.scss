@@ -1,0 +1,63 @@
+.profile-services-parent{
+    margin-top: 3rem;
+
+    .card-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); // 2 columns
+        gap: 1rem;
+        // padding: 2rem;
+    }
+
+    .card {
+        background: #1b1b1c;
+        border: 1px solid #313134;
+        font-size: 13px;
+        border-radius: 0.75rem;
+        padding: 1.5rem;
+        color: #ffffff;
+        // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease;
+        display: flex;
+        align-items: start;
+        gap: 1rem;
+    
+        .icon {
+            background-color: #18181a;
+            border: 1px solid #313134;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.7rem;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #5c5c61 !important;
+        }
+
+        h3 {
+            margin: 0;
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-top: 0.5rem;
+            font-size: 13px;
+            color: #d1d5db;
+        }
+
+        cursor: pointer;
+
+        &:hover {
+            transform: translateY(-3px);
+            border: 1px solid #44c86b;
+            color: #44c86b;
+            transition: 0.2s ease;  
+
+            .icon{
+                color: #44c86b !important; // ensures icon color changes
+                transition: 0.2s ease;  
+            }
+        }  
+    }
+}
+

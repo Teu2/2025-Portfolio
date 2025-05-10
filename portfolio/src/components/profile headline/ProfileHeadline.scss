@@ -1,0 +1,84 @@
+
+.profile-headline-parent{
+    // background-color: red;
+    margin-top: 4.5rem;
+    width: 100%;
+    
+    p{
+        font-size: 14px;
+        color: #9b9ba4;
+    }
+    
+    .content{
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        width: 100%;
+    }
+
+    .left{
+
+        img{    
+            width: 6rem;
+            height: 6rem;
+            border-radius: 50rem;
+        }
+    }
+
+    .right{
+
+        p{
+            svg{
+                color: #9b9ba4;
+                font-size: 0.8rem;
+            }
+        }
+
+        .location{
+            display: flex;
+            align-items: center;
+            gap: 0.1rem;
+            font-size: 15px;
+            color: #9b9ba4;
+
+            svg{
+                color: #9b9ba4;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
+
+.wave {
+  animation-name: wave-animation;  
+  animation-duration: 2.5s;       
+  animation-iteration-count: infinite;  
+  transform-origin: 70% 70%;       
+  display: inline-block;
+}
+
+@keyframes wave-animation {
+    0% { transform: rotate( 0.0deg) }
+   10% { transform: rotate(14.0deg) }  
+   20% { transform: rotate(-8.0deg) }
+   30% { transform: rotate(14.0deg) }
+   40% { transform: rotate(-4.0deg) }
+   50% { transform: rotate(10.0deg) }
+   60% { transform: rotate( 0.0deg) }  
+  100% { transform: rotate( 0.0deg) }
+}
+
+.typing::after {
+    content: '|'; /* this is the blinking line */
+    display: inline-block;
+    margin-left: 1px;
+    animation: blink 0.9s step-start infinite;
+    font-weight: bold;
+    color: #b9b9c1;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}

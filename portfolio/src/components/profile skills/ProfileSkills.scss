@@ -1,0 +1,38 @@
+.profile-skills-parent{
+    margin-top: 3rem;
+    
+    .skills{
+        margin-top: 1rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+
+        .skill{
+            border: 1px solid #313134;
+            padding: 0.2rem 0.9rem 0.24rem 0.9rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+
+            .skill-icon{
+                width: 15px;
+                height: 15px;
+            }
+
+            cursor: pointer;
+
+            &:hover{
+                background-color: #272729;
+                transition: all 0.3s ease;
+            }
+        }
+
+        p{
+            font-size: 12px;
+        }
+
+       
+    }
+}
