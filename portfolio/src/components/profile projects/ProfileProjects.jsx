@@ -24,6 +24,9 @@ import pythonSvg from "../../assets/tech stack icons/python.svg"
 import jsSvg from "../../assets/tech stack icons/javascript.svg"
 import tsSvg from "../../assets/tech stack icons/typescript-icon.svg"
 import aPro from "../../assets/tech stack icons/apro.svg"
+import { FaGithub } from "react-icons/fa6";
+
+import { FiArrowUpRight } from "react-icons/fi";
 
 export const ProfileProjects = () => {
 
@@ -92,12 +95,31 @@ export const ProfileProjects = () => {
 
             <div className="project-list" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
                 {filtered.map((project, idx) => (
-                    <div key={idx} className="project-card">
-                        {/* <img src={project.image} alt={project.title} /> */}
-                        <h4>{project.title}</h4>
-                        <p>{project.desc}</p>
-                        <a href={project.github} target="_blank" rel="noopener noreferrer">View Code</a>
-                    </div>
+                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                        <div key={idx} className="project-card">
+                            {/* <img src={project.image} alt={project.title} /> */}
+                            <div className="title">
+                                <h4>{project.title}</h4>
+                                <FiArrowUpRight />
+                            </div>
+                            <div className="project-image">
+                                {project.img ? <img src={project.img} alt={project.title} /> : <div className="no-image"><p>In Progress</p></div>}
+                            </div>
+                            <div className="project-desc">
+                                <p>{project.desc}</p>
+                            </div>
+                            <div className="project-bottom">
+                                <div className="project-stack">
+                                    {project.techStack.map((tech, i) => (
+                                        <span key={i}>{tech}</span>
+                                    ))}
+                                </div>
+                                <div className="project-links">
+                                    <a href={project.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
                 ))}
             </div>
         </div>

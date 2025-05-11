@@ -40,7 +40,7 @@ export const ProfileExperience = () => {
                         <div className="top">
                             <img src={capLogo} alt="Capgemini Engineering" />
                             <div className="right">
-                                <h4>Associate Software Consultant</h4>
+                                <h4>Associate Software Consultant {"(DCM)"}</h4>
                                 <p>Capgemini Engineering - Melbourne, Victoria, Aus</p>
                                 <p className='date'>Mar 2025 - Present</p>
                             </div>
@@ -57,7 +57,7 @@ export const ProfileExperience = () => {
                         <div className="top">
                             <img src={scorpLogo} alt="Scorptec" />
                             <div className="right">
-                                <h4>Junior PC Builder</h4>
+                                <h4>Junior PC Systems Builder</h4>
                                 <p>Scorptec Computers - Melbourne, Victoria, Aus</p>
                                 <p className='date'>Oct 2024 - Mar 2025</p>
                             </div>
