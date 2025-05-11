@@ -32,7 +32,6 @@ export const ProfileProjects = () => {
 
     const [tooltipVisibleProjects, setTooltipVisibleProjects] = useState(false);
     const [tooltipVisibleCategories, setTooltipVisibleCategories] = useState(false);
-    const [projectCount, setProjectCount] = useState(0);
     const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
     
     const handleMouseMove = (e) => {
@@ -62,65 +61,66 @@ export const ProfileProjects = () => {
 
     return (
         <div className="profile-projects-parent">
-            <div data-aos="fade-up" data-aos-duration="300">
-                <h1>Projects</h1>
-                <p>Here are some of the {' '}
-                    <span span className="green hover" onMouseEnter={() => setTooltipVisibleProjects(true)} onMouseLeave={() => setTooltipVisibleProjects(false)} onMouseMove={handleMouseMove}><a href="https://github.com/Teu2" target='_blank' className='link'>{"{Projects}"}</a></span> 
-                    {' '}
-                    i've worked on! go ahead and feel free to check them out, I even made a simple filtering option to make your life easier if you want to browse by a particular 
-                    {' '}
-                    <span span className="green hover" onMouseEnter={() => setTooltipVisibleCategories(true)} onMouseLeave={() => setTooltipVisibleCategories(false)} onMouseMove={handleMouseMove}><a href="" className='link'>{"{Category}"}</a></span>
-                    {' 🙌'}  
-                    
-                </p>
+            <div className="content">
+                <div className="content-header" data-aos="fade-up" data-aos-duration="300">
+                    <h1>Projects</h1>
+                    <p>Here are some of the {' '}
+                        <span span className="green hover" onMouseEnter={() => setTooltipVisibleProjects(true)} onMouseLeave={() => setTooltipVisibleProjects(false)} onMouseMove={handleMouseMove}><a href="https://github.com/Teu2" target='_blank' className='link'>{"{Projects}"}</a></span> 
+                        {' '}
+                        i've worked on! go ahead and feel free to check them out, I even made a simple filtering option to make your life easier if you want to browse by a particular 
+                        {' '}
+                        <span span className="green hover" onMouseEnter={() => setTooltipVisibleCategories(true)} onMouseLeave={() => setTooltipVisibleCategories(false)} onMouseMove={handleMouseMove}><a href="" className='link'>{"{Category}"}</a></span>
+                        {' 🙌'}  
+                        
+                    </p>
+                </div>
 
                 {tooltipVisibleProjects && (
                     <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{handleProjectCount()}</div>
                 )}
-
                 {tooltipVisibleCategories && (
                     <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{"setActiveFilter(filter.value)"}</div>
                 )}
-            </div>
-
-            <div className="filter-bar" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
-                {filters.map(filter => (
-                    <div key={filter.value} onClick={() => setActiveFilter(filter.value)} className={`filter-button ${activeFilter === filter.value ? "active" : ""}`}>
-                        {console.log(`${typeof filter.icon} - ${filter.label}`)}
-                        {typeof filter.icon === "string" ? <img src={filter.icon} alt="icon" className="skill-icon"/> : filter.icon}
-                        {filter.label}
-                    </div>
-                ))}
-            </div>
-
-            <div className="project-list" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
-                {filtered.map((project, idx) => (
-                    <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                        <div key={idx} className="project-card">
-                            {/* <img src={project.image} alt={project.title} /> */}
-                            <div className="title">
-                                <h4>{project.title}</h4>
-                                <FiArrowUpRight />
-                            </div>
-                            <div className="project-image">
-                                {project.img ? <img src={project.img} alt={project.title} /> : <div className="no-image"><p>In Progress</p></div>}
-                            </div>
-                            <div className="project-desc">
-                                <p>{project.desc}</p>
-                            </div>
-                            <div className="project-bottom">
-                                <div className="project-stack">
-                                    {project.techStack.map((tech, i) => (
-                                        <span key={i}>{tech}</span>
-                                    ))}
-                                </div>
-                                <div className="project-links">
-                                    <a href={project.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
-                                </div>
-                            </div>
+                
+                <div className="filter-bar" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
+                    {filters.map(filter => (
+                        <div key={filter.value} onClick={() => setActiveFilter(filter.value)} className={`filter-button ${activeFilter === filter.value ? "active" : ""}`}>
+                            {console.log(`${typeof filter.icon} - ${filter.label}`)}
+                            {typeof filter.icon === "string" ? <img src={filter.icon} alt="icon" className="skill-icon"/> : filter.icon}
+                            {filter.label}
                         </div>
-                    </a>
-                ))}
+                    ))}
+                </div>
+
+                <div className="project-list" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
+                    {filtered.map((project, idx) => (
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
+                            <div key={idx} className="project-card">
+                                {/* <img src={project.image} alt={project.title} /> */}
+                                <div className="title">
+                                    <h4>{project.title}</h4>
+                                    <FiArrowUpRight />
+                                </div>
+                                <div className="project-image">
+                                    {project.img ? <img src={project.img} alt={project.title} /> : <div className="no-image"><p>In Progress</p></div>}
+                                </div>
+                                <div className="project-desc">
+                                    <p>{project.desc}</p>
+                                </div>
+                                <div className="project-bottom">
+                                    <div className="project-stack">
+                                        {project.techStack.map((tech, i) => (
+                                            <span key={i}>{tech}</span>
+                                        ))}
+                                    </div>
+                                    <div className="project-links">
+                                        <a href={project.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
     );

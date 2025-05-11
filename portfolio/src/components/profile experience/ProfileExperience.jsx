@@ -81,7 +81,7 @@ export const ProfileExperience = () => {
                                 <p className='date'>Feb 2024 - May 2024</p>
                             </div>
                         </div>
-                        <div className="bottom">
+                        <div className="bottom"> 
                             <div className="skill">Golang</div>
                             <div className="skill">TypeScript</div>
                             <div className="skill">Angular</div>
