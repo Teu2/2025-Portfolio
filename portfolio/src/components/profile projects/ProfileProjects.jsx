@@ -22,15 +22,35 @@ import { SiDavinciresolve } from "react-icons/si";
 import dotnetSvg from "../../assets/tech stack icons/dotnet.svg"
 import pythonSvg from "../../assets/tech stack icons/python.svg"
 import jsSvg from "../../assets/tech stack icons/javascript.svg"
+import tsSvg from "../../assets/tech stack icons/typescript-icon.svg"
 import aPro from "../../assets/tech stack icons/apro.svg"
 
 export const ProfileProjects = () => {
+
+    const [tooltipVisibleProjects, setTooltipVisibleProjects] = useState(false);
+    const [tooltipVisibleCategories, setTooltipVisibleCategories] = useState(false);
+    const [projectCount, setProjectCount] = useState(0);
+    const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+    
+    const handleMouseMove = (e) => {
+        setTooltipPos({ x: e.clientX + 5, y: e.clientY - 40}); // small offset
+    };
+    
+    const handleProjectCount = () => {
+        var count = 0;
+        projects.forEach((projects) =>{
+            count++;
+        })
+
+        return `${count} Projects`;
+    }
 
     const filters = [
         { label: "All Projects", value: "all", icon: <FaLayerGroup /> },
         { label: "Python", value: "python", icon: pythonSvg },
         { label: ".NET", value: "csharp", icon: dotnetSvg },
         { label: "JavaScript", value: "javascript", icon: jsSvg },
+        { label: "TypeScript", value: "typescript", icon: tsSvg },
         // { label: "Video Editing", value: "editing", icon: aPro },
     ];
 
@@ -40,7 +60,25 @@ export const ProfileProjects = () => {
     return (
         <div className="profile-projects-parent">
             <h1>Projects</h1>
-            <p>Here are some of the projects i've worked on! go ahead and feel free to check them out, I even made a simple filtering option to make your life easier if you want to browse by a particular category! 🙌</p>
+            <p>Here are some of the {' '}
+                <span span className="green hover" onMouseEnter={() => setTooltipVisibleProjects(true)} onMouseLeave={() => setTooltipVisibleProjects(false)} onMouseMove={handleMouseMove}><a href="https://github.com/Teu2" target='_blank' className='link'>{"{Projects}"}</a></span> 
+                {' '}
+                i've worked on! go ahead and feel free to check them out, I even made a simple filtering option to make your life easier if you want to browse by a particular 
+                {' '}
+                <span span className="green hover" onMouseEnter={() => setTooltipVisibleCategories(true)} onMouseLeave={() => setTooltipVisibleCategories(false)} onMouseMove={handleMouseMove}><a href="" className='link'>{"{Category}"}</a></span>
+                {' 🙌'}  
+                
+            </p>
+
+            {tooltipVisibleProjects && (
+                <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{handleProjectCount()}</div>
+            )}
+
+            {tooltipVisibleCategories && (
+                <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{"setActiveFilter(filter.value)"}</div>
+            )}
+
+
             <div className="filter-bar">
                 {filters.map(filter => (
                     <div key={filter.value} onClick={() => setActiveFilter(filter.value)} className={`filter-button ${activeFilter === filter.value ? "active" : ""}`}>

@@ -31,6 +31,22 @@ export const projects = [
         github: "https://github.com/example/python-sorting"
     },
     {
+        title: "Books Manager",
+        tech: "csharp",
+        techStack: [
+            "C#",
+            "ASP.NET",
+            "MVC",
+            "Razor",
+            "Entity Framework",
+            "SQL Server",
+            "Moq",
+        ],
+        desc: "A CRUD web application for managing books, built with ASP.NET MVC and Entity Framework.",
+        demo: "https://example.com/demo",
+        github: "https://github.com/example/python-sorting"
+    },
+    {
         title: "Discord Twitter Bot",
         tech: "csharp",
         techStack: [
@@ -57,83 +73,17 @@ export const projects = [
         github: "https://github.com/example/python-sorting"
     },
     {
-        title: "Books Manager",
-        tech: "csharp",
+        title: "NSCL Web Based Dataset",
+        tech: "javascript",
         techStack: [
-            "C#",
-            "ASP.NET",
-            "MVC",
-            "Razor",
-            "Entity Framework",
-            "SQL Server",
-            "Moq",
+            "HTML",
+            "CSS",
+            "PHP",
+            "JavaScript",
+            "MySQL",
         ],
-        desc: "A CRUD web application for managing books, built with ASP.NET MVC and Entity Framework.",
+        desc: "A web-based dataset for software bugs and patches, built with HTML, CSS, PHP, and MySQL.",
         demo: "https://example.com/demo",
         github: "https://github.com/example/python-sorting"
-    },
-    {
-        title: "Books Manager",
-        tech: "csharp",
-        techStack: [
-            "C#",
-            "ASP.NET",
-            "MVC",
-            "Razor",
-            "Entity Framework",
-            "SQL Server",
-            "Moq",
-        ],
-        desc: "A CRUD web application for managing books, built with ASP.NET MVC and Entity Framework.",
-        demo: "https://example.com/demo",
-        github: "https://github.com/example/python-sorting"
-    },
-    {
-        title: "Books Manager",
-        tech: "csharp",
-        techStack: [
-            "C#",
-            "ASP.NET",
-            "MVC",
-            "Razor",
-            "Entity Framework",
-            "SQL Server",
-            "Moq",
-        ],
-        desc: "A CRUD web application for managing books, built with ASP.NET MVC and Entity Framework.",
-        demo: "https://example.com/demo",
-        github: "https://github.com/example/python-sorting"
-    },
-    {
-        title: "Books Manager",
-        tech: "csharp",
-        techStack: [
-            "C#",
-            "ASP.NET",
-            "MVC",
-            "Razor",
-            "Entity Framework",
-            "SQL Server",
-            "Moq",
-        ],
-        desc: "A CRUD web application for managing books, built with ASP.NET MVC and Entity Framework.",
-        demo: "https://example.com/demo",
-        github: "https://github.com/example/python-sorting"
-    },
-    {
-        title: "Books Manager",
-        tech: "csharp",
-        techStack: [
-            "C#",
-            "ASP.NET",
-            "MVC",
-            "Razor",
-            "Entity Framework",
-            "SQL Server",
-            "Moq",
-        ],
-        desc: "A CRUD web application for managing books, built with ASP.NET MVC and Entity Framework.",
-        demo: "https://example.com/demo",
-        github: "https://github.com/example/python-sorting"
-    },
+    }
 ];

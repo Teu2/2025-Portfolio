@@ -39,7 +39,7 @@ export const ProfileSkills = () => {
                     <div className="skill"><img src={reactSvg} alt="react" className="skill-icon"/><p>React</p></div>
                     <div className="skill"><img src={nodeSvg} alt="node" className="skill-icon"/><p>Node</p></div>
                     <div className="skill"><img src={expressSvg} alt="express" className="skill-icon"/><p>Express</p></div>
-                    <div className="skill"><img src={msqlSvg} alt="msql" className="skill-icon"/><p>MySQL</p></div>
+                    {/* <div className="skill"><img src={msqlSvg} alt="msql" className="skill-icon"/><p>MySQL</p></div> */}
                     <div className="skill"><img src={psqlSvg} alt="psql" className="skill-icon"/><p>PostgreSQL</p></div>
                     <div className="skill"><img src={mdbSvg} alt="mdb" className="skill-icon"/><p>MongoDB</p></div>
                     <div className="skill"><img src={poSvg} alt="po" className="skill-icon"/><p>Postman</p></div>
