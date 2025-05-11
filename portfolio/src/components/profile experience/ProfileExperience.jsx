@@ -1,6 +1,13 @@
 import React, { useState } from 'react'
 import "./ProfileExperience.scss"
 
+// logo imports
+import capLogo from "../../assets/work logos/capgemini_engineering.png"
+import scorpLogo from "../../assets/work logos/scorptec.png"
+import ellenexLogo from "../../assets/work logos/ellenex.png"
+import brykLogo from "../../assets/work logos/bryk.png"
+import deakinLogo from "../../assets/work logos/deakin.png"
+
 export const ProfileExperience = () => {
 
     const [tooltipVisible, setTooltipVisible] = useState(false);
@@ -18,7 +25,7 @@ export const ProfileExperience = () => {
                     <p>Want to see my {' '}
                         <span span className="green hover" onMouseEnter={() => setTooltipVisible(true)} onMouseLeave={() => setTooltipVisible(false)} onMouseMove={handleMouseMove}><a href="https://www.linkedin.com/in/dominic-y-6376b2277/" target='_blank' className='link'>{"{Work History}"}</a></span>
                         {'? '}
-                        I got you, I've been very fortunate to work with some amazing 
+                        no problem! I've been very fortunate to work with some amazing 
                         teams and incredible mentors to develop my skills in different areas of development during my 
                         time at these companies! 💪</p>
                 </div>
@@ -30,12 +37,15 @@ export const ProfileExperience = () => {
                 <div className="experience-section">
                     <div className="experience">
                         <div className="green-dot"></div>
-                        <div className="left">
-                            <h4>Associate Software Consultant</h4>
-                            <p>Capgemini Engineering - Melbourne, Victoria, Aus</p>
-                            <p>Mar 2025 - Present</p>
+                        <div className="top">
+                            <img src={capLogo} alt="Capgemini Engineering" />
+                            <div className="right">
+                                <h4>Associate Software Consultant</h4>
+                                <p>Capgemini Engineering - Melbourne, Victoria, Aus</p>
+                                <p className='date'>Mar 2025 - Present</p>
+                            </div>
                         </div>
-                        <div className="right">
+                        <div className="bottom">
                             <div className="skill">Consulting</div>
                             <div className="skill">Mendix</div>
                             <div className="skill">Quintiq</div>
@@ -44,12 +54,15 @@ export const ProfileExperience = () => {
                     </div>
                     <div className="experience">
                         <div className="green-dot"></div>
-                        <div className="left">
-                            <h4>Junior PC Builder</h4>
-                            <p>Scorptec Computers - Melbourne, Victoria, Aus</p>
-                            <p>Oct 2024 - Mar 2025</p>
+                        <div className="top">
+                            <img src={scorpLogo} alt="Scorptec" />
+                            <div className="right">
+                                <h4>Junior PC Builder</h4>
+                                <p>Scorptec Computers - Melbourne, Victoria, Aus</p>
+                                <p className='date'>Oct 2024 - Mar 2025</p>
+                            </div>
                         </div>
-                        <div className="right">
+                        <div className="bottom">
                             <div className="skill">Quality Control</div>
                             <div className="skill">Troubleshooting</div>
                             <div className="skill">Computer Building</div>
@@ -60,12 +73,15 @@ export const ProfileExperience = () => {
                     </div>
                     <div className="experience">
                         <div className="green-dot"></div>
-                        <div className="left">
-                            <h4>Full-Stack Engineering IoT Intern</h4>
-                            <p>Ellenex - Melbourne, Victoria, Aus</p>
-                            <p>Feb 2024 - May 2024</p>
+                        <div className="top">
+                            <img src={ellenexLogo} alt="Ellenex" />
+                            <div className="right">
+                                <h4>Full-Stack Engineering IoT Intern</h4>
+                                <p>Ellenex - Melbourne, Victoria, Aus</p>
+                                <p className='date'>Feb 2024 - May 2024</p>
+                            </div>
                         </div>
-                        <div className="right">
+                        <div className="bottom">
                             <div className="skill">Golang</div>
                             <div className="skill">TypeScript</div>
                             <div className="skill">Angular</div>
@@ -84,12 +100,15 @@ export const ProfileExperience = () => {
                     </div>
                     <div className="experience">
                         <div className="green-dot"></div>
-                        <div className="left">
-                            <h4>.NET Developer Intern</h4>
-                            <p>BRYK Group - Melbourne, Victoria, Aus</p>
-                            <p>May 2023 - Sep 2023</p>
+                        <div className="top">
+                            <img src={brykLogo} alt="Bryk group" />
+                            <div className="right">
+                                <h4>.NET Developer Intern</h4>
+                                <p>BRYK Group - Melbourne, Victoria, Aus</p>
+                                <p className='date'>May 2023 - Sep 2023</p>
+                            </div>
                         </div>
-                        <div className="right">
+                        <div className="bottom">
                             <div className="skill">C#</div>
                             <div className="skill">.NET</div>
                             <div className="skill">MVVC</div>
@@ -104,12 +123,15 @@ export const ProfileExperience = () => {
                     </div>
                     <div className="experience last">
                         <div className="green-dot"></div>
-                        <div className="left">
-                            <h4>Student Software Engineer</h4>
-                            <p>Deakin University - Melbourne, Victoria, Aus</p>
-                            <p>Mar 2022 - Nov 2022</p>
+                        <div className="top">
+                            <img src={deakinLogo} alt="Deakin" />
+                            <div className="right">
+                                <h4>Student Software Engineer</h4>
+                                <p>Deakin University - Melbourne, Victoria, Aus</p>
+                                <p className='date'>Mar 2022 - Nov 2022</p>
+                            </div>
                         </div>
-                        <div className="right">
+                        <div className="bottom">
                            <div className="skill">HTML5</div>
                            <div className="skill">CSS</div>
                            <div className="skill">MySQL</div>

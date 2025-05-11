@@ -22,25 +22,49 @@
             padding-left: 0.7rem;
 
             .experience{
-                border-left: 1px solid #313134;
-                padding: 0rem 0rem 3rem 2rem;
+                // border-left: 1px solid #313134;
+                padding: 0rem 0rem 3rem 1.5rem;
                 font-size: 12px;
                 position: relative;
                 display: flex;
                 flex-direction: column;
 
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: -0.05rem;
+                    top: 0.65rem;
+                    height: calc(100% - 0.45rem); // adjust this to match icon alignment
+                    border-left: 1px solid #313134;
+                }
+
                 .green-dot{
                     position: absolute;
-                    left: -0.7rem;
-                    top: 0rem;
+                    left: -0.55rem;
+                    top: 0.2rem;
                     background-color: #44c86b;
-                    width: 1.3rem;
-                    height: 1.3rem;
+                    width: 1.1rem;
+                    height: 1.1rem;
                     border-radius: 50%;
                 }
 
-                .left{
+                .top{
                     flex: 4;
+                    display: flex;
+                    gap: 1rem;
+                    align-items: start;
+                    justify-content: start;
+                    position: a;
+
+                    img {
+                        width: 2.5rem;
+                        height: 2.5rem;
+                        padding: 0.25rem;
+                        object-fit: contain;      // keeps image proportions
+                        aspect-ratio: 1 / 1;      // optional, enforces square layout without distortion
+                        background-color: #1d1b1f;
+                        border-radius: 5px;
+                    }
 
                     h4{
                         font-size: 13px;
@@ -52,9 +76,10 @@
                     }
                 }
 
-                .right{
+                .bottom{
                     flex: 6;
                     margin-top: 1rem;
+                    margin-left: 3.5rem;
                     display: flex;
                     gap: 0.5rem;
                     flex-wrap: wrap;
@@ -85,4 +110,8 @@
             }
         }
     }
+}
+
+.date{
+    font-size: 12px !important;
 }
