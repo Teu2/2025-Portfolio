@@ -10,7 +10,7 @@ import { HiChatBubbleLeftRight } from "react-icons/hi2";
 
 export const ProfileServices = () => {
     return (
-        <div className="profile-services-parent">
+        <div className="profile-services-parent" data-aos="fade-up" data-aos-delay="800" data-aos-duration="300">
             <div className="content">
                 <div className="card-grid">
                     <div className="card">

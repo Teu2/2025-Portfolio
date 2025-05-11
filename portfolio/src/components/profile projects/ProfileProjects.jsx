@@ -59,27 +59,28 @@ export const ProfileProjects = () => {
 
     return (
         <div className="profile-projects-parent">
-            <h1>Projects</h1>
-            <p>Here are some of the {' '}
-                <span span className="green hover" onMouseEnter={() => setTooltipVisibleProjects(true)} onMouseLeave={() => setTooltipVisibleProjects(false)} onMouseMove={handleMouseMove}><a href="https://github.com/Teu2" target='_blank' className='link'>{"{Projects}"}</a></span> 
-                {' '}
-                i've worked on! go ahead and feel free to check them out, I even made a simple filtering option to make your life easier if you want to browse by a particular 
-                {' '}
-                <span span className="green hover" onMouseEnter={() => setTooltipVisibleCategories(true)} onMouseLeave={() => setTooltipVisibleCategories(false)} onMouseMove={handleMouseMove}><a href="" className='link'>{"{Category}"}</a></span>
-                {' 🙌'}  
-                
-            </p>
+            <div data-aos="fade-up" data-aos-duration="300">
+                <h1>Projects</h1>
+                <p>Here are some of the {' '}
+                    <span span className="green hover" onMouseEnter={() => setTooltipVisibleProjects(true)} onMouseLeave={() => setTooltipVisibleProjects(false)} onMouseMove={handleMouseMove}><a href="https://github.com/Teu2" target='_blank' className='link'>{"{Projects}"}</a></span> 
+                    {' '}
+                    i've worked on! go ahead and feel free to check them out, I even made a simple filtering option to make your life easier if you want to browse by a particular 
+                    {' '}
+                    <span span className="green hover" onMouseEnter={() => setTooltipVisibleCategories(true)} onMouseLeave={() => setTooltipVisibleCategories(false)} onMouseMove={handleMouseMove}><a href="" className='link'>{"{Category}"}</a></span>
+                    {' 🙌'}  
+                    
+                </p>
 
-            {tooltipVisibleProjects && (
-                <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{handleProjectCount()}</div>
-            )}
+                {tooltipVisibleProjects && (
+                    <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{handleProjectCount()}</div>
+                )}
 
-            {tooltipVisibleCategories && (
-                <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{"setActiveFilter(filter.value)"}</div>
-            )}
+                {tooltipVisibleCategories && (
+                    <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{"setActiveFilter(filter.value)"}</div>
+                )}
+            </div>
 
-
-            <div className="filter-bar">
+            <div className="filter-bar" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
                 {filters.map(filter => (
                     <div key={filter.value} onClick={() => setActiveFilter(filter.value)} className={`filter-button ${activeFilter === filter.value ? "active" : ""}`}>
                         {console.log(`${typeof filter.icon} - ${filter.label}`)}
@@ -89,7 +90,7 @@ export const ProfileProjects = () => {
                 ))}
             </div>
 
-            <div className="project-list">
+            <div className="project-list" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
                 {filtered.map((project, idx) => (
                     <div key={idx} className="project-card">
                         {/* <img src={project.image} alt={project.title} /> */}

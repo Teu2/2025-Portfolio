@@ -1,5 +1,7 @@
 import { useState, useEffect, createContext } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; // You can also use <link> for styles
 import "./App.scss";
 
 // components
@@ -15,7 +17,8 @@ import { ProfileContact } from "./components/profile contact/ProfileContact.jsx"
 import { ProfileSpotify } from "./components/profile spotify/ProfileSpotify.jsx";
 
 function App() {
-
+	
+	AOS.init();
 	const router = createBrowserRouter([
 		{
 			path: "/",

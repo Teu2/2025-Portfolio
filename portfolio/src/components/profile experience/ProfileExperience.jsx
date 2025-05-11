@@ -20,7 +20,7 @@ export const ProfileExperience = () => {
     return (
         <div className="profile-experience-parent">
             <div className="content">
-                <div className="content-header">
+                <div className="content-header" data-aos="fade-up" data-aos-duration="300">
                     <h1>Experience</h1>
                     <p>Want to see my {' '}
                         <span span className="green hover" onMouseEnter={() => setTooltipVisible(true)} onMouseLeave={() => setTooltipVisible(false)} onMouseMove={handleMouseMove}><a href="https://www.linkedin.com/in/dominic-y-6376b2277/" target='_blank' className='link'>{"{Work History}"}</a></span>
@@ -34,7 +34,7 @@ export const ProfileExperience = () => {
                     <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>5 Experiences</div>
                 )}
 
-                <div className="experience-section">
+                <div className="experience-section" data-aos="fade-left" data-aos-delay="200" data-aos-duration="300">
                     <div className="experience">
                         <div className="green-dot"></div>
                         <div className="top">

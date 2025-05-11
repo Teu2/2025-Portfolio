@@ -20,11 +20,12 @@ export const ProfileAbout = () => {
     }
 
     const handleMouseMove = (e) => {
-        setTooltipPos({ x: e.clientX + 5, y: e.clientY - 40}); // small offset
+        // setTooltipPos({ x: e.clientX + 5, y: e.clientY - 40}); // small offset without AOS
+        setTooltipPos({ x: e.clientX - 585, y: e.clientY - 330}); // small offset with AOS
     };
     
     return (
-        <div className="profile-about-parent">
+        <div className="profile-about-parent" data-aos="fade-up" data-aos-delay="400" data-aos-duration="400">
             <div className="content">
                 {/* <h4>💻<span className='hl1'> Console</span>.<span className='hl2'>WriteLine</span>(<span className='hl3'>"About Me"</span>);</h4> */}
                 <div className="about-links">

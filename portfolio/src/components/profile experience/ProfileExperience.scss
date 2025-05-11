@@ -34,17 +34,17 @@
                     position: absolute;
                     left: -0.05rem;
                     top: 0.65rem;
-                    height: calc(100% - 0.45rem); // adjust this to match icon alignment
+                    height: calc(100% - 0.10rem); // adjust this to match icon alignment
                     border-left: 1px solid #313134;
                 }
 
                 .green-dot{
                     position: absolute;
-                    left: -0.55rem;
-                    top: 0.2rem;
+                    left: -0.5rem;
+                    top: 0.65rem;
                     background-color: #44c86b;
-                    width: 1.1rem;
-                    height: 1.1rem;
+                    width: 1rem;
+                    height: 1rem;
                     border-radius: 50%;
                 }
 

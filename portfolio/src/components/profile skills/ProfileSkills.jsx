@@ -24,7 +24,7 @@ import scssSvg from "../../assets/tech stack icons/scss.svg"
 
 export const ProfileSkills = () => {
     return (
-        <div className="profile-skills-parent">
+        <div className="profile-skills-parent" data-aos="fade-up" data-aos-delay="600" data-aos-duration="300">
             <div className="content">
                 {/* <h4>💻 <span className='hl1'>Console</span>.<span className='hl2'>WriteLine</span>(<span className='hl3'>"Tech Stack"</span>);</h4> */}
                 <h4>🚀 My Tech Stack</h4>
