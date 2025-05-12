@@ -1,4 +1,6 @@
-- Spotify last listen
+- Spotify 
+    - last listen
+    - podcasts
 - Light and dark mode
 - projects
     - python

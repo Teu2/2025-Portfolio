@@ -3,20 +3,13 @@ import { projects } from './Projects'
 import "./ProfileProjects.scss"
 
 // icons
-import { IoLogoJavascript } from "react-icons/io5";
-import { SiTypescript } from "react-icons/si";
-import { BiLogoTypescript } from "react-icons/bi";
-import { FaPython } from "react-icons/fa";
-import { FaVideo } from "react-icons/fa";
 import { FaLayerGroup } from "react-icons/fa";
-import { TbBrandGolang } from "react-icons/tb";
-import { FaHashtag } from "react-icons/fa";
-import { FaGolang } from "react-icons/fa6";
-import { HiOutlineFilm } from "react-icons/hi";
-import { FaFileVideo } from "react-icons/fa";
-import { PiFilmSlateFill } from "react-icons/pi";
-import { IoFilm } from "react-icons/io5";
-import { SiDavinciresolve } from "react-icons/si";
+import { FaDiceD6 } from "react-icons/fa";
+import { FaPaintBrush } from "react-icons/fa";
+import { FiMonitor } from "react-icons/fi";
+import { FaTerminal } from "react-icons/fa";
+import { FaHighlighter } from "react-icons/fa";
+import { FaServer } from "react-icons/fa";
 
 // icons
 import dotnetSvg from "../../assets/tech stack icons/dotnet.svg"
@@ -49,10 +42,10 @@ export const ProfileProjects = () => {
 
     const filters = [
         { label: "All Projects", value: "all", icon: <FaLayerGroup /> },
-        { label: "Python", value: "python", icon: pythonSvg },
-        { label: ".NET", value: "csharp", icon: dotnetSvg },
-        { label: "JavaScript", value: "javascript", icon: jsSvg },
-        { label: "TypeScript", value: "typescript", icon: tsSvg },
+        { label: "Front-End", value: "frontend", icon: <FaPaintBrush /> },
+        { label: "Back-End", value: "backend", icon: <FaServer /> },
+        { label: "Full-Stack", value: "fullstack", icon: <FaDiceD6 /> },
+        { label: "Console", value: "console", icon: <FaTerminal /> },
         // { label: "Video Editing", value: "editing", icon: aPro },
     ];
 
@@ -98,7 +91,12 @@ export const ProfileProjects = () => {
                             <div key={idx} className="project-card">
                                 {/* <img src={project.image} alt={project.title} /> */}
                                 <div className="title">
-                                    <h4>{project.title}</h4>
+                                    <div className="tech-title">
+                                        <div className="img-container">
+                                            <img src={project.language} alt="tech" />
+                                        </div>
+                                        <h4>{project.title}</h4>
+                                    </div>
                                     <FiArrowUpRight />
                                 </div>
                                 <div className="project-image">

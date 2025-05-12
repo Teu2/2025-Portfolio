@@ -9,39 +9,81 @@ import tictactoe from "../../assets/project images/tictactoe.png";
 import tetris from "../../assets/project images/tetris.png";
 import inferenceEngine from "../../assets/project images/inference-engine.png";
 import mazeNavigation from "../../assets/project images/maze-navigation.png";
+import ellenex from "../../assets/project images/ellenex.png";
+import porfolio from "../../assets/project images/portfolio.png";
+
+import dotnetSvg from "../../assets/tech stack icons/dotnet.svg"
+import pythonSvg from "../../assets/tech stack icons/python.svg"
+import jsSvg from "../../assets/tech stack icons/javascript.svg"
+import tsSvg from "../../assets/tech stack icons/typescript-icon.svg"
+import aPro from "../../assets/tech stack icons/apro.svg"
 
 export const projects = [
     {
-        title: "RESTful API",
-        tech: "python",
+        title: "GenAI RESTful API",
+        tech: "backend",
         techStack: [
             "Python",
             "Flask",
             "SQLAlchemy",
             "Docker",
+            "Redis",
             "JWT"
         ],
-        desc: "A RESTful API built with Flask, SQLAlchemy and JWT, providing CRUD operations",
+        language: pythonSvg,
+        desc: "A GenAI API for Game Narratives and World-Building, perfect for game developers and writers.",
         demo: "https://example.com/demo",
         github: "https://github.com/example/python-sorting"
     },
     {
         title: "IMAGE Reader",
-        tech: "javascript",
+        tech: "frontend",
         techStack: [
             "JavaScript",
             "React",
             "Tesseract OCR",
             "Translation API",
         ],
+        language: jsSvg,
         img: imageReader,
-        desc: "Translates text from images using Tesseract OCR and a Translation API.",
+        desc: "Translates Japanese text from images using Tesseract OCR and a Translation API.",
         demo: "https://imagetranslator.netlify.app/",
         github: "https://github.com/Teu2/Image-Reader"
     },
     {
+        title: "2025 Portfolio",
+        tech: "frontend",
+        techStack: [
+            "JavaScript",
+            "React",
+            "EmailJS",
+            "Spotify API",
+            "Vite",
+        ],
+        language: jsSvg,
+        img: porfolio,
+        desc: "My personal portfolio website, showcasing my projects and skills! Built with React and Vite.",
+        demo: "https://imagetranslator.netlify.app/",
+        github: "https://github.com/Teu2/Image-Reader"
+    },
+    {
+        title: "Ellenex Monitoring IoT Platform",
+        tech: "fullstack",
+        techStack: [
+            "TypeScript",
+            "Angular",
+            "Leaflet",
+            "Tailwind",
+            "InfluxDB",
+        ],
+        language: tsSvg,
+        img: ellenex,
+        desc: "A Full-Stack application for monitoring IoT devices that I significantly contributed during my time at Ellenex.",
+        demo: "https://auth.ellenex.net/login?response_type=code&client_id=go7ub2sqap0m0d8b618a8it2c&redirect_uri=https://ellenex.net",
+    },
+    {
         title: "Books Manager",
-        tech: "csharp",
+        tech: "fullstack",
         techStack: [
             "C#",
             "ASP.NET",
@@ -50,6 +92,7 @@ export const projects = [
             "Entity",
             "SQL Server",
         ],
+        language: dotnetSvg,
         img: bookManager,
         desc: "A CRUD web application for managing books, built with ASP.NET MVC and Entity Framework.",
         demo: "https://github.com/Teu2/ASP.NET-Books-Manager",
@@ -57,13 +100,14 @@ export const projects = [
     },
     {
         title: "Discord Twitter Bot",
-        tech: "csharp",
+        tech: "backend",
         techStack: [
             "C#",
             ".NET",
             "Discord.NET",
             "Twitter API",
         ],
+        language: dotnetSvg,
         img: discordBot,
         desc: "A Discord bot that fetches and displays tweets from a specified Twitter account.",
         demo: "https://github.com/Teu2/Discord-Twitter-Bot",
@@ -71,7 +115,7 @@ export const projects = [
     },
     {
         title: "Tic Tac Toe w/ AI",
-        tech: "csharp",
+        tech: "frontend",
         techStack: [
             "C#",
             ".NET",
@@ -79,6 +123,7 @@ export const projects = [
             "WPF",
             "AI",
         ],
+        language: dotnetSvg,
         img: tictactoe,
         desc: "A Tic Tac Toe game with an AI opponent using the MiniMax algorithm, built using WPF and C#.",
         demo: "https://github.com/Teu2/.NET-Tic-Tac-Toe-MiniMax",
@@ -100,7 +145,7 @@ export const projects = [
     // },
     {
         title: "Inference Engine",
-        tech: "csharp",
+        tech: "console",
         techStack: [
             "C#",
             ".NET",
@@ -108,6 +153,7 @@ export const projects = [
             "Console",
             "AI",
         ],
+        language: dotnetSvg,
         img: inferenceEngine,
         desc: "An inference engine built in C# using a console application, demonstrating basic AI concepts.",
         demo: "https://github.com/Teu2/Inference-Engine",
@@ -115,7 +161,7 @@ export const projects = [
     },
     {
         title: "Maze Navigation App",
-        tech: "csharp",
+        tech: "console",
         techStack: [
             "C#",
             ".NET",
@@ -123,24 +169,25 @@ export const projects = [
             "Console",
             "AI",
         ],
+        language: dotnetSvg,
         img: mazeNavigation,
         desc: "A maze navigation console application built in C#, using BFS, DFS, A* and GBFS algorithms.",
         demo: "https://github.com/Teu2/Maze-Navigation-Console",
         github: "https://github.com/Teu2/Maze-Navigation-Console"
     },
-    {
-        title: "NSCL Web Based Dataset",
-        tech: "javascript",
-        techStack: [
-            "HTML",
-            "CSS",
-            "PHP",
-            "JavaScript",
-            "MySQL",
-        ],
-        img: nsclab,
-        desc: "A web-based dataset for software bugs and patches, include fuzzy search, filtering, sorting and pagination.",
-        demo: "https://nsclabdataset.netlify.app/",
-        github: "https://github.com/Teu2/NSCWebBasedDataSet"
-    }
+    // {
+    //     title: "NSCL Web Based Dataset",
+    //     tech: "fullstack",
+    //     techStack: [
+    //         "HTML",
+    //         "CSS",
+    //         "PHP",
+    //         "JavaScript",
+    //         "MySQL",
+    //     ],
+    //     img: nsclab,
+    //     desc: "A web-based dataset for software bugs and patches, include fuzzy search, filtering, sorting and pagination.",
+    //     demo: "https://nsclabdataset.netlify.app/",
+    //     github: "https://github.com/Teu2/NSCWebBasedDataSet"
+    // }
 ];

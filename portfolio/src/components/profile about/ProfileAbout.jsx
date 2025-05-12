@@ -50,7 +50,7 @@ export const ProfileAbout = () => {
                     {' '} or {' '}
                     <span span className="green hover" onMouseEnter={() => setTooltipVisibleLGitHub(true)} onMouseLeave={() => setTooltipVisibleLGitHub(false)} onMouseMove={handleMouseMove}><a href="https://github.com/Teu2" target='_blank' className='link'>{"{GitHub}"}</a></span>
                     {', '} or just download my {' '}
-                    <span span className="green hover" onMouseEnter={() => setTooltipVisibleCV(true)} onMouseLeave={() => setTooltipVisibleCV(false)} onMouseMove={handleMouseMove}><a href="https://github.com/Teu2" target='_blank' className='link'>{"{Resume}"}</a></span>
+                    <span span className="green hover" onMouseEnter={() => setTooltipVisibleCV(true)} onMouseLeave={() => setTooltipVisibleCV(false)} onMouseMove={handleMouseMove}><a href="https://docs.google.com/document/d/166OcttudOVXttP_xZkmQsdDz1T79xYyUgCw3zb3Op0g/edit?usp=sharing" target='_blank' className='link'>{"{Resume}"}</a></span>
                 </p>
             </div>
                 
