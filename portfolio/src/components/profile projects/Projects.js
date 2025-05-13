@@ -11,6 +11,9 @@ import inferenceEngine from "../../assets/project images/inference-engine.png";
 import mazeNavigation from "../../assets/project images/maze-navigation.png";
 import ellenex from "../../assets/project images/ellenex.png";
 import porfolio from "../../assets/project images/portfolio.png";
+import restful from "../../assets/project images/restfulapi.png";
+import social from "../../assets/project images/social.png"
+import link from "../../assets/project images/link.png"
 
 import dotnetSvg from "../../assets/tech stack icons/dotnet.svg"
 import pythonSvg from "../../assets/tech stack icons/python.svg"
@@ -19,6 +22,23 @@ import tsSvg from "../../assets/tech stack icons/typescript-icon.svg"
 import aPro from "../../assets/tech stack icons/apro.svg"
 
 export const projects = [
+    // {
+    //     title: "LINK",
+    //     tech: "fullstack",
+    //     techStack: [
+    //         "TypeScript",
+    //         "React",
+    //         "Node",
+    //         "Express",
+    //         "MySQL",
+    //         "Socket.io"
+    //     ],
+    //     language: tsSvg,
+    //     img: social,
+    //     desc: "A Full-Stack social media app for Gamers, includes typical social media elements & infinite scrolling",
+    //     demo: "https://example.com/demo",
+    //     github: "https://github.com/example/python-sorting"
+    // },
     {
         title: "GenAI RESTful API",
         tech: "backend",
@@ -31,6 +51,7 @@ export const projects = [
             "JWT"
         ],
         language: pythonSvg,
+        img: restful,
         desc: "A GenAI API for Game Narratives and World-Building, perfect for game developers and writers.",
         demo: "https://example.com/demo",
         github: "https://github.com/example/python-sorting"
@@ -63,8 +84,8 @@ export const projects = [
         language: jsSvg,
         img: porfolio,
         desc: "My personal portfolio website, showcasing my projects and skills! Built with React and Vite.",
-        demo: "https://imagetranslator.netlify.app/",
-        github: "https://github.com/Teu2/Image-Reader"
+        demo: "https://dominicyeoh.netlify.app/",
+        github: "https://dominicyeoh.netlify.app/"
     },
     {
         title: "Ellenex Monitoring IoT Platform",
@@ -109,13 +130,13 @@ export const projects = [
         ],
         language: dotnetSvg,
         img: discordBot,
-        desc: "A Discord bot that fetches and displays tweets from a specified Twitter account.",
+        desc: "A Discord bot that fetches and displays tweets from my friends or a specified Twitter account.",
         demo: "https://github.com/Teu2/Discord-Twitter-Bot",
         github: "https://github.com/Teu2/Discord-Twitter-Bot"
     },
     {
         title: "Tic Tac Toe w/ AI",
-        tech: "frontend",
+        tech: "games",
         techStack: [
             "C#",
             ".NET",

@@ -16,6 +16,13 @@ a{
   }
 }
 
+body, html {
+  ::selection {
+    background: #44c86b;
+    color: #0f0f0f;
+  }
+}
+
 .app-parent{
   display: flex;
   flex-direction: column;

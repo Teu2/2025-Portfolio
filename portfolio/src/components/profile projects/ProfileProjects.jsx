@@ -6,20 +6,11 @@ import "./ProfileProjects.scss"
 import { FaLayerGroup } from "react-icons/fa";
 import { FaDiceD6 } from "react-icons/fa";
 import { FaPaintBrush } from "react-icons/fa";
-import { FiMonitor } from "react-icons/fi";
 import { FaTerminal } from "react-icons/fa";
-import { FaHighlighter } from "react-icons/fa";
 import { FaServer } from "react-icons/fa";
-
-// icons
-import dotnetSvg from "../../assets/tech stack icons/dotnet.svg"
-import pythonSvg from "../../assets/tech stack icons/python.svg"
-import jsSvg from "../../assets/tech stack icons/javascript.svg"
-import tsSvg from "../../assets/tech stack icons/typescript-icon.svg"
-import aPro from "../../assets/tech stack icons/apro.svg"
 import { FaGithub } from "react-icons/fa6";
-
 import { FiArrowUpRight } from "react-icons/fi";
+import { ImPacman } from "react-icons/im";
 
 export const ProfileProjects = () => {
 
@@ -46,7 +37,7 @@ export const ProfileProjects = () => {
         { label: "Back-End", value: "backend", icon: <FaServer /> },
         { label: "Full-Stack", value: "fullstack", icon: <FaDiceD6 /> },
         { label: "Console", value: "console", icon: <FaTerminal /> },
-        // { label: "Video Editing", value: "editing", icon: aPro },
+        { label: "Games", value: "games", icon: <ImPacman /> },
     ];
 
     const [activeFilter, setActiveFilter] = useState("all");
@@ -64,10 +55,9 @@ export const ProfileProjects = () => {
                         {' '}
                         <span span className="green hover" onMouseEnter={() => setTooltipVisibleCategories(true)} onMouseLeave={() => setTooltipVisibleCategories(false)} onMouseMove={handleMouseMove}><a href="" className='link'>{"{Category}"}</a></span>
                         {' 🙌'}  
-                        
                     </p>
                 </div>
-
+            
                 {tooltipVisibleProjects && (
                     <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{handleProjectCount()}</div>
                 )}
@@ -89,7 +79,6 @@ export const ProfileProjects = () => {
                     {filtered.map((project, idx) => (
                         <a href={project.demo} target="_blank" rel="noopener noreferrer">
                             <div key={idx} className="project-card">
-                                {/* <img src={project.image} alt={project.title} /> */}
                                 <div className="title">
                                     <div className="tech-title">
                                         <div className="img-container">
