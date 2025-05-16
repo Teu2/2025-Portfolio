@@ -15,81 +15,102 @@ import { ProfileExperience } from "./components/profile experience/ProfileExperi
 import { ProfileProjects } from "./components/profile projects/ProfileProjects.jsx";
 import { ProfileContact } from "./components/profile contact/ProfileContact.jsx";
 import { ProfileSpotify } from "./components/profile spotify/ProfileSpotify.jsx";
+import { MouseTrail } from "./components/mouse trail/MouseTrail.jsx";
+
+// Create a Layout component that includes MouseTrail
+const Layout = ({ children }) => {
+    return (
+        <>
+            <MouseTrail />
+            {children}
+        </>
+    );
+};
 
 function App() {
-	
-	AOS.init();
-	const router = createBrowserRouter([
-		{
-			path: "/",
-			element: (
-				<div className="app-container">
-					<Navbar />
-					<div className="content">
-						<ProfileHeadline />
-						<ProfileAbout />
-						<ProfileSkills />
-						<ProfileServices />
-					</div>
-					<Footer />
-				</div>
-			)
-		},
-		{
-			path: "/experience",
-			element: (
-				<div className="app-container">
-					<Navbar />
-					<div className="content">
-						<ProfileExperience />
-					</div>
-					<Footer />
-				</div>
-			)
-		},
-		{
-			path: "/projects",
-			element: (
-				<div className="app-container">
-					<Navbar />
-					<div className="content">
-						<ProfileProjects />
-					</div>
-					<Footer />
-				</div>
-			)
-		},
-		{
-			path: "/listening",
-			element: (
-				<div className="app-container">
-					<Navbar />
-					<div className="content">
-						<ProfileSpotify />
-					</div>
-					<Footer />
-				</div>
-			)
-		},
-		{
-			path: "/contact",
-			element: (
-				<div className="app-container">
-					<Navbar />
-					<div className="content">
-						<ProfileContact />
-					</div>
-					<Footer />
-				</div>
-			)
-		},
-	])
+    
+    AOS.init();
+    const router = createBrowserRouter([
+        {
+            path: "/",
+            element: (
+                <Layout>
+                    <div className="app-container">
+                        <Navbar />
+                        <div className="content">
+                            <ProfileHeadline />
+                            <ProfileAbout />
+                            <ProfileSkills />
+                            <ProfileServices />
+                        </div>
+                        <Footer />
+                    </div>
+                </Layout>
+            )
+        },
+        {
+            path: "/experience",
+            element: (
+                <Layout>
+                    <div className="app-container">
+                        <Navbar />
+                        <div className="content">
+                            <ProfileExperience />
+                        </div>
+                        <Footer />
+                    </div>
+                </Layout>
+            )
+        },
+        {
+            path: "/projects",
+            element: (
+                <Layout>
+                    <div className="app-container">
+                        <Navbar />
+                        <div className="content">
+                            <ProfileProjects />
+                        </div>
+                        <Footer />
+                    </div>
+                </Layout>
+            )
+        },
+        {
+            path: "/listening",
+            element: (
+                <Layout>
+                    <div className="app-container">
+                        <Navbar />
+                        <div className="content">
+                            <ProfileSpotify />
+                        </div>
+                        <Footer />
+                    </div>
+                </Layout>
+            )
+        },
+        {
+            path: "/contact",
+            element: (
+                <Layout>
+                    <div className="app-container">
+                        <Navbar />
+                        <div className="content">
+                            <ProfileContact />
+                        </div>
+                        <Footer />
+                    </div>
+                </Layout>
+            )
+        },
+    ])
 
-	return (
-		<div className="app-parent">
-			<RouterProvider router={router} />
-		</div>
-	);
+    return (
+        <div className="app-parent">
+            <RouterProvider router={router} />
+        </div>
+    );
 }
 
 export default App;

@@ -40,7 +40,7 @@ export const projects = [
     //     github: "https://github.com/example/python-sorting"
     // },
     {
-        title: "GenAI RESTful API",
+        title: "GenAI RESTful API (In Progress)",
         tech: "backend",
         techStack: [
             "Python",
@@ -120,7 +120,7 @@ export const projects = [
         github: "https://github.com/Teu2/ASP.NET-Books-Manager"
     },
     {
-        title: "Discord Twitter Bot",
+        title: "Toki - A Discord Bot",
         tech: "backend",
         techStack: [
             "C#",
