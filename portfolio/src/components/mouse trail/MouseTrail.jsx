@@ -50,8 +50,8 @@ export const MouseTrail = () => {
                 pointsRef.current.push({
                     x: x,
                     y: y,
-                    vx: 0,
-                    vy: 0
+                    vx: -50,
+                    vy: -500
                 });
             }
         };
@@ -63,7 +63,7 @@ export const MouseTrail = () => {
             // Initialize points only on first mouse move
             if (!mouseMovedRef.current) {
                 mouseMovedRef.current = true;
-                initializePoints(e.clientX, e.clientY);
+                initializePoints(e.clientX - 50, e.clientY - 50);
                 console.log("Mouse moved for the first time, initializing trail");
             }
         };

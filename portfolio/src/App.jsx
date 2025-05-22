@@ -21,7 +21,7 @@ import { MouseTrail } from "./components/mouse trail/MouseTrail.jsx";
 const Layout = ({ children }) => {
     return (
         <>
-            <MouseTrail />
+            {/* <MouseTrail /> */}
             {children}
         </>
     );

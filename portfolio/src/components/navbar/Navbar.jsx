@@ -9,6 +9,8 @@ import { FaEnvelope } from "react-icons/fa";
 import { FaFolderOpen } from "react-icons/fa";
 import { IoDocumentText } from "react-icons/io5";
 import { FaSpotify } from "react-icons/fa";
+import { FaFolder } from "react-icons/fa";
+import { PiCertificateFill } from "react-icons/pi";
 import { FiSun } from "react-icons/fi";
 
 export const Navbar = () => {

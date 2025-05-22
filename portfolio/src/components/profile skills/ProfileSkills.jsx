@@ -42,13 +42,13 @@ export const ProfileSkills = () => {
                     <div className="skill"><img src={expressSvg} alt="express" className="skill-icon"/><p>Express</p></div>
                     {/* <div className="skill"><img src={msqlSvg} alt="msql" className="skill-icon"/><p>MySQL</p></div> */}
                     <div className="skill"><img src={psqlSvg} alt="psql" className="skill-icon"/><p>PostgreSQL</p></div>
-                    <div className="skill"><img src={mdbSvg} alt="mdb" className="skill-icon"/><p>MongoDB</p></div>
+                    {/* <div className="skill"><img src={mdbSvg} alt="mdb" className="skill-icon"/><p>MongoDB</p></div> */}
                     <div className="skill"><img src={poSvg} alt="po" className="skill-icon"/><p>Postman</p></div>
                     <div className="skill"><img src={doSvg} alt="do" className="skill-icon"/><p>Docker</p></div>
-                    {/* <div className="skill"><img src={awsSvg} alt="aws" className="skill-icon"/><p>AWS</p></div> */}
+                    <div className="skill"><img src={awsSvg} alt="aws" className="skill-icon"/><p>AWS</p></div>
                     <div className="skill"><img src={gitSvg} alt="git" className="skill-icon"/><p>Git</p></div>
                     <div className="skill"><img src={ghubSvg2} alt="ghub" className="skill-icon"/><p>GitHub</p></div>
-                    <div className="skill"><img src={npmSvg} alt="ghub" className="skill-icon"/><p>npm</p></div>
+                    {/* <div className="skill"><img src={npmSvg} alt="ghub" className="skill-icon"/><p>npm</p></div> */}
                     <div className="skill"><img src={figSvg} alt="fig" className="skill-icon"/><p>Figma</p></div>
                     {/* <div className="skill"><img src={cssSvg} alt="fig" className="skill-icon"/><p>CSS</p></div> */}
                     <div className="skill"><img src={scssSvg} alt="fig" className="skill-icon"/><p>SCSS</p></div>
