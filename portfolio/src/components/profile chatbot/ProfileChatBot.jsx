@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ProfileChatBot.scss';
 import { GoDependabot } from "react-icons/go";
+import { FiMaximize2 } from "react-icons/fi";
+import { FiMinimize2 } from "react-icons/fi";
 
 export const ProfileChatBot = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -195,7 +197,7 @@ export const ProfileChatBot = () => {
                     <span className="header-title">Chat with Dom Support</span>
                     </div>
                     <button onClick={() => setIsOpen(false)} className="header-button">
-                    <MinimizeIcon />
+                    <FiMinimize2  />
                     </button>
                 </div>
                 
@@ -264,7 +266,7 @@ export const ProfileChatBot = () => {
                             <span className="header-title">Chat with Dom Support</span>
                         </div>
                         <button onClick={() => setIsOpen(true)} className="header-button">
-                            <MinimizeIcon />
+                            <FiMaximize2 />
                         </button>
                     </div>  
                 </div>
