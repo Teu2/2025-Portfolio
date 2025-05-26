@@ -22,23 +22,6 @@ import tsSvg from "../../assets/tech stack icons/typescript-icon.svg"
 import aPro from "../../assets/tech stack icons/apro.svg"
 
 export const projects = [
-    // {
-    //     title: "LINK",
-    //     tech: "fullstack",
-    //     techStack: [
-    //         "TypeScript",
-    //         "React",
-    //         "Node",
-    //         "Express",
-    //         "MySQL",
-    //         "Socket.io"
-    //     ],
-    //     language: tsSvg,
-    //     img: social,
-    //     desc: "A Full-Stack social media app for Gamers, includes typical social media elements & infinite scrolling",
-    //     demo: "https://example.com/demo",
-    //     github: "https://github.com/example/python-sorting"
-    // },
     {
         title: "GenAI RESTful API (In Progress)",
         tech: "backend",
@@ -53,6 +36,23 @@ export const projects = [
         language: pythonSvg,
         img: restful,
         desc: "A GenAI API for Game Narratives and World-Building, perfect for game developers and writers.",
+        demo: "https://example.com/demo",
+        github: "https://github.com/example/python-sorting"
+    },
+    {
+        title: "LINK Community (In Progress)",
+        tech: "fullstack",
+        techStack: [
+            "JavaScript",
+            "React",
+            "Node",
+            "Express",
+            "MySQL",
+            "Socket.io"
+        ],
+        language: jsSvg,
+        img: link,
+        desc: "A Full-Stack social media app for Gamers, includes typical social media elements & infinite scrolling.",
         demo: "https://example.com/demo",
         github: "https://github.com/example/python-sorting"
     },
@@ -99,26 +99,26 @@ export const projects = [
         ],
         language: tsSvg,
         img: ellenex,
-        desc: "A Full-Stack application for monitoring IoT devices that I significantly contributed during my time at Ellenex.",
+        desc: "A Full-Stack application for monitoring IoT devices that I significantly contributed to during my time at Ellenex.",
         demo: "https://auth.ellenex.net/login?response_type=code&client_id=go7ub2sqap0m0d8b618a8it2c&redirect_uri=https://ellenex.net",
     },
-    {
-        title: "Books Manager",
-        tech: "fullstack",
-        techStack: [
-            "C#",
-            "ASP.NET",
-            "MVC",
-            "Razor",
-            "Entity",
-            "SQL Server",
-        ],
-        language: dotnetSvg,
-        img: bookManager,
-        desc: "A CRUD web application for managing books, built with ASP.NET MVC and Entity Framework.",
-        demo: "https://github.com/Teu2/ASP.NET-Books-Manager",
-        github: "https://github.com/Teu2/ASP.NET-Books-Manager"
-    },
+    // {
+    //     title: "Books Manager",
+    //     tech: "fullstack",
+    //     techStack: [
+    //         "C#",
+    //         "ASP.NET",
+    //         "MVC",
+    //         "Razor",
+    //         "Entity",
+    //         "SQL Server",
+    //     ],
+    //     language: dotnetSvg,
+    //     img: bookManager,
+    //     desc: "A CRUD web application for managing books, built with ASP.NET MVC and Entity Framework.",
+    //     demo: "https://github.com/Teu2/ASP.NET-Books-Manager",
+    //     github: "https://github.com/Teu2/ASP.NET-Books-Manager"
+    // },
     {
         title: "Toki - A Discord Bot",
         tech: "backend",
@@ -128,7 +128,7 @@ export const projects = [
             "Discord.NET",
             "Twitter API",
         ],
-        language: dotnetSvg,
+        language: pythonSvg,
         img: discordBot,
         desc: "A Discord bot that fetches and displays tweets from my friends or a specified Twitter account.",
         demo: "https://github.com/Teu2/Discord-Twitter-Bot",
@@ -152,13 +152,15 @@ export const projects = [
     },
     // {
     //     title: "Tetris Clone",
-    //     tech: "csharp",
+    //     tech: "games",
     //     techStack: [
     //         "C#",
     //         ".NET",
     //         "DSA",
     //         "WPF",
+    //         "Tutorial",
     //     ],
+    //     language: dotnetSvg,
     //     img: tetris,
     //     desc: "A Tetris clone built following a tutorial, using WPF and C#, with a focus on learning the basics of WPF.",
     //     demo: "https://github.com/Teu2/.NET-Tic-Tac-Toe-MiniMax",
@@ -206,6 +208,7 @@ export const projects = [
     //         "JavaScript",
     //         "MySQL",
     //     ],
+    //     language: jsSvg,
     //     img: nsclab,
     //     desc: "A web-based dataset for software bugs and patches, include fuzzy search, filtering, sorting and pagination.",
     //     demo: "https://nsclabdataset.netlify.app/",
