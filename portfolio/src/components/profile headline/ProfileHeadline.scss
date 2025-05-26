@@ -17,11 +17,31 @@
     }
 
     .left{
+        position: relative;
 
-        img{    
+        .pfp{    
             width: 6rem;
             height: 6rem;
             border-radius: 50rem;
+
+            &:hover{
+                cursor: pointer;
+            }
+        }
+
+        .baby-yoda{
+            position: absolute;
+            border-radius: 0rem;
+            left: 10px;
+            z-index: -1;
+            top: -20px;
+            width: 90px;
+            height: 90px;
+            transition: top 0.2s ease; // optional animation
+        }
+
+        .pfp:hover + .baby-yoda {
+            top: -55px;
         }
     }
 

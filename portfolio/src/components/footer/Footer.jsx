@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import './Footer.scss';
 
+import babyYoda from "../../assets/baby-yoda.png"
+
 export const Footer = () => {
     
     const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
@@ -15,6 +17,7 @@ export const Footer = () => {
         <div className="footer-parent">
         <div className="content">
             <p>©{' '}<span className="green hover" onMouseEnter={() => setTooltipVisible(true)} onMouseLeave={() => setTooltipVisible(false)} onMouseMove={handleMouseMove}>{`{${currentYear}}`}</span>{' '}Portfolio. All rights reserved.</p>
+            {/* <img src={babyYoda} alt="" /> */}
             <p>Developed with 💚 by Dominic</p>
 
             {tooltipVisible && (

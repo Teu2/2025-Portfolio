@@ -16,6 +16,7 @@ import { ProfileProjects } from "./components/profile projects/ProfileProjects.j
 import { ProfileContact } from "./components/profile contact/ProfileContact.jsx";
 import { ProfileSpotify } from "./components/profile spotify/ProfileSpotify.jsx";
 import { MouseTrail } from "./components/mouse trail/MouseTrail.jsx";
+import { ProfileChatBot } from "./components/profile chatbot/ProfileChatBot.jsx";
 
 // Create a Layout component that includes MouseTrail
 const Layout = ({ children }) => {
@@ -23,6 +24,7 @@ const Layout = ({ children }) => {
         <>
             {/* <MouseTrail /> */}
             {children}
+            <ProfileChatBot />
         </>
     );
 };
