@@ -42,6 +42,7 @@ export const ProfileChatBot = () => {
             if (message.includes('lift')) return "My one rep maxes are: 110kg bench, 60kg overhead barbell press, 120kg squat, 120kg deadlift (I don't have enough plates to go over 120kg haha)"
             if (message.includes('specs')) return "Ooooh glad you asked, my PC specs are "
             if (message.includes('projects')) return "I've worked on a lot of projects! check out my projection section to see them :3"
+
             if (message.includes('favourite') || message.includes('favorite') || message.includes('fav')){
                 if (message.includes('project')) return "my favourite project? hmm.. probably the Link social media appliction i'm currently developing!"
                 if (message.includes('game')) return "My favourite... of ALL time??.. that's tough, but it probably has to be Elden Ring. FromSoftware is just a cut above the rest!"
@@ -55,9 +56,13 @@ export const ProfileChatBot = () => {
                 return "Mendix is a low code platform, similar to wix but better and more intuitive!"
             }
             if (message.includes('language')){
+                if (message.includes('like')) return "I like working with C#, Python, JavaScript and TypeScript :3"
                 if (message.includes('programming')) return "I'm familiar with C#, Python, JavaScript and TypeScript :3"
                 if (message.includes('work')) return "I work with C#, Python, JavaScript and TypeScript :3"
+                
             }
+            if (message.includes('doing')) return "I like programming, boxing, building PC's, playing games and learning new technologies!"
+            if (message.includes('to do')) return "I like programming, boxing, building PC's, playing games and learning new technologies!"
             
         }
 
@@ -66,6 +71,9 @@ export const ProfileChatBot = () => {
             if (message.includes('box')) return "I've been boxing for 6 months now? I go 3 days a week! and spar every Friday"
             if (message.includes('gym')) return "I started going to the gym around 2022-ish?"
             if (message.includes('working out')) return "I started working out around 2022-ish?"
+            if (message.includes('weather')) return "Umm.. good... I guess..? I have no idea"
+            if (message.includes('are you')) return "I'm good thanks!"
+            if (message.includes('are u')) return "I'm good thanks!"
         }
 
         if (message.includes('why')) {
@@ -99,6 +107,7 @@ export const ProfileChatBot = () => {
         }
 
         if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
+            if (message.includes('world')) return "Hello World!"
             const greetings = [
                 "Hi there! 👋", "Hello, what do you want to talk about? 😊", "Hello! want to know something?", "Hi! hope you're doing well! what would you like to talk about?", "Hello!"
             ]

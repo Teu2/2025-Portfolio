@@ -34,7 +34,7 @@
     height: 24rem;
     background-color: #1b1b1b;
     border-radius: 0.5rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    // box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     border: 1px solid #313134;
     display: flex;
     flex-direction: column;
@@ -261,7 +261,7 @@
     height: 3.45rem;
     background-color: #1b1b1b;
     border-radius: 0.5rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    // box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
     border: 1px solid #313134;
     display: flex;
     flex-direction: column;
@@ -301,20 +301,20 @@
 }
 
 .header-button {
-        color: #9ca3af;
-        background: none;
-        border: none;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        transition: color 0.2s ease;
+    color: #9ca3af;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
 
-        &:hover {
-          color: white;
-        }
+    &:hover {
+      color: white;
+    }
 
-        &:focus {
-          outline: none;
-        }
-      }
+    &:focus {
+      outline: none;
+    }
+  }
