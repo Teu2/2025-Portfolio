@@ -25,13 +25,6 @@ export const ProfileChatBot = () => {
     const getResponse = (userMessage) => {
         const message = userMessage.toLowerCase().trim();
 
-        if (message.includes('do')) {
-            if (message.includes('boxing')) return "I've been boxing for 6 months now? I go 3 days a week! and spar every Friday"
-            if (message.includes('box')) return "I've been boxing for 6 months now? I go 3 days a week! and spar every Friday"
-            if (message.includes('gym')) return "I do! I try to go to them gym regularly!"
-            if (message.includes('workout')) return "I do! I try to workout regularly!"
-        }
-
         if (message.includes('what')) {
             if (message.includes('hobbies')) return "My hobbies? I like programming, building pc's, gaming, boxing and fitness!"
             if (message.includes('hobby')) return "My hobbies? I like programming, building pc's, gaming, boxing and fitness!"
@@ -47,10 +40,11 @@ export const ProfileChatBot = () => {
             if (message.includes('lift')) return "My one rep maxes are: 110kg bench, 60kg overhead barbell press, 120kg squat, 120kg deadlift (I don't have enough plates to go over 120kg haha)"
             if (message.includes('specs')) return "Ooooh glad you asked, my PC specs are "
             if (message.includes('projects')) return "I've worked on a lot of projects! check out my projection section to see them :3"
-            if (message.includes('favourite') || message.includes('favorite')){
+            if (message.includes('favourite') || message.includes('favorite') || message.includes('fav')){
                 if (message.includes('project')) return "my favourite project? hmm.. probably the Link social media appliction i'm currently developing!"
                 if (message.includes('game')) return "My favourite... of ALL time??.. that's tough, but it probably has to be Elden Ring. FromSoftware is just a cut above the rest!"
                 if (message.includes('language')) return "my favourite programming language... hm... probably JavaScript? vanilla answer I know, don't hate the player hate the game"
+                if (message.includes('food')) return "I really like sinigang! it's sour and savory soup or stew from the philippines!"
             }
             if (message.includes('learning')){
                 return "I'm currently learning python, typescript and Mendix!"
@@ -90,6 +84,16 @@ export const ProfileChatBot = () => {
             if (message.includes('do you do boxing')) return "I've been boxing for 6 months now? I go 3 days a week! and spar every Friday"
             if (message.includes('do you live', 'address')) return "I'm located in Melbourne Australia"
             if (message.includes('did you grow up')) return "I've been boxing for 6 months now? I go 3 days a week! and spar every Friday"
+        }
+
+        if (message.includes('do')) {
+            if (message.includes('like') || message.includes('enjoy')){
+                if (message.includes('boxing')) return "I do enjoy boxing! it keeps me fit, disciplined and teaches you how to defend yourself!"
+            }
+            if (message.includes('boxing')) return "I've been boxing for 6 months now? I go 3 days a week! and spar every Friday"
+            if (message.includes('box')) return "I've been boxing for 6 months now? I go 3 days a week! and spar every Friday"
+            if (message.includes('gym')) return "I do! I try to go to them gym regularly!"
+            if (message.includes('workout')) return "I do! I try to workout regularly!"
         }
 
         if (message.includes('hello') || message.includes('hi') || message.includes('hey')) {
