@@ -41,7 +41,7 @@ export const ProfileAbout = () => {
                         <p>Gaming</p>
                         <p>Fitness</p>
                         <p>Homelabs</p>
-                        <p>Daydreaming</p>
+                        <p>Pentesting</p>
                     </div>
                 </div>
 

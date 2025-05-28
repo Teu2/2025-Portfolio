@@ -5,6 +5,7 @@ import pfpImage from '../../assets/pfp.png'
 import babyYoda from "../../assets/baby-yoda.png"
 import budew from "../../assets/budew.png"
 import turtwig from "../../assets/turtwig.png"
+import greenie from "../../assets/greenie.png"
 
 import { IoLocation } from "react-icons/io5";
 
@@ -48,7 +49,7 @@ export const ProfileHeadline = () => {
             <div className="content">
                 <div className="left" data-aos="fade-right" data-aos-duration="300">
                     <img src={pfpImage} alt="Example" className='pfp'/>
-                    {/* <img src={turtwig} alt="Example" className='baby-yoda'/> */}
+                    <img src={greenie} alt="Example" className='baby-yoda'/>
                 </div>
                 <div className="right" data-aos="fade-left" data-aos-delay="200" data-aos-duration="300">
                     <h1>Welcome to my <span className='green'>Portfolio</span> <span className='wave'>👋</span></h1>

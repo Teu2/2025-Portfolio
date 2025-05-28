@@ -32,16 +32,16 @@
         .baby-yoda{
             position: absolute;
             border-radius: 0rem;
-            left: 10px;
+            left: 2px;
             z-index: -1;
-            top: -20px;
-            width: 90px;
-            height: 90px;
+            top: 10px;
+            width: 95px;
+            height: 95px;
             transition: top 0.2s ease; // optional animation
         }
 
         .pfp:hover + .baby-yoda {
-            top: -55px;
+            top: -50px;
         }
     }
 

@@ -11,6 +11,14 @@ import { FaServer } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { FiArrowUpRight } from "react-icons/fi";
 import { ImPacman } from "react-icons/im";
+import { FaProjectDiagram } from "react-icons/fa";
+import { PiTreeStructureFill } from "react-icons/pi";
+import { RiSpyFill } from "react-icons/ri";
+import { MdOutlineSecurity } from "react-icons/md";
+import { FaUnlock } from "react-icons/fa";
+import { FaNetworkWired } from "react-icons/fa6";
+import { FaVideo } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa6";
 
 export const ProfileProjects = () => {
 
@@ -38,6 +46,12 @@ export const ProfileProjects = () => {
         { label: "Full-Stack", value: "fullstack", icon: <FaDiceD6 /> },
         { label: "Console", value: "console", icon: <FaTerminal /> },
         { label: "Games", value: "games", icon: <ImPacman /> },
+        { label: "System Design", value: "systemdesign", icon: <FaProjectDiagram /> },
+        { label: "Pentesting / Hacking", value: "pentesting", icon: <FaUnlock /> },
+        { label: "Networking", value: "networking", icon: <FaNetworkWired /> },
+        // { label: "Featured", value: "featured", icon: <FaStar /> },
+        // { label: "Video Editing", value: "editing", icon: <FaVideo /> },
+        // { label: "Networking", value: "games", icon: <ImPacman /> },
     ];
 
     const [activeFilter, setActiveFilter] = useState("all");
@@ -81,9 +95,7 @@ export const ProfileProjects = () => {
                             <div key={idx} className="project-card">
                                 <div className="title">
                                     <div className="tech-title">
-                                        <div className="img-container">
-                                            <img src={project.language} alt="tech" />
-                                        </div>
+                                            {project.language ? <div className="img-container"><img src={project.language} alt="tech" /></div> : null}
                                         <h4>{project.title}</h4>
                                     </div>
                                     <FiArrowUpRight />
@@ -101,7 +113,7 @@ export const ProfileProjects = () => {
                                         ))}
                                     </div>
                                     <div className="project-links">
-                                        <a href={project.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+                                        {project.github ? <a href={project.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a> : <a href={project.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>}
                                     </div>
                                 </div>
                             </div>
