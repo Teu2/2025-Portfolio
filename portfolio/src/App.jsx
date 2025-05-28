@@ -32,8 +32,12 @@ const Layout = ({ children }) => {
 };
 
 function App() {
-    
     AOS.init();
+
+    useEffect(() => {
+        // getWeatherData();
+    }, []);
+
     const router = createBrowserRouter([
         {
             path: "/",
@@ -42,7 +46,7 @@ function App() {
                     <div className="app-container">
                         <Navbar />
                         <div className="content">
-                            <ProfileHeadline />
+                            <ProfileHeadline/>
                             <ProfileAbout />
                             <ProfileSkills />
                             <ProfileServices />

@@ -63,7 +63,7 @@ export const projects = [
             "JavaScript",
             "React",
             "EmailJS",
-            "Spotify API",
+            "Weather API",
             "Vite",
         ],
         language: jsSvg,

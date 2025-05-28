@@ -12,13 +12,8 @@ import { FaGithub } from "react-icons/fa6";
 import { FiArrowUpRight } from "react-icons/fi";
 import { ImPacman } from "react-icons/im";
 import { FaProjectDiagram } from "react-icons/fa";
-import { PiTreeStructureFill } from "react-icons/pi";
-import { RiSpyFill } from "react-icons/ri";
-import { MdOutlineSecurity } from "react-icons/md";
 import { FaUnlock } from "react-icons/fa";
 import { FaNetworkWired } from "react-icons/fa6";
-import { FaVideo } from "react-icons/fa6";
-import { FaStar } from "react-icons/fa6";
 
 export const ProfileProjects = () => {
 
@@ -49,9 +44,6 @@ export const ProfileProjects = () => {
         { label: "System Design", value: "systemdesign", icon: <FaProjectDiagram /> },
         { label: "Pentesting / Hacking", value: "pentesting", icon: <FaUnlock /> },
         { label: "Networking", value: "networking", icon: <FaNetworkWired /> },
-        // { label: "Featured", value: "featured", icon: <FaStar /> },
-        // { label: "Video Editing", value: "editing", icon: <FaVideo /> },
-        // { label: "Networking", value: "games", icon: <ImPacman /> },
     ];
 
     const [activeFilter, setActiveFilter] = useState("all");
