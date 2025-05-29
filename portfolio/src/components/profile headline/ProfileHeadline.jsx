@@ -10,6 +10,7 @@ export const ProfileHeadline = () => {
     const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
     
     const titles = ["Junior Software Engineer.", "Problem Solver.", "Tech Enthusiast."];
+    
     const [displayedText, setDisplayedText] = useState('');
     const [titleIndex, setTitleIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);

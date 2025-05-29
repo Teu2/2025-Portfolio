@@ -3,6 +3,7 @@ import './ProfileChatBotAI.scss';
 import { RiRobot2Line } from "react-icons/ri";
 
 export const ProfileChatBotAI = () => {
+
     const [isOpen, setIsOpen] = useState(false);
     const [messages, setMessages] = useState([]);
     const [inputValue, setInputValue] = useState('');
@@ -11,7 +12,6 @@ export const ProfileChatBotAI = () => {
     const [model, setModel] = useState(null);
     const messagesEndRef = useRef(null);
 
-    // Portfolio context for the AI
     const portfolioContext = `You are a helpful assistant for Dominic Yeoh's portfolio website. 
 
 Dominic Yeoh is a Junior Software Engineer based in Melbourne, Victoria, Australia. Here's what you should know about him:
@@ -53,7 +53,7 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
 
     useEffect(scrollToBottom, [messages]);
 
-    // Initialize the AI model when chatbot opens
+    // initialize the AI model when chatbot opens
     useEffect(() => {
         const initializeModel = async () => {
             if (isOpen && !model && !isModelLoading) {
@@ -107,7 +107,7 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
         }
     }, [isOpen, model, isModelLoading, messages.length]);
 
-    // Fallback responses for when AI isn't available
+    // fallback responses for when AI isn't available
     const getFallbackResponse = (userMessage) => {
         const message = userMessage.toLowerCase().trim();
 
@@ -229,7 +229,7 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
         return "That's an interesting question! I can tell you about Dominic's skills, experience, projects, or how to contact him. What would you like to know more about? 🤔";
     };
 
-    // Generate AI response
+    // generate AI response
     const generateAIResponse = async (userMessage) => {
         if (!model) {
             console.log('No AI model available, using fallback');
@@ -270,10 +270,10 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
         setIsTyping(true);
 
         try {
-            // Generate AI response
+            // generate AI response
             const aiResponse = await generateAIResponse(currentInput);
 
-            // Simulate a more natural typing delay
+            // simulate a more natural typing delay
             setTimeout(() => {
                 const botResponse = {
                     type: 'bot',
@@ -282,7 +282,7 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
                 };
                 setMessages(prev => [...prev, botResponse]);
                 setIsTyping(false);
-            }, 800 + Math.random() * 1200); // Random delay between 0.8-2 seconds
+            }, 800 + Math.random() * 1200); // random delay between 0.8-2 seconds
 
         } catch (error) {
             console.error('Error in handleSendMessage:', error);
@@ -330,7 +330,7 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
 
     return (
         <div className="chatbot-container">
-            {/* Collapsed Header Bar */}
+            {/* collapsed Header Bar */}
             {!isOpen && (
                 <div className="chatbot-collapsed" onClick={() => setIsOpen(true)}>
                     <div className="collapsed-content">
@@ -344,10 +344,10 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
                 </div>
             )}
 
-            {/* Full Chat Window */}
+            {/* full Chat Window */}
             {isOpen && (
                 <div className="chatbot-window">
-                    {/* Header */}
+                    {/* header */}
                     <div className="chatbot-header" onClick={() => setIsOpen(false)}>
                         <div className="header-content">
                             <RiRobot2Line   />
@@ -359,7 +359,7 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
                         </button>
                     </div>
 
-                    {/* Messages */}
+                    {/* messages */}
                     <div className="messages-container">
                         {isModelLoading && (
                             <div className="loading-message">
@@ -379,7 +379,7 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
                             </div>
                         ))}
 
-                        {/* Typing indicator */}
+                        {/* typing indicator */}
                         {isTyping && (
                             <div className="message bot">
                                 <div className="message-bubble">
@@ -394,7 +394,7 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
                         <div ref={messagesEndRef} />
                     </div>
 
-                    {/* Input */}
+                    {/* input */}
                     <div className="input-container">
                         <div className="input-wrapper">
                             <input
