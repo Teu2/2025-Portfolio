@@ -74,7 +74,6 @@ export const ProfileProjects = () => {
                 <div className="filter-bar" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
                     {filters.map(filter => (
                         <div key={filter.value} onClick={() => setActiveFilter(filter.value)} className={`filter-button ${activeFilter === filter.value ? "active" : ""}`}>
-                            {console.log(`${typeof filter.icon} - ${filter.label}`)}
                             {typeof filter.icon === "string" ? <img src={filter.icon} alt="icon" className="skill-icon"/> : filter.icon}
                             {filter.label}
                         </div>

@@ -7,9 +7,6 @@ import scorpLogo from "../../assets/work logos/scorptec.png"
 import ellenexLogo from "../../assets/work logos/ellenex.png"
 import brykLogo from "../../assets/work logos/bryk.png"
 import deakinLogo from "../../assets/work logos/deakin.png"
-import swinburneLogo from "../../assets/work logos/swinburne.png"
-import paloLogo from "../../assets/work logos/paloalto.png"
-import oracleLogo from "../../assets/work logos/oracle.png"
 
 export const ProfileExperience = () => {
 

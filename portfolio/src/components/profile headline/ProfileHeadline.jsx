@@ -74,7 +74,8 @@ export const ProfileHeadline = () => {
                     <p>Dominic Yeoh, <span className="typing">{displayedText}</span></p>
                     <div className="location">
                         <IoLocation/>
-                        <p>Melbourne, Victoria, Aus - {weather ? `${weather}°C ${weatherIcon}` : 'Loading Temperature...'}</p>
+                        <p>Melbourne, Victoria, Aus - {weather ? `${weather}°C` : 'Loading Temperature...'}</p>
+                        {/* <p>Melbourne, Victoria, Aus - {weather ? `${weather}°C ${weatherIcon}` : 'Loading Temperature...'}</p> */}
                     </div>
                 </div>
             </div>
