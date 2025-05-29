@@ -111,22 +111,6 @@ export const projects = [
         demo: "https://github.com/Teu2/.NET-Tic-Tac-Toe-MiniMax",
         github: "https://github.com/Teu2/.NET-Tic-Tac-Toe-MiniMax"
     },
-    // {
-    //     title: "Tetris Clone",
-    //     tech: "games",
-    //     techStack: [
-    //         "C#",
-    //         ".NET",
-    //         "DSA",
-    //         "WPF",
-    //         "Tutorial",
-    //     ],
-    //     language: dotnetSvg,
-    //     img: tetris,
-    //     desc: "A Tetris clone built in C# and .NET, following a tutorial to learn the basics of WPF.",
-    //     demo: "https://github.com/Teu2/.NET-Tic-Tac-Toe-MiniMax",
-    //     github: "https://github.com/Teu2/.NET-Tic-Tac-Toe-MiniMax"
-    // },
     {
         title: "Inference Engine",
         tech: "console",
@@ -139,7 +123,7 @@ export const projects = [
         ],
         language: dotnetSvg,
         img: inferenceEngine,
-        desc: "An inference engine built in C# using a console application, demonstrating basic AI concepts.",
+        desc: "An inference engine built in C# using forward chaining & backward chaining, demonstrating basic AI concepts.",
         demo: "https://github.com/Teu2/Inference-Engine",
         github: "https://github.com/Teu2/Inference-Engine"
     },

@@ -14,6 +14,8 @@ import { ImPacman } from "react-icons/im";
 import { FaProjectDiagram } from "react-icons/fa";
 import { FaUnlock } from "react-icons/fa";
 import { FaNetworkWired } from "react-icons/fa6";
+import { FaShareNodes } from "react-icons/fa6";
+import { FaPenRuler } from "react-icons/fa6";
 
 export const ProfileProjects = () => {
 
@@ -39,9 +41,9 @@ export const ProfileProjects = () => {
         { label: "Front-End", value: "frontend", icon: <FaPaintBrush /> },
         { label: "Back-End", value: "backend", icon: <FaServer /> },
         { label: "Full-Stack", value: "fullstack", icon: <FaDiceD6 /> },
-        { label: "Console", value: "console", icon: <FaTerminal /> },
+        { label: "Algorithms", value: "console", icon: <FaShareNodes /> },
         { label: "Games", value: "games", icon: <ImPacman /> },
-        { label: "System Design", value: "systemdesign", icon: <FaProjectDiagram /> },
+        { label: "System Design", value: "systemdesign", icon: <FaPenRuler /> },
         { label: "Pentesting / Hacking", value: "pentesting", icon: <FaUnlock /> },
         { label: "Networking", value: "networking", icon: <FaNetworkWired /> },
     ];

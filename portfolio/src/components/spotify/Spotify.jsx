@@ -32,7 +32,7 @@ export const Spotify = () => {
                     </div>
                 </div>
                 <div className="right">
-                    <p className='played'>2 hours ago</p>
+                    <p className='played'>Listening now</p>
                     <FaSpotify />
                 </div>
             </div>
