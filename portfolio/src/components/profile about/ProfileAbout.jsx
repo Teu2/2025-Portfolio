@@ -32,7 +32,7 @@ export const ProfileAbout = () => {
                 </div>
 
                 <p>I'm a Junior Software Engineer with a love for creating useful software solutions using .NET, Python, and JavaScript!
-                I love programming, enjoy learning new technologies, video editing, and boxing! — basically, I spend most of my time in front of a screen, and occasionaly get punched in the face.</p>
+                I love programming, enjoy learning new technologies, video editing, and boxing! - basically, I spend most of my time in front of a screen, and occasionaly get punched in the face.</p>
                     
                 <div className="hobbies">
                     <p>My other hobbies include:</p>

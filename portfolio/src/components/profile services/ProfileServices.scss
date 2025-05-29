@@ -14,7 +14,7 @@
         font-size: 13px;
         border-radius: 7px;
         padding: 1.5rem;
-        color: #ffffff;
+        color: rgba(255, 255, 255, 0.87);
         // box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         transition: transform 0.3s ease;
         display: flex;
@@ -42,7 +42,7 @@
         p {
             margin-top: 0.5rem;
             font-size: 13px;
-            color: #d1d5db;
+            color: #9b9ba4;
         }
 
         &:hover {

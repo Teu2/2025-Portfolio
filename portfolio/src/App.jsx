@@ -18,6 +18,7 @@ import { ProfileSpotify } from "./components/profile spotify/ProfileSpotify.jsx"
 import { MouseTrail } from "./components/mouse trail/MouseTrail.jsx";
 import { ProfileChatBot } from "./components/profile chatbot/ProfileChatBot.jsx";
 import { ProfileChatBotAI } from "./components/profile chatbot ai/ProfileChatBotAI.jsx";
+import { Spotify } from "./components/spotify/spotify.jsx";
 
 // Create a Layout component that includes MouseTrail
 const Layout = ({ children }) => {
@@ -50,6 +51,7 @@ function App() {
                             <ProfileAbout />
                             <ProfileSkills />
                             <ProfileServices />
+                            <Spotify />
                         </div>
                         <Footer />
                     </div>

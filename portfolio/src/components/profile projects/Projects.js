@@ -3,25 +3,18 @@
 // import js1 from "../assets/proj-js-1.png";
 import imageReader from "../../assets/project images/image-reader.png";
 import discordBot from "../../assets/project images/discord.png";
-import bookManager from "../../assets/project images/book-manager.png";
-import nsclab from "../../assets/project images/nsclab.png";
 import tictactoe from "../../assets/project images/tictactoe.png";
-import tetris from "../../assets/project images/tetris.png";
 import inferenceEngine from "../../assets/project images/inference-engine.png";
 import mazeNavigation from "../../assets/project images/maze-navigation.png";
 import ellenex from "../../assets/project images/ellenex.png";
 import porfolio from "../../assets/project images/portfolio.png";
 import restful from "../../assets/project images/restfulapi.png";
-import social from "../../assets/project images/social.png"
-import link from "../../assets/project images/link.png"
 import eforensic from "../../assets/project images/eforensic.png"
 import cracker from "../../assets/project images/cracker.png"
-
 import dotnetSvg from "../../assets/tech stack icons/dotnet.svg"
 import pythonSvg from "../../assets/tech stack icons/python.svg"
 import jsSvg from "../../assets/tech stack icons/javascript.svg"
 import tsSvg from "../../assets/tech stack icons/typescript-icon.svg"
-import aPro from "../../assets/tech stack icons/apro.svg"
 
 export const projects = [
     {
