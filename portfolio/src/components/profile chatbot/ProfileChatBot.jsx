@@ -23,7 +23,6 @@ export const ProfileChatBot = () => {
 
     useEffect(scrollToBottom, [messages]);
 
-    // Predefined responses based on common portfolio questions
     const getResponse = (userMessage) => {
         const message = userMessage.toLowerCase().trim();
 
