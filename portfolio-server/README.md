@@ -7,4 +7,4 @@ Technologies: Node.js, Express, Spotify API, Axios, Querystring
 - CORS & Origin Policy Handling 
 - Error Handling 
 - Token Refresh
-- Rate Limiting
+- Rate Limiting 
