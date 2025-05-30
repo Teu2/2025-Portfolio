@@ -11,9 +11,7 @@ const OWNER_TOKENS = {
     expires_at: null
 };
 
-const generateRandomString = length =>
-    crypto.randomBytes(60).toString('hex').slice(0, length);
-
+const generateRandomString = length => crypto.randomBytes(60).toString('hex').slice(0, length);
 const stateKey = 'spotify_auth_state';
 
 const refreshOwnerTokenAndRetry = (res, endpoint) => {

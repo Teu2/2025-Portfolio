@@ -122,3 +122,7 @@
         transform: translateX(-100%);
     }
 }
+
+.spotify-content:hover .marquee-text {
+    animation-play-state: paused !important;
+}
