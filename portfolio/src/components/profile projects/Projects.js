@@ -11,10 +11,12 @@ import porfolio from "../../assets/project images/portfolio.png";
 import restful from "../../assets/project images/restfulapi.png";
 import eforensic from "../../assets/project images/eforensic.png"
 import cracker from "../../assets/project images/cracker.png"
+import portfolioserver from "../../assets/project images/portfolio-server.png"
 import dotnetSvg from "../../assets/tech stack icons/dotnet.svg"
 import pythonSvg from "../../assets/tech stack icons/python.svg"
 import jsSvg from "../../assets/tech stack icons/javascript.svg"
 import tsSvg from "../../assets/tech stack icons/typescript-icon.svg"
+import nodeSvg from "../../assets/tech stack icons/nodejs-icon.svg"
 
 export const projects = [
     {
@@ -62,8 +64,24 @@ export const projects = [
         language: jsSvg,
         img: porfolio,
         desc: "My personal portfolio website, showcasing my projects and skills! Built with React and Vite.",
-        demo: "https://dominicyeoh.netlify.app/",
-        github: "https://dominicyeoh.netlify.app/"
+        demo: "https://github.com/Teu2/2025-Portfolio",
+        github: "https://github.com/Teu2/2025-Portfolio"
+    },
+    {
+        title: "2025 Portfolio Server",
+        tech: "backend",
+        techStack: [
+            "JavaScript",
+            "Node.js",
+            "Express",
+            "Spotify API",
+            "OAuth2",
+        ],
+        language: nodeSvg,
+        img: portfolioserver,
+        desc: "A Node.js server for my portfolio, that fetches my Spotify activity and provides a chatbot for the frontend.",
+        demo: "https://github.com/Teu2/2025-Portfolio",
+        github: "https://github.com/Teu2/2025-Portfolio"
     },
     {
         title: "Ellenex Monitoring IoT Platform",

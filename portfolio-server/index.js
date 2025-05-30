@@ -106,15 +106,9 @@ app.get('/callback', function (req, res) {
                 OWNER_TOKENS.expires_at = Date.now() + (body.expires_in * 1000);
 
                 console.log('Owner authenticated successfully!');
-                res.send(`
-                    <p>Authentication Successful! <a href="http://localhost:5173">Go to your portfolio</a></p>
-                `);
-                
+                res.send(` <p>Authentication Successful! <a href="http://localhost:5173">Go to portfolio</a></p>`);
             } else {
-                res.redirect('/#' +
-                    querystring.stringify({
-                        error: 'invalid_token'
-                    }));
+                res.redirect('/#' + querystring.stringify({ error: 'invalid_token' }));
             }
         });
     }
@@ -132,9 +126,7 @@ app.get('/status', function (req, res) {
 // show currently playing track to portfolio visitors
 app.get('/currently-playing', function (req, res) {
     if (!OWNER_TOKENS.access_token) {
-        return res.status(503).json({ 
-            error: 'Owner not authenticated. Portfolio owner needs to visit /login first.' 
-        });
+        return res.status(503).json({ error: 'Owner not authenticated. Portfolio owner needs to visit /login first.'});
     }
 
     // check if silly token did an expired
@@ -142,9 +134,7 @@ app.get('/currently-playing', function (req, res) {
         if (OWNER_TOKENS.refresh_token) {
             return refreshOwnerTokenAndRetry(res, 'currently-playing');
         } else {
-            return res.status(503).json({ 
-                error: 'Owner authentication expired. Portfolio owner needs to re-authenticate.' 
-            });
+            return res.status(503).json({ error: 'Owner authentication expired. Portfolio owner needs to re-authenticate.' });
         }
     }
 
@@ -188,18 +178,14 @@ app.get('/currently-playing', function (req, res) {
 // shows my recently played tracks to portfolio visitors
 app.get('/recently-played', function (req, res) {
     if (!OWNER_TOKENS.access_token) {
-        return res.status(503).json({ 
-            error: 'Owner not authenticated. Portfolio owner needs to visit /login first.' 
-        });
+        return res.status(503).json({ error: 'Owner not authenticated. Portfolio owner needs to visit /login first.' });
     }
 
     if (Date.now() >= OWNER_TOKENS.expires_at) {
         if (OWNER_TOKENS.refresh_token) {
             return refreshOwnerTokenAndRetry(res, 'recently-played');
         } else {
-            return res.status(503).json({ 
-                error: 'Owner authentication expired. Portfolio owner needs to re-authenticate.' 
-            });
+            return res.status(503).json({ error: 'Owner authentication expired. Portfolio owner needs to re-authenticate.' });
         }
     }
 
