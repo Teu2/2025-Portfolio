@@ -14,7 +14,6 @@ import { Footer } from "./components/footer/Footer.jsx";
 import { ProfileExperience } from "./components/profile experience/ProfileExperience.jsx";
 import { ProfileProjects } from "./components/profile projects/ProfileProjects.jsx";
 import { ProfileContact } from "./components/profile contact/ProfileContact.jsx";
-import { ProfileSpotify } from "./components/profile spotify/ProfileSpotify.jsx";
 import { MouseTrail } from "./components/mouse trail/MouseTrail.jsx";
 import { ProfileChatBot } from "./components/profile chatbot/ProfileChatBot.jsx";
 import { ProfileChatBotAI } from "./components/profile chatbot ai/ProfileChatBotAI.jsx";
@@ -93,7 +92,7 @@ function App() {
                     <div className="app-container">
                         <Navbar />
                         <div className="content">
-                            <ProfileSpotify />
+                            {/* <ProfileSpotify /> */}
                         </div>
                         <Footer />
                     </div>
