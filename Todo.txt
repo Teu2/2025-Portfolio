@@ -1,0 +1,10 @@
+Frontend Client
+1. Light Mode (ew)
+3. Chatbot using the portfolio server instead of the front end
+
+Portfolio Server
+1. Spotify API
+    - Rate limiting
+    - In-Memory Token Storage: Tokens are stored in a global OWNER_TOKENS object that will be lost on server restart. This isn't persistent or secure.
+    - Input Validation Query parameters and user inputs aren't thoroughly validated
+    - Error Information Leakage: Some error responses might expose internal details

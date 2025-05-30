@@ -9,4 +9,4 @@ router.get('/status', controller.status);
 router.get('/currently-playing', controller.currentlyPlaying);
 router.get('/recently-played', controller.recentlyPlayed);
 
-module.exports = router;
+module.exports = router; 

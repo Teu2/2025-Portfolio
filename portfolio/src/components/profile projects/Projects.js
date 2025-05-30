@@ -52,7 +52,7 @@ export const projects = [
         github: "https://github.com/Teu2/Image-Reader"
     },
     {
-        title: "2025 Portfolio",
+        title: "2025 Portfolio Client",
         tech: "frontend",
         techStack: [
             "JavaScript",
@@ -79,7 +79,7 @@ export const projects = [
         ],
         language: nodeSvg,
         img: portfolioserver,
-        desc: "A Node.js server for my portfolio, that fetches my Spotify activity and provides a chatbot for the frontend.",
+        desc: "A Node.js server for my portfolio that fetches my Spotify activity and provides a chatbot for the frontend.",
         demo: "https://github.com/Teu2/2025-Portfolio",
         github: "https://github.com/Teu2/2025-Portfolio"
     },
@@ -100,7 +100,7 @@ export const projects = [
     },
     {
         title: "Toki - A Discord Bot",
-        tech: "backend",
+        tech: "bots",
         techStack: [
             "C#",
             ".NET",
@@ -131,7 +131,7 @@ export const projects = [
     },
     {
         title: "Inference Engine",
-        tech: "console",
+        tech: "algorithms",
         techStack: [
             "C#",
             ".NET",
@@ -147,7 +147,7 @@ export const projects = [
     },
     {
         title: "Maze Navigation App",
-        tech: "console",
+        tech: "algorithms",
         techStack: [
             "C#",
             ".NET",

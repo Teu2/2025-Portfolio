@@ -45,19 +45,19 @@ export const ProfileHeadline = () => {
     }, [charIndex, isDeleting, titleIndex]);
 
     useEffect(() => {
-        const getWeatherData = async () => {
-            try {
-                await axios.get(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Melbourne`)
-                .then(res => {
-                    console.log("weather data fetched wooo:", res.data);
-                    setWeather(res.data.current.temp_c);
-                    if (weather < 16) setWeatherIcon("☁️");
-                    if (weather > 17) setWeatherIcon("⛅");
-                });
-            } catch (err) {
-                console.error("failed to fetch boooo:", err);
-                setWeather(null);
-            }
+        const getWeatherData = async () => { 
+            // try {
+            //     await axios.get(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Melbourne`)
+            //     .then(res => {
+            //         console.log("weather data fetched wooo:", res.data);
+            //         setWeather(res.data.current.temp_c);
+            //         if (weather < 16) setWeatherIcon("☁️");
+            //         if (weather > 17) setWeatherIcon("⛅");
+            //     });
+            // } catch (err) {
+            //     console.error("failed to fetch boooo:", err);
+            //     setWeather(null);
+            // }
         };
         getWeatherData();
     }, []);

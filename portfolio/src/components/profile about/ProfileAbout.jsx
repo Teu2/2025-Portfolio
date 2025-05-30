@@ -57,7 +57,7 @@ export const ProfileAbout = () => {
 
             {/* tool tips */}
             {tooltipVisibleLinkedIn && (
-                <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>46 Connections</div>
+                <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>51 Connections</div>
             )}
 
             {tooltipVisibleGitHub && (

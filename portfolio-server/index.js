@@ -11,12 +11,12 @@ const corsOrigins = process.env.CORS_ORIGINS?.split(',').map(o => o.trim());
 
 app.use(cors({ origin: corsOrigins, credentials: true }));
 app.use(cookieParser());
-app.use('/spotify', spotifyRoutes);
+app.use('', spotifyRoutes);
 
 app.listen(port, '127.0.0.1', () => {
     console.log(`\nQUICK USEFUL LINKS:`);
-    console.log(`http://127.0.0.1:${port}/spotify`);
-    console.log(`http://127.0.0.1:8888/spotify/login`);
-    console.log(`http://127.0.0.1:8888/spotify/currently-playing`);
-    console.log(`http://127.0.0.1:8888/spotify/recently-played`);
+    console.log(`http://127.0.0.1:${port}/`);
+    console.log(`http://127.0.0.1:8888/login`);
+    console.log(`http://127.0.0.1:8888/currently-playing`);
+    console.log(`http://127.0.0.1:8888/recently-played`);
 }); 

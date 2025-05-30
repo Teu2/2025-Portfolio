@@ -15,10 +15,10 @@ export const Spotify = () => {
 
     const fetchSpotifyData = async () => {
         try {
-            const res = await axios.get('http://127.0.0.1:8888/spotify/currently-playing', {
+            const res = await axios.get('http://127.0.0.1:8888/currently-playing', {
                 withCredentials: true,
             });
-            
+
             if (res.data.track) {
                 setTrack(res.data.track);
                 setIsCurrentlyPlaying(res.data.currently_playing || false);
@@ -34,7 +34,7 @@ export const Spotify = () => {
             } else if (err.response?.data?.error) {
                 setError(err.response.data.error);
             } else {
-                setError('Failed to fetch track data');
+                setError(`Failed to get Spotify data. Don't worry, it's Dom's fault!`);
             }
         } finally {
             setIsLoading(false);
@@ -59,7 +59,7 @@ export const Spotify = () => {
 
     const getStatusText = () => {
         if (isCurrentlyPlaying) {
-            return 'Listening now';
+            return 'Listening';
         } else if (track) {
             return 'Last played';
         } else {
@@ -70,7 +70,7 @@ export const Spotify = () => {
     return (
         <div className="spotify-parent">
             <div className="top">
-                <h5>{isCurrentlyPlaying ? 'NOW LISTENING' : 'LAST LISTENED SONG'}</h5>
+                <h5>{isCurrentlyPlaying ? '🎧 NOW LISTENING' : '🎧 LAST LISTENED SONG'}</h5>
                 <div className="link-refresh">
                     <button onClick={refreshSpotify} disabled={isRefreshing} className={isRefreshing ? 'refreshing' : ''}>
                         <FaArrowsRotate className={isRefreshing ? 'spinning' : ''} />
@@ -80,7 +80,7 @@ export const Spotify = () => {
             </div>
             <div className="spotify-content">
                 <div className="left">
-                    <img src={track?.image || setIcon} alt="Album cover" className='song-cover'onError={(e) => { e.target.src = setIcon; }}/>
+                    <img src={track?.image || setIcon} alt="Album cover" className='song-cover' onError={(e) => { e.target.src = setIcon; }} />
                     <div className="song-info">
                         {isLoading ? (
                             <p>Loading...</p>
@@ -94,7 +94,7 @@ export const Spotify = () => {
                                 <p>{error}</p>
                                 {error?.includes('authenticate') && (
                                     <p className="auth-hint">
-                                        <small>{`Owner (me) needs to log in first!`}<br/>
+                                        <small>{`Owner (me) needs to log in first!`}<br />
                                         <code>http://127.0.0.1:8888/login</code></small>
                                     </p>
                                 )}
@@ -103,10 +103,12 @@ export const Spotify = () => {
                     </div>
                 </div>
                 <div className="right">
-                    <p className={`played ${isCurrentlyPlaying ? 'now-playing' : ''}`}>
-                        {getStatusText()}
-                    </p>
-                    <FaSpotify className={isCurrentlyPlaying ? 'now-playing' : ''} />
+                    {isCurrentlyPlaying ?
+                        <p className={"played"}><span className="marquee-text">{getStatusText()} {getStatusText()} {getStatusText()}</span></p>
+                        :
+                        <p className={"not-played"}><span className="marquee-text">{getStatusText()}</span></p>
+                    }
+                    <FaSpotify />
                 </div>
             </div>
         </div>
