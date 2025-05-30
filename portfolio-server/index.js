@@ -15,4 +15,4 @@ app.use('/spotify', spotifyRoutes);
 
 app.listen(port, '127.0.0.1', () => {
     console.log(`✅ Spotify Backend running at http://127.0.0.1:${port}/spotify`);
-});
+}); 
