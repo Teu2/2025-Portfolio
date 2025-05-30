@@ -7,7 +7,7 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-// Spotify api credentials
+// spotify api credentials
 var client_id = process.env.SPOTIFY_CLIENT_ID;
 var client_secret = process.env.SPOTIFY_CLIENT_SECRET; 
 var redirect_uri = process.env.REDIRECT_URI;
@@ -295,20 +295,20 @@ function refreshOwnerTokenAndRetry(res, endpoint) {
 }
 
 app.listen(port, () => {
-    console.log('\n🎵 Spotify Portfolio Backend');
+    console.log('\nSpotify Portfolio Backend');
     console.log('======================================================================');
-    console.log(`Environment: ${process.env.NODE_ENV || 'development'}`);
-    console.log(`Port: ${port}`);
-    console.log(`CORS Origins: ${corsOrigins.join(', ')}`);
-    console.log(`Client ID: ${client_id ? 'Set' : 'Missing'}`);
-    console.log(`Client Secret: ${client_secret ? 'Set' : 'Missing'}`);
+    console.log('IMPORTANT SETUP INFORMATION:');
+    console.log(`- Environment: ${process.env.NODE_ENV || 'development'}`);
+    console.log(`- Port: ${port}`);
+    console.log(`- CORS Origins: ${corsOrigins.join(', ')}`);
+    console.log(`- Client ID: ${client_id ? 'Set' : 'Missing'}`);
+    console.log(`- Client Secret: ${client_secret ? 'Set' : 'Missing'}`);
     console.log('======================================================================');
-    console.log('SETUP INSTRUCTIONS (For me :3)');
-    console.log('1. Visit: http://127.0.0.1:8888/login');
-    console.log('2. After authentication, the portfolio will show my Spotify activity');
-    console.log('3. Visitors can see your music without needing to authenticate');
+    console.log('SETUP INSTRUCTIONS:');
+    console.log('- Visit: http://127.0.0.1:8888/login');
+    console.log('- After authentication, the portfolio will show my Spotify activity');
     console.log('======================================================================');
-    console.log('Endpoints:');
+    console.log('ENDPOINTS:');
     console.log(`- Status: http://127.0.0.1:8888/status`);
     console.log(`- Currently Playing: http://127.0.0.1:8888/currently-playing`);
     console.log(`- Recently Played: http://127.0.0.1:8888/recently-played`);
