@@ -34,11 +34,11 @@ const refreshOwnerTokenAndRetry = (res, endpoint) => {
         if (!error && response.statusCode === 200) {
             OWNER_TOKENS.access_token = body.access_token;
             OWNER_TOKENS.expires_at = Date.now() + body.expires_in * 1000;
-            console.log('Token refreshed successfully');
+            console.log('Token refreshed successfully! yay :3');
             res.redirect(`/spotify/${endpoint}`);
         } else {
-            console.error('Failed to refresh owner token');
-            res.status(503).json({ error: 'Failed to refresh authentication. Owner needs to re-authenticate.' });
+            console.error('Failed to refresh owner token :c');
+            res.status(503).json({ error: 'Failed to refresh authentication, need to re-authenticate.' });
         }
     });
 };
@@ -64,7 +64,7 @@ const getOwnerRecentTrack = (res) => {
                 }
             });
         }
-        res.json({ message: 'No recently played tracks found' });
+        res.json({ message: 'No recently played tracks found... :c' });
     });
 };
 

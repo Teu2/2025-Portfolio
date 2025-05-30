@@ -14,5 +14,9 @@ app.use(cookieParser());
 app.use('/spotify', spotifyRoutes);
 
 app.listen(port, '127.0.0.1', () => {
-    console.log(`✅ Spotify Backend running at http://127.0.0.1:${port}/spotify`);
+    console.log(`\nQUICK USEFUL LINKS:`);
+    console.log(`http://127.0.0.1:${port}/spotify`);
+    console.log(`http://127.0.0.1:8888/spotify/login`);
+    console.log(`http://127.0.0.1:8888/spotify/currently-playing`);
+    console.log(`http://127.0.0.1:8888/spotify/recently-played`);
 }); 
