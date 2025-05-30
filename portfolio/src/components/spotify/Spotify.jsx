@@ -15,7 +15,7 @@ export const Spotify = () => {
 
     const fetchSpotifyData = async () => {
         try {
-            const res = await axios.get('http://127.0.0.1:8888/currently-playing', {
+            const res = await axios.get('http://127.0.0.1:8888/spotify/currently-playing', {
                 withCredentials: true,
             });
             
@@ -80,12 +80,7 @@ export const Spotify = () => {
             </div>
             <div className="spotify-content">
                 <div className="left">
-                    <img 
-                        src={track?.image || setIcon} 
-                        alt="Album cover" 
-                        className='song-cover'
-                        onError={(e) => { e.target.src = setIcon; }}
-                    />
+                    <img src={track?.image || setIcon} alt="Album cover" className='song-cover'onError={(e) => { e.target.src = setIcon; }}/>
                     <div className="song-info">
                         {isLoading ? (
                             <p>Loading...</p>
@@ -93,12 +88,6 @@ export const Spotify = () => {
                             <>
                                 <p><strong>{track.name}</strong></p>
                                 <p>{formatArtists(track.artists)} - <em>{track.album}</em></p>
-                                <p></p>
-                                {track.played_at && (
-                                    <p className="played-time">
-                                        {new Date(track.played_at).toLocaleString()}
-                                    </p>
-                                )}
                             </>
                         ) : (
                             <div className="error-state">
