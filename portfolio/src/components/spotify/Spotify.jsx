@@ -7,6 +7,9 @@ import { FaSpotify } from "react-icons/fa6";
 import setIcon from "../../assets/test.png"
 
 export const Spotify = () => {
+
+    const API_KEY = import.meta.env.VITE_SPOTIFY_URI;
+
     const [track, setTrack] = useState(null);
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +18,7 @@ export const Spotify = () => {
 
     const fetchSpotifyData = async () => {
         try {
-            const res = await axios.get('http://127.0.0.1:8888/currently-playing', {
+            const res = await axios.get(API_KEY, {
                 withCredentials: true,
             });
 

@@ -52,7 +52,7 @@ function App() {
                             <ProfileSkills />
                             <ProfileServices />
                             <Spotify />
-                            <GithubContributions />
+                            {/* <GithubContributions /> */}
                         </div>
                         <Footer />
                     </div>
@@ -82,20 +82,6 @@ function App() {
                         <div className="content">
                             <ProfileProjects />
                             {/* <GithubContributions /> */}
-                        </div>
-                        <Footer />
-                    </div>
-                </Layout>
-            )
-        },
-        {
-            path: "/listening",
-            element: (
-                <Layout>
-                    <div className="app-container">
-                        <Navbar />
-                        <div className="content">
-                            {/* <ProfileSpotify /> */}
                         </div>
                         <Footer />
                     </div>

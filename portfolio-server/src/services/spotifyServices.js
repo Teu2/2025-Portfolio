@@ -1,6 +1,6 @@
 const axios = require('axios');
 const querystring = require('querystring');
-const { client_id, client_secret, redirect_uri, OWNER_TOKENS } = require('../utils/spotifyUtils');
+const { client_id, client_secret, redirect_uri, OWNER_TOKENS, updateTokens } = require('../utils/spotifyUtils');
 
 exports.exchangeCodeForToken = async (code) => {
     try {
@@ -19,9 +19,11 @@ exports.exchangeCodeForToken = async (code) => {
         );
 
         const body = response.data;
-        OWNER_TOKENS.access_token = body.access_token;
-        OWNER_TOKENS.refresh_token = body.refresh_token;
-        OWNER_TOKENS.expires_at = Date.now() + body.expires_in * 1000;
+        updateTokens({
+            access_token: body.access_token,
+            refresh_token: body.refresh_token,
+            expires_at: Date.now() + body.expires_in * 1000
+        });
 
         return { success: true };
     } catch (err) {
@@ -31,6 +33,7 @@ exports.exchangeCodeForToken = async (code) => {
 };
 
 exports.getCurrentlyPlaying = async () => {
+    console.log("1. Here")
     if (!OWNER_TOKENS.access_token) return { status: 503, body: { error: 'Not authenticated' } };
     if (Date.now() >= OWNER_TOKENS.expires_at) return { status: 'refresh' };
 
@@ -39,7 +42,9 @@ exports.getCurrentlyPlaying = async () => {
             headers: { Authorization: `Bearer ${OWNER_TOKENS.access_token}` }
         });
 
-        if (!response.data || !response.data.item) return { status: 'recent' };
+        if (!response.data || !response.data.item){
+            return { status: 'recent' };
+        } 
 
         return {
             status: 200,
@@ -106,8 +111,10 @@ exports.refreshOwnerTokenAndRetry = async (res, endpoint) => {
         );
 
         const body = response.data;
-        OWNER_TOKENS.access_token = body.access_token;
-        OWNER_TOKENS.expires_at = Date.now() + body.expires_in * 1000;
+        updateTokens({
+            access_token: body.access_token,
+            expires_at: Date.now() + body.expires_in * 1000
+        });
 
         return res.redirect(`/spotify/${endpoint}`);
     } catch (err) {

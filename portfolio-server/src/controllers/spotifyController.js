@@ -1,6 +1,7 @@
 const querystring = require('querystring');
 const spotifyService = require('../services/spotifyServices');
 const { generateRandomString, stateKey, OWNER_TOKENS, getOwnerRecentTrack } = require('../utils/spotifyUtils');
+const axios = require('axios');
 
 exports.root = (req, res) => {
     res.json({
@@ -18,7 +19,12 @@ exports.root = (req, res) => {
 
 exports.login = (req, res) => {
     const state = generateRandomString(16);
-    res.cookie(stateKey, state);
+    res.cookie(stateKey, state, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'Lax',
+        maxAge: 300000 // 5 minutes
+    });
 
     const scope = 'user-read-currently-playing user-read-recently-played';
     const params = querystring.stringify({
@@ -35,6 +41,10 @@ exports.login = (req, res) => {
 exports.callback = async (req, res) => {
     const { code, state } = req.query;
     const storedState = req.cookies?.[stateKey];
+
+    if (!code || typeof code !== 'string' || !state || typeof state !== 'string') {
+        return res.status(400).send('Invalid request parameters');
+    }
 
     if (!state || state !== storedState) {
         return res.redirect('/spotify#' + querystring.stringify({ error: 'state_mismatch' }));
@@ -61,14 +71,16 @@ exports.status = (req, res) => {
 
 exports.currentlyPlaying = async (req, res) => {
     const result = await spotifyService.getCurrentlyPlaying();
+    console.log(`exports.currentlyPlaying() result.status = ${result.status}`)
 
     if (result.status === 'refresh') {
         return spotifyService.refreshOwnerTokenAndRetry(res, 'currently-playing');
     }
 
     if (result.status === 'recent') {
+        console.log(`result.status === 'recent'`)
         return getOwnerRecentTrack(res);
-    }
+    } 
 
     return res.status(result.statusCode || 200).json(result.body);
 };
@@ -81,4 +93,34 @@ exports.recentlyPlayed = async (req, res) => {
     }
 
     return res.status(result.statusCode || 200).json(result.body);
+};
+
+exports.health = async (req, res) => {
+    const health = {
+        status: 'UP',
+        timestamp: new Date().toISOString(),
+        uptime: Math.floor(process.uptime()),
+        checks: {
+            server: 'UP',
+            authentication: OWNER_TOKENS.access_token ? 'UP' : 'DOWN',
+            token_expiry: OWNER_TOKENS.expires_at > Date.now() ? 'VALID' : 'EXPIRED'
+        }
+    };
+
+    // Optional: Test Spotify API connectivity
+    if (OWNER_TOKENS.access_token) {
+        try {
+            await axios.get('https://api.spotify.com/v1/me', {
+                headers: { Authorization: `Bearer ${OWNER_TOKENS.access_token}` },
+                timeout: 2000
+            });
+            health.checks.spotify_connectivity = 'UP';
+        } catch (err) {
+            health.checks.spotify_connectivity = 'DOWN';
+            health.status = 'DEGRADED';
+        }
+    }
+
+    const statusCode = health.status === 'UP' ? 200 : 503;
+    res.status(statusCode).json(health);
 };

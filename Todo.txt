@@ -8,3 +8,4 @@ Portfolio Server
     - In-Memory Token Storage: Tokens are stored in a global OWNER_TOKENS object that will be lost on server restart. This isn't persistent or secure.
     - Input Validation Query parameters and user inputs aren't thoroughly validated
     - Error Information Leakage: Some error responses might expose internal details
+    - Security headers with Helmet

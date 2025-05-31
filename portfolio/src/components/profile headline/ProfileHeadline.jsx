@@ -2,7 +2,7 @@ import {React, useEffect, useState} from 'react'
 import "./ProfileHeadline.scss"
 import pfpImage from '../../assets/pfp.png'
 import greenie from "../../assets/greenie.png"
-import { IoLocation } from "react-icons/io5";
+import { FaMapLocation } from "react-icons/fa6";
 import axios from 'axios';
 
 export const ProfileHeadline = () => {
@@ -74,8 +74,9 @@ export const ProfileHeadline = () => {
                     <h1>Welcome to my <span className='green'>Portfolio</span> <span className='wave'>👋</span></h1>
                     <p>Dominic Yeoh, <span className="typing">{displayedText}</span></p>
                     <div className="location">
-                        <IoLocation/>
-                        <p>Melbourne, Victoria, Aus - {weather ? `${weather}°C` : 'Loading...'}</p>
+                        {/* <IoLocation/> */}
+                        <FaMapLocation />
+                        <p>Melbourne, Victoria, Aus - {weather ? `${weather}°C` : '12.5°C'}</p>
                         {/* <p>Melbourne, Victoria, Aus - {weather ? `${weather}°C ${weatherIcon}` : 'Loading Temperature...'}</p> */}
                     </div>
                 </div>

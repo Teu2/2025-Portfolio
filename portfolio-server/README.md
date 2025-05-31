@@ -8,3 +8,7 @@ Technologies: Node.js, Express, Spotify API, Axios, Querystring
 - Error Handling 
 - Token Refresh
 - Rate Limiting 
+- Security headers with Helmet
+- HTTPS Enforcement / Cookie Flags
+- API Health checks
+- Endpoint versioning

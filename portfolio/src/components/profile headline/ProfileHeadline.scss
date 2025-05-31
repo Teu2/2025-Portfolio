@@ -46,6 +46,10 @@
     }
 
     .right{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
 
         p{
             svg{
@@ -57,7 +61,7 @@
         .location{
             display: flex;
             align-items: center;
-            gap: 0.1rem;
+            gap: 0.5rem;
             font-size: 15px;
             color: #9b9ba4;
 
