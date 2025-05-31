@@ -78,7 +78,7 @@ exports.currentlyPlaying = async (req, res) => {
     }
 
     if (result.status === 'recent') {
-        console.log(`result.status === 'recent'`)
+        console.log("result.status === 'recent'")
         return getOwnerRecentTrack(res);
     } 
 
@@ -107,7 +107,6 @@ exports.health = async (req, res) => {
         }
     };
 
-    // Optional: Test Spotify API connectivity
     if (OWNER_TOKENS.access_token) {
         try {
             await axios.get('https://api.spotify.com/v1/me', {

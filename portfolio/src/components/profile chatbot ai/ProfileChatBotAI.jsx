@@ -77,7 +77,7 @@ Keep responses concise, friendly, and relevant to potential employers or collabo
                     );
 
                     setModel(generator);
-                    console.log("✅ Model loaded!");
+                    console.log("Model loaded!");
 
                     setMessages([
                         {

@@ -17,17 +17,19 @@ const spotifyRoutes = require('./src/routes/spotify');
 
 const app = express();
 const port = process.env.PORT || 8888;
+const url = process.env.URL 
 const corsOrigins = process.env.CORS_ORIGINS?.split(',').map(o => o.trim());
+
 
 app.use(helmet());
 app.use(cors({ origin: corsOrigins, credentials: true }));
 app.use(cookieParser());
 app.use('', spotifyRoutes, limiter);
 
-app.listen(port, '127.0.0.1', () => {
+app.listen(port, url, () => {
     console.log(`\nQUICK USEFUL LINKS:`);
-    console.log(`http://127.0.0.1:${port}/`);
-    console.log(`http://127.0.0.1:8888/spotify/login`);
-    console.log(`http://127.0.0.1:8888/spotify/currently-playing`);
-    console.log(`http://127.0.0.1:8888/spotify/recently-played`);
-}); 
+    console.log(`http://${url}:${port}/`);
+    console.log(`http://${url}:${port}/spotify/login`);
+    console.log(`http://${url}:${port}/spotify/currently-playing`);
+    console.log(`http://${url}:${port}/spotify/recently-played`);
+});  
