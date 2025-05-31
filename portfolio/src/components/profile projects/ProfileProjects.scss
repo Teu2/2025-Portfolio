@@ -208,5 +208,21 @@
         }
     }
 
-    
+    .project-name{
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        gap: 0.5rem;
+
+        .in-progress{
+            background-color: #cbac46;
+            border: 1px solid #cbac46;
+            padding: 0rem 0.5rem;
+            border-radius: 4px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
 }

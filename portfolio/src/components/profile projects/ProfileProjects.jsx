@@ -90,7 +90,10 @@ export const ProfileProjects = () => {
                                 <div className="title">
                                     <div className="tech-title">
                                             {project.language ? <div className="img-container"><img src={project.language} alt="tech" /></div> : null}
-                                        <h4>{project.title}</h4>
+                                            <div className="project-name">
+                                                <h4>{project.title}</h4>
+                                                {project.inProgress ? <span className="in-progress">In Progress</span> : null}
+                                            </div>
                                     </div>
                                     <FiArrowUpRight />
                                 </div>

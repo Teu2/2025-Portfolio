@@ -9,6 +9,7 @@ import setIcon from "../../assets/test.png"
 export const Spotify = () => {
 
     const API_KEY = import.meta.env.VITE_SPOTIFY_URI;
+    const SECRET = import.meta.env.VITE_SPOTIFY_API_SECRET;
 
     const [track, setTrack] = useState(null);
     const [error, setError] = useState(null);
@@ -20,6 +21,10 @@ export const Spotify = () => {
         try {
             const res = await axios.get(API_KEY, {
                 withCredentials: true,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-Spotify-Secret': SECRET
+                }
             });
 
             if (res.data.track) {
@@ -33,11 +38,11 @@ export const Spotify = () => {
         } catch (err) {
             setTrack(null);
             if (err.response?.status === 503) {
-                setError(`The Spotify API is currently unavailable. Please try again later.`);
+                setError("The Spotify API is currently unavailable. Please try again later.");
             } else if (err.response?.data?.error) {
                 setError(err.response.data.error);
             } else {
-                setError(`Failed to get Spotify data. Don't worry, it's Dom's fault!`);
+                setError("Failed to get Spotify data. Don't worry, it's Dom's fault!");
             }
         } finally {
             setIsLoading(false);
@@ -95,21 +100,21 @@ export const Spotify = () => {
                         ) : (
                             <div className="error-state">
                                 <p>{error}</p>
-                                {error?.includes('authenticate') && (
-                                    <p className="auth-hint">
-                                        <small>{`Owner (me) needs to log in first!`}<br />
-                                        <code>http://127.0.0.1:8888/login</code></small>
-                                    </p>
-                                )}
                             </div>
                         )}
                     </div>
                 </div>
                 <div className="right">
-                    {isCurrentlyPlaying ?
-                        <p className={"played"}><span className="marquee-text">{getStatusText()} {getStatusText()} {getStatusText()}</span></p>
+                    {error ? 
+                        <p className={"not-played"}><span className="marquee-text">Limited</span></p> 
                         :
-                        <p className={"not-played"}><span className="marquee-text">{getStatusText()}</span></p>
+                        <>
+                            {isCurrentlyPlaying ?
+                                <p className={"played"}><span className="marquee-text">{getStatusText()} {getStatusText()} {getStatusText()}</span></p>
+                                :
+                                <p className={"not-played"}><span className="marquee-text">{getStatusText()}</span></p>
+                            }
+                        </>
                     }
                     <FaSpotify />
                 </div>

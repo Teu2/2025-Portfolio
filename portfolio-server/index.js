@@ -6,10 +6,10 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 
 const limiter = rateLimit({
-    windowMs: 60_000,      // 1 minute
-    max: 30,               // Limit each IP to 30 requests per windowMs
+    windowMs: 60_000,      
+    max: 10,               
     message: {
-        error: 'Too many requests from this IP, please try again after a minute.'
+        error: 'Too many requests, please try again after a minute.'
     }
 });
 
@@ -18,13 +18,17 @@ const spotifyRoutes = require('./src/routes/spotify');
 const app = express();
 const port = process.env.PORT || 8888;
 const url = process.env.URL 
-const corsOrigins = process.env.CORS_ORIGINS?.split(',').map(o => o.trim());
 
+if (!process.env.CORS_ORIGINS) {
+    throw new Error('CORS_ORIGINS must be set in .env');
+}
 
+const corsOrigins = process.env.CORS_ORIGINS.split(',').map((o) => o.trim());
 app.use(helmet());
 app.use(cors({ origin: corsOrigins, credentials: true }));
 app.use(cookieParser());
-app.use('', spotifyRoutes, limiter);
+app.use(limiter);
+app.use('', spotifyRoutes);
 
 app.listen(port, url, () => {
     console.log(`\nQUICK USEFUL LINKS:`);

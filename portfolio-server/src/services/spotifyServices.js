@@ -96,6 +96,7 @@ exports.getRecentlyPlayed = async () => {
 
 // refreshes token when the token becomes old and expired ;c
 exports.refreshOwnerTokenAndRetry = async (res, endpoint) => {
+    console.log(`Refreshing token for endpoint: ${endpoint} -- res: ${res}`);
     try {
         const response = await axios.post('https://accounts.spotify.com/api/token',
             querystring.stringify({
@@ -115,10 +116,10 @@ exports.refreshOwnerTokenAndRetry = async (res, endpoint) => {
             access_token: body.access_token,
             expires_at: Date.now() + body.expires_in * 1000
         });
-
+        console.error("Redirecting to endpoint: /spotify/", endpoint);
         return res.redirect(`/spotify/${endpoint}`);
     } catch (err) {
-        console.error('Token refresh failed');
+        console.error("Token refresh failed", err.message);
         return res.status(503).json({ error: 'Failed to refresh token' });
     }
 };

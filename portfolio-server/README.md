@@ -10,5 +10,3 @@ Technologies: Node.js, Express, Spotify API, Axios, Querystring
 - Rate Limiting 
 - Security headers with Helmet
 - HTTPS Enforcement / Cookie Flags
-- API Health checks
-- Endpoint versioning

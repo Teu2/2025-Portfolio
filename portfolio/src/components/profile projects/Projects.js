@@ -20,7 +20,8 @@ import nodeSvg from "../../assets/tech stack icons/nodejs-icon.svg"
 
 export const projects = [
     {
-        title: "GenAI RESTful API (In Progress)",
+        title: "GenAI RESTful API",
+        inProgress: true,
         tech: "backend",
         techStack: [
             "Python",
@@ -38,6 +39,7 @@ export const projects = [
     },
     {
         title: "IMAGE Reader",
+        inProgress: false,
         tech: "frontend",
         techStack: [
             "JavaScript",
@@ -53,6 +55,7 @@ export const projects = [
     },
     {
         title: "2025 Portfolio Client",
+        inProgress: false,
         tech: "frontend",
         techStack: [
             "JavaScript",
@@ -69,6 +72,7 @@ export const projects = [
     },
     {
         title: "2025 Portfolio Server",
+        inProgress: false,
         tech: "backend",
         techStack: [
             "JavaScript",
@@ -85,6 +89,7 @@ export const projects = [
     },
     {
         title: "Ellenex Monitoring IoT Platform",
+        inProgress: false,
         tech: "fullstack",
         techStack: [
             "TypeScript",
@@ -100,6 +105,7 @@ export const projects = [
     },
     {
         title: "Toki - A Discord Bot",
+        inProgress: false,
         tech: "bots",
         techStack: [
             "C#",
@@ -115,6 +121,7 @@ export const projects = [
     },
     {
         title: "Tic Tac Toe w/ AI",
+        inProgress: false,
         tech: "games",
         techStack: [
             "C#",
@@ -131,6 +138,7 @@ export const projects = [
     },
     {
         title: "Inference Engine",
+        inProgress: false,
         tech: "algorithms",
         techStack: [
             "C#",
@@ -147,6 +155,7 @@ export const projects = [
     },
     {
         title: "Maze Navigation App",
+        inProgress: false,
         tech: "algorithms",
         techStack: [
             "C#",
@@ -163,6 +172,7 @@ export const projects = [
     },
     {
         title: "Cracky - A Password Cracker",
+        inProgress: false,
         tech: "pentesting",
         techStack: [
             "Python",
@@ -178,6 +188,7 @@ export const projects = [
     },
     {
         title: "E-Forensic Capstone Report",
+        inProgress: false,
         tech: "pentesting",
         techStack: [
             "Sans Sift",

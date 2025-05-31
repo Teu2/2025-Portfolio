@@ -22,7 +22,7 @@ exports.login = (req, res) => {
     res.cookie(stateKey, state, {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
-        sameSite: 'Lax',
+        sameSite: 'Strict',
         maxAge: 300000 // 5 minutes
     });
 
@@ -41,7 +41,7 @@ exports.login = (req, res) => {
 exports.callback = async (req, res) => {
     const { code, state } = req.query;
     const storedState = req.cookies?.[stateKey];
-
+    
     if (!code || typeof code !== 'string' || !state || typeof state !== 'string') {
         return res.status(400).send('Invalid request parameters');
     }
@@ -71,16 +71,17 @@ exports.status = (req, res) => {
 
 exports.currentlyPlaying = async (req, res) => {
     const result = await spotifyService.getCurrentlyPlaying();
-    console.log(`exports.currentlyPlaying() result.status = ${result.status}`)
+    console.log(`[exports.currentlyPlaying()] - (result.status) = ${result.status}`);
 
     if (result.status === 'refresh') {
+        console.log(`result.status === '${result.status}'`);
         return spotifyService.refreshOwnerTokenAndRetry(res, 'currently-playing');
     }
 
     if (result.status === 'recent') {
         console.log("result.status === 'recent'")
         return getOwnerRecentTrack(res);
-    } 
+    }  
 
     return res.status(result.statusCode || 200).json(result.body);
 };
