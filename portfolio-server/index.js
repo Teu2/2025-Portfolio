@@ -30,6 +30,7 @@ app.use(cookieParser());
 app.use(limiter);
 app.use('', spotifyRoutes);
 
+// binding to 0.0.0.0 means “listen on all interfaces,” - locally it still hits at localhost or 127.0.0.1. great for Render and Local testing wooooo!
 app.listen(port, '0.0.0.0', () => {
-  console.log(`Server listening on 0.0.0.0:${port}`);
+  console.log("https://two025-portfolio-dbkd.onrender.com/")
 });

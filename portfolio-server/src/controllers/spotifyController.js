@@ -9,11 +9,11 @@ exports.root = (req, res) => {
     res.json({
         message: 'Spotify API Backend',
         endpoints: {
-            login: '/login',
-            callback: '/callback',
-            currentlyPlaying: '/currently-playing',
-            recentlyPlayed: '/recently-played',
-            status: '/status'
+            login: '/spotify/login',
+            callback: '/spotify/callback',
+            currentlyPlaying: '/spotify/currently-playing',
+            recentlyPlayed: '/spotify/recently-played',
+            status: '/spotify/status'
         },
         authenticated: !!OWNER_TOKENS.access_token
     });
