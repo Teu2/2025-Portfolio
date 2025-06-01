@@ -66,18 +66,19 @@ export const ProfileHeadline = () => {
     return (
         <div className="profile-headline-parent">
             <div className="content">
+                {/* picture of me */}
                 <div className="left" data-aos="fade-right" data-aos-duration="300">
                     <img src={pfpImage} alt="Example" className='pfp'/>
                     <img src={greenie} alt="Example" className='baby-yoda'/>
                 </div>
+
+                {/* welcome greeting */}
                 <div className="right" data-aos="fade-left" data-aos-delay="200" data-aos-duration="300">
                     <h1>Welcome to my <span className='green'>Portfolio</span> <span className='wave'>👋</span></h1>
                     <p>Dominic Yeoh, <span className="typing">{displayedText}</span></p>
                     <div className="location">
-                        {/* <IoLocation/> */}
                         <FaMapLocation />
                         <p>Melbourne, Victoria, Aus - {weather ? `${weather}°C` : '12.5°C'}</p>
-                        {/* <p>Melbourne, Victoria, Aus - {weather ? `${weather}°C ${weatherIcon}` : 'Loading Temperature...'}</p> */}
                     </div>
                 </div>
             </div>

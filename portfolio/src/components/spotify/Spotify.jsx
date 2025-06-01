@@ -77,6 +77,7 @@ export const Spotify = () => {
 
     return (
         <div className="spotify-parent">
+            {/* sub header */}
             <div className="top">
                 <h5>{isCurrentlyPlaying ? '🎧 NOW LISTENING' : '🎧 LAST LISTENED SONG'}</h5>
                 <div className="link-refresh">
@@ -86,7 +87,10 @@ export const Spotify = () => {
                     </button>
                 </div>
             </div>
+
+            {/* spotify card */}
             <div className="spotify-content">
+                {/* left section*/}
                 <div className="left">
                     <img src={track?.image || setIcon} alt="Album cover" className='song-cover' onError={(e) => { e.target.src = setIcon; }} />
                     <div className="song-info">
@@ -104,6 +108,8 @@ export const Spotify = () => {
                         )}
                     </div>
                 </div>
+
+                {/* right section*/}
                 <div className="right">
                     {error ? 
                         <p className={"not-played"}><span className="marquee-text">Limited</span></p> 

@@ -20,13 +20,16 @@ import { FaHouse } from "react-icons/fa6";
 export const Navbar = () => {
     return (
         <div className="navbar">
+
+            {/* navigation links */}
             <div className="left">
                 <Link to="/"><FaHouse/><p>Home</p></Link>
                 <Link to="/experience"><FaBriefcase/><p>Experience</p></Link>
                 <Link to="/projects"><FaFolderClosed/><p>Projects</p></Link>
-                {/* <Link to="/listening"><FaSpotify/><p>Spotify</p></Link> */}
                 <Link to="/contact"><FaEnvelope/><p>Contact</p></Link>
             </div>
+
+            {/* navbar utilities */}
             <div className="right">
                 <a href=""><FiSun/></a>
                 <a href="https://github.com/Teu2" target='_blank'><RiGithubLine/></a>

@@ -15,7 +15,6 @@ export const ProfileServices = () => {
                 <div className="card-grid">
                     <div className="card">
                         <div className="left">
-                            {/* <div className="icon">🖥️</div> */}
                             <div className="icon green"><FiMonitor/></div>
                         </div>
                         <div className="right">
@@ -25,7 +24,6 @@ export const ProfileServices = () => {
                     </div>
                     <div className="card">
                         <div className="left">
-                            {/* <div className="icon">🛠️</div> */}
                             <div className="icon green"><TbServerCog/></div>
                         </div>
                         <div className="right">
@@ -35,7 +33,6 @@ export const ProfileServices = () => {
                     </div>
                     <div className="card">
                         <div className="left">
-                            {/* <div className="icon">💼</div> */}
                             <div className="icon green"><HiChatBubbleLeftRight /></div>
                         </div>
                         <div className="right">
@@ -45,7 +42,6 @@ export const ProfileServices = () => {
                     </div>
                     <div className="card">
                         <div className="left">
-                            {/* <div className="icon">📡</div> */}
                             <div className="icon green"><HiChip /></div>
                         </div>
                         <div className="right">

@@ -22,9 +22,11 @@ import tailSvg from "../../assets/tech stack icons/tailwind.svg"
 export const ProfileSkills = () => {
     return (
         <div className="profile-skills-parent" data-aos="fade-up" data-aos-delay="600" data-aos-duration="300">
+            {/* sub header */}
             <div className="content">
-                {/* <h4>💻 <span className='hl1'>Console</span>.<span className='hl2'>WriteLine</span>(<span className='hl3'>"Tech Stack"</span>);</h4> */}
                 <h5>🚀 MY TECH STACK</h5>
+
+                {/* skills section */}
                 <div className="skills">
                     <div className="skill"><img src={csharpSvg} alt="C#" className="skill-icon"/><p>C#</p></div>
                     <div className="skill"><img src={jsSvg} alt="js" className="skill-icon"/><p>JavaScript</p></div>

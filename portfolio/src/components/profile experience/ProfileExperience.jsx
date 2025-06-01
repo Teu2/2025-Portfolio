@@ -20,6 +20,7 @@ export const ProfileExperience = () => {
     return (
         <div className="profile-experience-parent">
             <div className="content">
+                {/* experience header */}
                 <div className="content-header" data-aos="fade-up" data-aos-duration="300">
                     <h1>Experience</h1>
                     <p>Want to see my {' '}
@@ -34,6 +35,7 @@ export const ProfileExperience = () => {
                     <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>5 Experiences</div>
                 )}
 
+                {/* experience section */}
                 <div className="experience-section" data-aos="fade-left" data-aos-delay="200" data-aos-duration="300">
                     <div className="experience">
                         <div className="green-dot"></div>

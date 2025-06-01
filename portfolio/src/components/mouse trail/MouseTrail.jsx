@@ -1,3 +1,4 @@
+// AI Generated
 import React, { useEffect, useRef, useState } from 'react';
 import './MouseTrail.scss';
 

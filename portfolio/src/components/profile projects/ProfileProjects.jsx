@@ -83,6 +83,7 @@ export const ProfileProjects = () => {
     return (
         <div className="profile-projects-parent">
             <div className="content">
+                {/* intro header */}
                 <div className="content-header" data-aos="fade-up" data-aos-duration="300">
                     <h1>Projects</h1>
                     <p>Here are some of the {' '}
@@ -94,7 +95,8 @@ export const ProfileProjects = () => {
                         {' 🙌'}  
                     </p>
                 </div>
-            
+
+                {/* tooltips */}
                 {tooltipVisibleProjects && (
                     <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{handleProjectCount()}</div>
                 )}
@@ -102,6 +104,7 @@ export const ProfileProjects = () => {
                     <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>{"setActiveFilter(filter.value)"}</div>
                 )}
                 
+                {/* filtering bar */}
                 <div className="filter-bar" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
                     {filters.map(filter => (
                         <div key={filter.value} onClick={() => setActiveFilter(filter.value)} className={`filter-button ${activeFilter === filter.value ? "active" : ""}`}>
@@ -110,7 +113,8 @@ export const ProfileProjects = () => {
                         </div>
                     ))}
                 </div>
-
+                
+                {/* project list */}
                 <div className="project-list" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
                     {filtered.map((project, idx) => (
                         <a href={project.demo} target="_blank" rel="noopener noreferrer" key={idx} onClick={(e) => handleProjectClick(e, project)}>
@@ -131,16 +135,6 @@ export const ProfileProjects = () => {
                                 <div className="project-desc">
                                     <p>{project.desc}</p>
                                 </div>
-                                {/* <div className="project-bottom">
-                                    <div className="project-stack">
-                                        {project.techStack.map((tech, i) => (
-                                            <span key={i}>{tech}</span>
-                                        ))}
-                                    </div>
-                                    <div className="project-links">
-                                        {project.github ? <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}><FaGithub /></a> : <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}><FaGithub /></a>}
-                                    </div>
-                                </div> */}
                             </div>
                         </a>
                     ))}

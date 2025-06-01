@@ -16,10 +16,11 @@ export const Footer = () => {
     return (
         <div className="footer-parent">
         <div className="content">
+            {/* footer text */}
             <p>©{' '}<span className="green hover" onMouseEnter={() => setTooltipVisible(true)} onMouseLeave={() => setTooltipVisible(false)} onMouseMove={handleMouseMove}>{`{${currentYear}}`}</span>{' '}Portfolio. All rights reserved.</p>
-            {/* <img src={babyYoda} alt="" /> */}
             <p>Developed with 💚 by Dominic</p>
 
+            {/* tooltip */}
             {tooltipVisible && (
                 <div className="tooltip" style={{left: tooltipPos.x, top: tooltipPos.y,}}>
                     useState(new Date().getFullYear());

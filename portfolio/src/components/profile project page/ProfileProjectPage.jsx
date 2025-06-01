@@ -13,12 +13,13 @@ export const ProfileProjectPage = ({ project, onBack }) => {
     return (
         <div className="profile-project-page-parent" data-aos="fade-left" data-aos-delay="200" data-aos-duration="300">
             <div className="content">
+                {/* back button */}
                 <div className="back-button">
                     <button onClick={onBack}><FaArrowLeft/> <span className='btn'>Back</span></button>
                 </div>
                 
+                {/* project details */}
                 <div className="project-detail-container">
-                    
                     <div className="project-header">
                         <div className="title">
                             {project.language ? <img src={project.language} alt="tech" /> : null}
@@ -27,12 +28,13 @@ export const ProfileProjectPage = ({ project, onBack }) => {
                         <p className='tech'>{convertToUpperCase(project.tech)}</p>
                     </div>
 
+                    {/* project image */}
                     <div className="project-image-showcase">
                         {project.img ? <img src={project.img} alt={project.title} /> : <div className="no-image-placeholder"><p>Project In Progress</p></div>}
                     </div>
 
+                    {/* project about section */}
                     <div className="demo-about-stack">
-
                         <div className="demo">
                             <div className="left">
                                 <p className='left-title'>Demo & Code</p>
@@ -52,11 +54,13 @@ export const ProfileProjectPage = ({ project, onBack }) => {
                             </div>
                         </div>
                         
+                        {/* about */}
                         <div className="about">
                             <h5>💻 PROJECT</h5>
                             <p>{project.descExt}</p>
                         </div>
-
+                        
+                        {/* stack */}
                         <div className="stack">
                             <div className="stack-list">
                                 {project.techStack.map((tool, i) => (
@@ -66,9 +70,9 @@ export const ProfileProjectPage = ({ project, onBack }) => {
                         </div>
 
                         <div className="seperator"></div>
-                        
                     </div>
                     
+                    {/* features */}
                     <div className="project-features">
                         <h5>📗 KEY FEATURES</h5>
                         <div className="features">

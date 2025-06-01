@@ -51,10 +51,13 @@ export const ProfileContact = () => {
 
     return (
         <div className="profile-contact-parent">
+            {/* intro header */}
             <div className="content" data-aos="fade-left" data-aos-duration="300">
                 <h1>Contact me</h1>
                 <p>If you have any questions or if you'd like to discuss a project, please feel free to reach out! 🫶</p>
             </div>
+
+            {/* form section */}
             <div className="form" data-aos="fade-up" data-aos-delay="200" data-aos-duration="300">
                 <form ref={form} onSubmit={sendEmail} className="contact-form">
                     <input type="text" name="user_name" placeholder="Your Name" required />
@@ -63,11 +66,15 @@ export const ProfileContact = () => {
                     <button type="submit">Send Message</button>
                 </form>
             </div>
+
+            {/* socials */}
             <div className="social-links" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
                 <FaGithub />
                 <FaLinkedin />
                 <a href="https://docs.google.com/document/d/166OcttudOVXttP_xZkmQsdDz1T79xYyUgCw3zb3Op0g/edit?usp=sharing" target='_blank' className='about-link'><LuDownload /> {"Resume"}</a>
             </div>
+            
+            {/* custom toast */}
             {toast.visible && (
                 <div className={`toast ${toast.type}`}>
                     {toast.message}
