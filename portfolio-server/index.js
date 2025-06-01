@@ -30,10 +30,6 @@ app.use(cookieParser());
 app.use(limiter);
 app.use('', spotifyRoutes);
 
-app.listen(port, url, () => {
-    console.log(`\nQUICK USEFUL LINKS:`);
-    console.log(`http://${url}:${port}/`);
-    console.log(`http://${url}:${port}/spotify/login`);
-    console.log(`http://${url}:${port}/spotify/currently-playing`);
-    console.log(`http://${url}:${port}/spotify/recently-played`);
-});  
+app.listen(port, '0.0.0.0', () => {
+  console.log(`Server listening on 0.0.0.0:${port}`);
+});
