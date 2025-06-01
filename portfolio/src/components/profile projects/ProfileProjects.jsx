@@ -7,7 +7,6 @@ import { FaLayerGroup } from "react-icons/fa";
 import { FaDiceD6 } from "react-icons/fa";
 import { FaPaintBrush } from "react-icons/fa";
 import { FaServer } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
 import { FiArrowUpRight } from "react-icons/fi";
 import { ImPacman } from "react-icons/im";
 import { FaUnlock } from "react-icons/fa";
@@ -33,7 +32,6 @@ export const ProfileProjects = () => {
         projects.forEach((projects) =>{
             count++;
         })
-
         return `${count} Projects`;
     }
 
@@ -54,6 +52,7 @@ export const ProfileProjects = () => {
 
     const handleProjectClick = (e, project) => {
         e.preventDefault(); // prevent the link navigation
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
         setSelectedProject(project);
     };
 

@@ -3,6 +3,8 @@ const spotifyService = require('../services/spotifyServices');
 const { generateRandomString, stateKey, OWNER_TOKENS, getOwnerRecentTrack } = require('../utils/spotifyUtils');
 const axios = require('axios');
 
+const frontEndUrl =process.env.FRONTEND_URL
+
 exports.root = (req, res) => {
     res.json({
         message: 'Spotify API Backend',
@@ -53,7 +55,7 @@ exports.callback = async (req, res) => {
     res.clearCookie(stateKey);
     const result = await spotifyService.exchangeCodeForToken(code);
     if (result.success) {
-        res.send(`<p>Authenticated! <a href="http://localhost:5173">Back to Portfolio</a></p>`);
+        res.send(`<p>Authenticated! <a href=${frontEndUrl}>Back to Portfolio</a></p>`);
     } else {
         res.redirect('/spotify#' + querystring.stringify({ error: 'invalid_token' }));
     }

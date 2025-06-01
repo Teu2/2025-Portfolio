@@ -1,16 +1,17 @@
-import {React, useEffect, useState} from 'react'
-import "./ProfileHeadline.scss"
-import pfpImage from '../../assets/pfp.png'
-import greenie from "../../assets/greenie.png"
+import { React, useEffect, useState } from 'react';
+import "./ProfileHeadline.scss";
+import pfpImage from '../../assets/pfp.png';
+import greenie from "../../assets/greenie.png";
 import { FaMapLocation } from "react-icons/fa6";
 import axios from 'axios';
 
 export const ProfileHeadline = () => {
 
     const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-    
+    const cache_key = 'melbourneWeatherCache';
+    const cache_ttl = 5 * 60 * 1000;
     const titles = ["Junior Software Engineer.", "Problem Solver.", "Tech Enthusiast."];
-    
+
     const [displayedText, setDisplayedText] = useState('');
     const [titleIndex, setTitleIndex] = useState(0);
     const [charIndex, setCharIndex] = useState(0);
@@ -45,31 +46,64 @@ export const ProfileHeadline = () => {
     }, [charIndex, isDeleting, titleIndex]);
 
     useEffect(() => {
-        const getWeatherData = async () => { 
-            // try {
-            //     await axios.get(`https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Melbourne`)
-            //     .then(res => {
-            //         console.log("weather data fetched wooo:", res.data);
-            //         setWeather(res.data.current.temp_c);
-            //         if (weather < 16) setWeatherIcon("☁️");
-            //         if (weather > 17) setWeatherIcon("⛅");
-            //     });
-            // } catch (err) {
-            //     console.error("failed to fetch boooo:", err);
-            //     setWeather(null);
-            // }
+        const getCachedWeather = () => {
+            try {
+                const raw = localStorage.getItem(cache_key);
+                if (!raw) return null;
+                const data = JSON.parse(raw);
+                if (!data.temp_c || !data.fetchedAt) return null;
+                if (Date.now() - data.fetchedAt < cache_ttl) {
+                    return data.temp_c;
+                } else {
+                    return null;
+                }
+            } catch {
+                return null;
+            }
         };
+
+        const cacheWeatherValue = (temp) => {
+            const payload = {
+                temp_c: temp,
+                fetchedAt: Date.now(),
+            };
+            localStorage.setItem(cache_key, JSON.stringify(payload));
+        };
+
+        const getWeatherData = async () => {
+            const cachedTemp = getCachedWeather();
+            if (cachedTemp !== null) {
+                console.log("Fetching fresh weather data from cache...");
+                setWeather(cachedTemp);
+                return;
+            }
+
+            try {
+                console.log("Fetching fresh weather data from API...");
+                const res = await axios.get(
+                    `https://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=Melbourne`
+                );
+                const temp = res.data.current.temp_c;
+                setWeather(temp);
+                cacheWeatherValue(temp);
+            } catch (err) {
+                console.error("Failed to fetch weather:", err);
+                const FAKE_TEMP = 12.6;
+                setWeather(FAKE_TEMP);
+                setWeatherIcon("☁️");
+            }
+        };
+
         getWeatherData();
     }, []);
-
 
     return (
         <div className="profile-headline-parent">
             <div className="content">
                 {/* picture of me */}
                 <div className="left" data-aos="fade-right" data-aos-duration="300">
-                    <img src={pfpImage} alt="Example" className='pfp'/>
-                    <img src={greenie} alt="Example" className='baby-yoda'/>
+                    <img src={pfpImage} alt="Example" className='pfp' />
+                    <img src={greenie} alt="Example" className='baby-yoda' />
                 </div>
 
                 {/* welcome greeting */}
@@ -78,10 +112,12 @@ export const ProfileHeadline = () => {
                     <p>Dominic Yeoh, <span className="typing">{displayedText}</span></p>
                     <div className="location">
                         <FaMapLocation />
-                        <p>Melbourne, Victoria, Aus - {weather ? `${weather}°C` : '12.5°C'}</p>
+                        <p>
+                            Melbourne, Victoria, Aus – {weather !== null ? `${weather}°C` : '12.5°C'}
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-    )
-}
+    );
+};

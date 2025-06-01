@@ -70,21 +70,21 @@ export const ProfileProjectPage = ({ project, onBack }) => {
                         </div>
 
                         <div className="seperator"></div>
-                    </div>
-                    
-                    {/* features */}
-                    <div className="project-features">
-                        <h5>📗 KEY FEATURES</h5>
-                        <div className="features">
-                            {project.features && project.features.length > 0 ? (
-                                project.features.map((feature, index) => (
-                                    <div className="feature" key={index}>
-                                        <p>• {feature}</p>
-                                    </div>
-                                ))
-                            ) : (
-                                <p>No specific features listed for this project.</p>
-                            )}
+
+                        {/* features */}
+                        <div className="project-features">
+                            <h5>📗 KEY FEATURES</h5>
+                            <div className="features">
+                                {project.features && project.features.length > 0 ? (
+                                    project.features.map((feature, index) => (
+                                        <div className="feature" key={index}>
+                                            <p>• {feature}</p>
+                                        </div>
+                                    ))
+                                ) : (
+                                    <p>No specific features for this project yet... Come back soon!</p>
+                                )}
+                            </div>
                         </div>
                     </div>
                 </div>
