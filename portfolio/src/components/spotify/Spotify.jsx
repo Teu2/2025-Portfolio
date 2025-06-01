@@ -42,7 +42,7 @@ export const Spotify = () => {
             } else if (err.response?.data?.error) {
                 setError(err.response.data.error);
             } else {
-                setError("Failed to get Spotify data. Don't worry, it's Dom's fault!");
+                setError("Failed to get Spotify data. Don't worry, Dom will fix it soon!");
             }
         } finally {
             setIsLoading(false);

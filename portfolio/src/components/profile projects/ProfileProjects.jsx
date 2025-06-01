@@ -6,20 +6,20 @@ import "./ProfileProjects.scss"
 import { FaLayerGroup } from "react-icons/fa";
 import { FaDiceD6 } from "react-icons/fa";
 import { FaPaintBrush } from "react-icons/fa";
-import { FaTerminal } from "react-icons/fa";
 import { FaServer } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa6";
 import { FiArrowUpRight } from "react-icons/fi";
 import { ImPacman } from "react-icons/im";
-import { FaProjectDiagram } from "react-icons/fa";
 import { FaUnlock } from "react-icons/fa";
-import { FaNetworkWired } from "react-icons/fa6";
 import { FaShareNodes } from "react-icons/fa6";
 import { RiRobot2Fill } from "react-icons/ri";
 import { FaPenRuler } from "react-icons/fa6";
 
-export const ProfileProjects = () => {
+// components
+import { ProfileProjectPage } from '../profile project page/ProfileProjectPage';
 
+export const ProfileProjects = () => {
+    const [selectedProject, setSelectedProject] = useState(null);
     const [tooltipVisibleProjects, setTooltipVisibleProjects] = useState(false);
     const [tooltipVisibleCategories, setTooltipVisibleCategories] = useState(false);
     const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
@@ -51,6 +51,34 @@ export const ProfileProjects = () => {
 
     const [activeFilter, setActiveFilter] = useState("all");
     const filtered = activeFilter === "all" ? projects : projects.filter(p => p.tech === activeFilter);
+
+    const handleProjectClick = (e, project) => {
+        e.preventDefault(); // prevent the link navigation
+        setSelectedProject(project);
+    };
+
+    const handleBackClick = () => {
+        setSelectedProject(null);
+    };
+
+    // If a project is selected, show the ProfileProjectPage
+    if (selectedProject) {
+        return(
+        <>
+            <div className="content-header-project-page" data-aos="fade-up" data-aos-duration="300">
+                <h1>Projects</h1>
+                <p>Here are some of the {' '}
+                    <span span className="green hover" onMouseEnter={() => setTooltipVisibleProjects(true)} onMouseLeave={() => setTooltipVisibleProjects(false)} onMouseMove={handleMouseMove}><a href="https://github.com/Teu2" target='_blank' className='link'>{"{Projects}"}</a></span> 
+                    {' '}
+                    i've worked on! go ahead and feel free to check them out, I even made a simple filtering option to make your life easier if you want to browse by a particular 
+                    {' '}
+                    <span span className="green hover" onMouseEnter={() => setTooltipVisibleCategories(true)} onMouseLeave={() => setTooltipVisibleCategories(false)} onMouseMove={handleMouseMove}><a href="" className='link'>{"{Category}"}</a></span>
+                    {' 🙌'}  
+                </p>
+            </div>
+            <ProfileProjectPage project={selectedProject} onBack={handleBackClick} />
+        </>);
+    }
 
     return (
         <div className="profile-projects-parent">
@@ -85,8 +113,8 @@ export const ProfileProjects = () => {
 
                 <div className="project-list" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
                     {filtered.map((project, idx) => (
-                        <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                            <div key={idx} className="project-card">
+                        <a href={project.demo} target="_blank" rel="noopener noreferrer" key={idx} onClick={(e) => handleProjectClick(e, project)}>
+                            <div className="project-card">
                                 <div className="title">
                                     <div className="tech-title">
                                             {project.language ? <div className="img-container"><img src={project.language} alt="tech" /></div> : null}
@@ -103,16 +131,16 @@ export const ProfileProjects = () => {
                                 <div className="project-desc">
                                     <p>{project.desc}</p>
                                 </div>
-                                <div className="project-bottom">
+                                {/* <div className="project-bottom">
                                     <div className="project-stack">
                                         {project.techStack.map((tech, i) => (
                                             <span key={i}>{tech}</span>
                                         ))}
                                     </div>
                                     <div className="project-links">
-                                        {project.github ? <a href={project.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a> : <a href={project.github} target="_blank" rel="noopener noreferrer"><FaGithub /></a>}
+                                        {project.github ? <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}><FaGithub /></a> : <a href={project.github} target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()}><FaGithub /></a>}
                                     </div>
-                                </div>
+                                </div> */}
                             </div>
                         </a>
                     ))}

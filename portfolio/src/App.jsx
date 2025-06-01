@@ -1,7 +1,7 @@
 import { useState, useEffect, createContext } from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import AOS from 'aos';
-import 'aos/dist/aos.css'; // You can also use <link> for styles
+import 'aos/dist/aos.css';
 import "./App.scss";
 
 // components
@@ -20,7 +20,6 @@ import { ProfileChatBotAI } from "./components/profile chatbot ai/ProfileChatBot
 import { Spotify } from "./components/spotify/spotify.jsx";
 import { GithubContributions } from "./components/github contributions/GithubContributions.jsx";
 
-// Create a Layout component that includes MouseTrail
 const Layout = ({ children }) => {
     return (
         <>

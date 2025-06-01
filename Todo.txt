@@ -1,6 +1,8 @@
 Frontend Client
 1. Light Mode (ew)
+2. Project Page when user clicks on a project (gives more details)
 3. Chatbot using the portfolio server instead of the front end
+4. Framer Motion?
 
 Portfolio Server
 1. Spotify API

@@ -62,6 +62,10 @@ p{
   cursor: pointer;
 }
 
+.w-txt{
+  color: rgba(255, 255, 255, 0.87);
+}
+
 .tooltip {
   position: fixed;
   background-color: #1b1b1b;
@@ -80,8 +84,6 @@ p{
 .about-links{
   display: flex;
   gap: 0.5rem;
-
-  
 
   .about-copied{
       font-size: 15px;
