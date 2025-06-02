@@ -1,68 +1,74 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Changa+One:ital@0;1&family=Fira+Code:wght@300..700&family=Paytone+One&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
   color: rgba(255, 255, 255, 0.87);
 
-  &:hover{
-    // color: #46cb77;
+  &:hover {
     transition: all 0.3s ease;
   }
 }
 
-body, html {
+body,
+html {
   ::selection {
     background: #44c86b;
     color: #0f0f0f;
   }
 }
 
-.app-parent{
+.app-parent {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   background-color: #18181a;
+  // padding: 1rem;
 }
 
-.app-container{
+.app-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: start;
-  min-height: 100vh;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 45rem;
   background-color: #18181a;
-  width: 45rem;
   color: rgba(255, 255, 255, 0.87);
-  min-height: 100vh; // full height of the screen
+  min-height: 100vh;
+  // padding: 1rem;
 }
 
-.content{
+.content {
   width: 100%;
   flex: 1;
+
+  p {
+    font-size: 1rem;
+  }
 }
 
-.green{
+.green {
   color: #46cb77 !important;
 }
 
-p{
-  font-size: 15px;
+p {
+  font-size: 1rem;
   color: #9b9ba4;
 }
 
-.hover{
+.hover {
   cursor: pointer;
 }
 
-.w-txt{
+.w-txt {
   color: rgba(255, 255, 255, 0.87);
 }
 
@@ -70,10 +76,10 @@ p{
   position: fixed;
   background-color: #1b1b1b;
   color: #d1d5db;
-  padding: 0.5rem 0.7rem 0.4rem 0.7rem; // 1rem top, 0rem right, 0rem bottom, 0rem left
+  padding: 0.5rem 0.7rem;
   border-radius: 5px;
-  font-size: 11px;
-  pointer-events: none; // so it doesn't block mouse movement
+  font-size: 0.6875rem;
+  pointer-events: none;
   z-index: 1000;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   white-space: nowrap;
@@ -81,48 +87,64 @@ p{
   font-family: 'Fira Code', Courier, monospace;
 }
 
-.about-links{
+.about-links {
   display: flex;
   gap: 0.5rem;
-
-  .about-copied{
-      font-size: 15px;
-      background-color: #1b1b1b;
-      border: 1px solid #313134;
-      border-radius: 5px;
-      width: fit-content;
-      display: flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.3rem 0.7rem 0.3rem 0.7rem; // 1rem top, 0rem right, 0rem bottom, 0rem left
-      font-size: 13px;
-
-      cursor: pointer;
-  }
+  flex-wrap: wrap; // for small screens
 }
 
-.about-link{
-    font-size: 15px;
-    background-color: #1b1b1b;
-    border: 1px solid #313134;
-    border-radius: 5px;
-    width: fit-content;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    padding: 0.3rem 0.7rem 0.3rem 0.7rem; // 1rem top, 0rem right, 0rem bottom, 0rem left
-    font-size: 13px;
+.about-copied,
+.about-link {
+  font-size: 0.8125rem;
+  background-color: #1b1b1b;
+  border: 1px solid #313134;
+  border-radius: 5px;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 0.7rem;
+  cursor: pointer;
+}
 
-    cursor: pointer;
-  }
-
-.skill-icon{
+.skill-icon {
   width: 15px;
   height: 15px;
 }
 
-.content{
-  p{
-    font-size: 14px;
+@media (max-width: 768px) {
+  .app-container {
+    padding: 1rem;
+    width: 100%;
+  }
+
+  p {
+    font-size: 0.95rem;
+  }
+
+  .about-copied,
+  .about-link {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  .tooltip {
+    font-size: 0.625rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .about-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .tooltip {
+    max-width: 90vw;
+    white-space: normal;
   }
 }

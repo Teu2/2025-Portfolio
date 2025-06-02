@@ -12,7 +12,7 @@ import { ImPacman } from "react-icons/im";
 import { FaUnlock } from "react-icons/fa";
 import { FaShareNodes } from "react-icons/fa6";
 import { RiRobot2Fill } from "react-icons/ri";
-import { FaPenRuler } from "react-icons/fa6";
+import { FaCodeBranch } from "react-icons/fa6";
 
 // components
 import { ProfileProjectPage } from '../profile project page/ProfileProjectPage';
@@ -41,10 +41,10 @@ export const ProfileProjects = () => {
         { label: "Back-End", value: "backend", icon: <FaServer /> },
         { label: "Full-Stack", value: "fullstack", icon: <FaDiceD6 /> },
         { label: "Algorithms", value: "algorithms", icon: <FaShareNodes /> },
-        { label: "Games", value: "games", icon: <ImPacman /> },
-        { label: "System Design", value: "systemdesign", icon: <FaPenRuler /> },
-        { label: "Pentesting / Hacking", value: "pentesting", icon: <FaUnlock /> },
         { label: "Bots", value: "bots", icon: <RiRobot2Fill /> },
+        { label: "Machine Learning", value: "machinelearning", icon: <FaCodeBranch /> },
+        { label: "Pentesting / Hacking", value: "pentesting", icon: <FaUnlock /> },
+        
     ];
 
     const [activeFilter, setActiveFilter] = useState("all");

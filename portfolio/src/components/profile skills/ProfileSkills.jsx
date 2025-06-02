@@ -18,6 +18,7 @@ import figSvg from "../../assets/tech stack icons/figma.svg"
 import awsSvg from "../../assets/tech stack icons/aws.svg"
 import scssSvg from "../../assets/tech stack icons/scss.svg"
 import tailSvg from "../../assets/tech stack icons/tailwind.svg"
+import supaBase from "../../assets/tech stack icons/supabase-icon.svg"
 
 export const ProfileSkills = () => {
     return (
@@ -36,6 +37,7 @@ export const ProfileSkills = () => {
                     <div className="skill"><img src={reactSvg} alt="react" className="skill-icon"/><p>React</p></div>
                     <div className="skill"><img src={nodeSvg} alt="node" className="skill-icon"/><p>Node</p></div>
                     <div className="skill"><img src={expressSvg} alt="express" className="skill-icon"/><p>Express</p></div>
+                    <div className="skill"><img src={supaBase} alt="psql" className="skill-icon"/><p>SupaBase</p></div>
                     <div className="skill"><img src={psqlSvg} alt="psql" className="skill-icon"/><p>PostgreSQL</p></div>
                     <div className="skill"><img src={poSvg} alt="po" className="skill-icon"/><p>Postman</p></div>
                     <div className="skill"><img src={doSvg} alt="do" className="skill-icon"/><p>Docker</p></div>

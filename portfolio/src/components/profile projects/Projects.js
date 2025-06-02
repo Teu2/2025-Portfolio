@@ -100,6 +100,7 @@ export const projects = [
             "OAuth2",
             "CORS",
             "Helmet",
+            "SupaBase",
         ],
         language: nodeSvg,
         img: portfolioserver,
@@ -143,9 +144,9 @@ export const projects = [
         github: "https://github.com/Teu2/Discord-Twitter-Bot"
     },
     {
-        title: "Tic Tac Toe w/ AI",
+        title: "Tic Tac Toe - AI Bot",
         inProgress: false,
-        tech: "games",
+        tech: "bots",
         techStack: [
             "C#",
             ".NET",

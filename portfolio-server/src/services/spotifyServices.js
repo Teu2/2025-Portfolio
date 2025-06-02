@@ -19,7 +19,8 @@ exports.exchangeCodeForToken = async (code) => {
         );
 
         const body = response.data;
-        updateTokens({
+        
+        await updateTokens({
             access_token: body.access_token,
             refresh_token: body.refresh_token,
             expires_at: Date.now() + body.expires_in * 1000
