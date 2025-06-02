@@ -95,7 +95,7 @@ export const Spotify = () => {
                     <img src={track?.image || setIcon} alt="Album cover" className='song-cover' onError={(e) => { e.target.src = setIcon; }} />
                     <div className="song-info">
                         {isLoading ? (
-                            <p>Loading...</p>
+                            <p>Loading... Render waking up from sleep...</p>
                         ) : track ? (
                             <>
                                 <p><strong>{track.name}</strong></p>
