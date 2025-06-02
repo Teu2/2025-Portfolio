@@ -42,20 +42,40 @@ const loadTokens = async () => {
 // saving them tokens to Supabase
 const saveTokens = async () => {
     try {
-        const { error } = await supabase
+        const { data, error: updateError } = await supabase
             .from("spotify_tokens")
-            .upsert({
-                user_id: "owner",
+            .update({
                 access_token: OWNER_TOKENS.access_token,
                 refresh_token: OWNER_TOKENS.refresh_token,
                 expires_at: OWNER_TOKENS.expires_at,
                 updated_at: new Date().toISOString()
-            });
+            })
+            .eq('user_id', 'owner')
+            .select();
 
-        if (error) {
-            console.error("error saving tokens:", error.message);
+        if (updateError) {
+            console.error("error updating tokens:", updateError.message);
+            return;
+        }
+
+        if (!data || data.length === 0) {
+            const { error: insertError } = await supabase
+                .from("spotify_tokens")
+                .insert({
+                    user_id: "owner",
+                    access_token: OWNER_TOKENS.access_token,
+                    refresh_token: OWNER_TOKENS.refresh_token,
+                    expires_at: OWNER_TOKENS.expires_at,
+                    updated_at: new Date().toISOString()
+                });
+
+            if (insertError) {
+                console.error("error inserting tokens:", insertError.message);
+            } else {
+                console.log("tokens inserted to Supabase");
+            }
         } else {
-            console.log("tokens saved to Supabase");
+            console.log("tokens updated in Supabase");
         }
     } catch (err) {
         console.error("failed to save tokens:", err.message);
