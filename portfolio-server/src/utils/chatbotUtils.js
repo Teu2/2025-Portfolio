@@ -1,4 +1,4 @@
-const chatbot_secret = process.env.CHATBOT_API_SECRE;
+const chatbot_secret = process.env.CHATBOT_API_SECRET;
 
 const system_content = `You are a helpful assistant for Dominic Yeoh's portfolio website. 
 
