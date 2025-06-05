@@ -49,10 +49,6 @@ html {
 .content {
   width: 100%;
   flex: 1;
-
-  p {
-    font-size: 1rem;
-  }
 }
 
 .green {
@@ -60,12 +56,7 @@ html {
 }
 
 p {
-  font-size: 1rem;
   color: #9b9ba4;
-}
-
-.hover {
-  cursor: pointer;
 }
 
 .w-txt {
@@ -116,10 +107,6 @@ p {
   .app-container {
     padding: 1rem;
     width: 100%;
-  }
-
-  p {
-    font-size: 0.95rem;
   }
 
   .about-copied,

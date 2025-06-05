@@ -20,7 +20,7 @@ import nodeSvg from "../../assets/tech stack icons/nodejs-icon.svg"
 
 export const projects = [
     {
-        title: "PromptSmith - A GenAI API",
+        title: "Prompt Smith - A GenAI API",
         inProgress: true,
         tech: "backend",
         techStack: [
@@ -46,7 +46,7 @@ export const projects = [
         github: "https://github.com/example/python-sorting"
     },
     {
-        title: "YomiSnap - An OCR Translator",
+        title: "Yomi Snap - An OCR Translator",
         inProgress: false,
         tech: "frontend",
         techStack: [
@@ -101,12 +101,14 @@ export const projects = [
             "CORS",
             "Helmet",
             "SupaBase",
+            "Hugging Face",
+            "SmolLM2 1.7B",
         ],
         language: nodeSvg,
         img: portfolioserver,
         desc: "A Node.js server for my portfolio that fetches my Spotify activity and provides a chatbot for the frontend.",
-        descExt: "A Node.js and Express server that works with my portfolio's Spotify integration / planned AI chatbot features. The server implements secure OAuth 2.0 flows, intelligent token management, and robust API orchestration. I built it with the best security practices in mind and also designed it for scalability. It currently serves real time music data from Spotify, and is being preparing for advanced conversational AI integration for my chatbot component! 🥳",
-        features: ["Secure OAuth 2.0 authentication for Spotify API with automatic token refresh.", "Helmet, CORS, and custom auth middleware for robust security.", "Rate limiting on endpoints to prevent abuse.", "Orchestrated API calls for real-time track data with fallback to recent plays.", "Modular structure designed for scalability.", "Planned AI chatbot integration for Front-end Chatbot component."],
+        descExt: "A Node.js and Express server that works with my portfolio's Spotify integration and a AI chatbot feature. The server implements secure OAuth 2.0 flows, intelligent token management, and robust API orchestration. I built it with the best security practices in mind and also designed it for scalability. It currently serves real time music data from Spotify, and serves a conversational AI integration for my chatbot component! 🥳",
+        features: ["Spotify integration to retrieve latest Spotify activity.", "AI chatbot integration for Front-end Chatbot component", "Uses Hugging Face and the SmolLM2-1.7B-Instruct Mmodel.", "Secure OAuth 2.0 authentication for Spotify API with automatic token refresh.", "Helmet, CORS, and custom auth middleware for robust security.", "Rate limiting on endpoints to prevent abuse.", "Orchestrated API calls for real-time track data with fallback to recent plays.", "Modular structure designed for scalability."],
         demo: "https://dominicyeoh.netlify.app/",
         github: "https://github.com/Teu2/2025-Portfolio"
     },
@@ -208,22 +210,22 @@ export const projects = [
         demo: "https://github.com/Teu2/Maze-Navigation-Console",
         github: "https://github.com/Teu2/Maze-Navigation-Console"
     },
-    {
-        title: "Cracko - A Password Cracker",
-        inProgress: false,
-        tech: "pentesting",
-        techStack: [
-            "Python",
-            "Hashlib",
-            "Pycryptodome",
-            "Zipfile",
-        ],
-        language: pythonSvg,
-        img: cracker,
-        desc: "A password cracker designed to crack hashed passwords & protected files using various attacks.",
-        demo: "https://example.com/demo",
-        github: "https://github.com/Teu2/Maze-Navigation-Console"
-    },
+    // {
+    //     title: "Cracko - A Password Cracker",
+    //     inProgress: false,
+    //     tech: "pentesting",
+    //     techStack: [
+    //         "Python",
+    //         "Hashlib",
+    //         "Pycryptodome",
+    //         "Zipfile",
+    //     ],
+    //     language: pythonSvg,
+    //     img: cracker,
+    //     desc: "A password cracker designed to crack hashed passwords & protected files using various attacks.",
+    //     demo: "https://example.com/demo",
+    //     github: "https://github.com/Teu2/Maze-Navigation-Console"
+    // },
     // {
     //     title: "E-Forensic Capstone Report",
     //     inProgress: false,

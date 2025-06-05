@@ -2,6 +2,7 @@ import React from 'react'
 import "./ProfileSkills.scss"
 
 import csharpSvg from "../../assets/tech stack icons/c-sharp.svg"
+import csharpPng from "../../assets/tech stack icons/c-sharp.png"
 import jsSvg from "../../assets/tech stack icons/javascript.svg"
 import tsSvg from "../../assets/tech stack icons/typescript-icon.svg"
 import dotnetSvg from "../../assets/tech stack icons/dotnet.svg"
@@ -19,6 +20,7 @@ import awsSvg from "../../assets/tech stack icons/aws.svg"
 import scssSvg from "../../assets/tech stack icons/scss.svg"
 import tailSvg from "../../assets/tech stack icons/tailwind.svg"
 import supaBase from "../../assets/tech stack icons/supabase-icon.svg"
+import huggingFace from "../../assets/tech stack icons/hugging-face.png"
 
 export const ProfileSkills = () => {
     return (
@@ -46,7 +48,7 @@ export const ProfileSkills = () => {
                     <div className="skill"><img src={ghubSvg2} alt="ghub" className="skill-icon"/><p>GitHub</p></div>
                     <div className="skill"><img src={figSvg} alt="fig" className="skill-icon"/><p>Figma</p></div>
                     <div className="skill"><img src={scssSvg} alt="fig" className="skill-icon"/><p>SCSS</p></div>
-                    <div className="skill"><img src={tailSvg} alt="fig" className="skill-icon"/><p>Tailwind </p></div>
+                    <div className="skill"><img src={tailSvg} alt="fig" className="skill-icon"/><p>Tailwind</p></div>
                 </div>
             </div>
         </div>

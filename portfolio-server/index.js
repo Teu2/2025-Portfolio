@@ -14,6 +14,7 @@ const limiter = rateLimit({
 });
 
 const spotifyRoutes = require('./src/routes/spotify');
+const chatbotRoutes = require('./src/routes/chatbot');
 
 const app = express();
 app.set('trust proxy', 1); // render
@@ -27,11 +28,13 @@ if (!process.env.CORS_ORIGINS) {
 const corsOrigins = process.env.CORS_ORIGINS.split(',').map((o) => o.trim());
 app.use(helmet());
 app.use(cors({ origin: corsOrigins, credentials: true }));
+app.use(express.json()); // IMPORTANT: Add this for JSON parsing
 app.use(cookieParser());
 app.use(limiter);
 app.use('', spotifyRoutes);
+app.use('', chatbotRoutes);
 
-// binding to 0.0.0.0 means “listen on all interfaces,” - locally it still hits at localhost or 127.0.0.1. great for Render and Local testing wooooo!
+// binding to 0.0.0.0 means "listen on all interfaces," - locally it still hits at localhost or 127.0.0.1. great for Render and Local testing wooooo!
 app.listen(port, '0.0.0.0', () => {
     console.log("QUICK LINKS:")
     console.log("https://two025-portfolio-dbkd.onrender.com/");

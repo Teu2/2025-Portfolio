@@ -3,7 +3,7 @@ const spotifyService = require('../services/spotifyServices');
 const { generateRandomString, stateKey, OWNER_TOKENS, getOwnerRecentTrack } = require('../utils/spotifyUtils');
 const axios = require('axios');
 
-const frontEndUrl =process.env.FRONTEND_URL
+const frontEndUrl = process.env.FRONTEND_URL
 
 exports.root = (req, res) => {
     res.json({
