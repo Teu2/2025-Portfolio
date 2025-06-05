@@ -11,23 +11,27 @@ class MyClassificationPipeline {
     static model = 'HuggingFaceTB/SmolLM2-1.7B-Instruct';
 
     static async getInstance(userPrompt) {
+
+        console.log("3.");
         let { pipeline, env } = await import('@huggingface/transformers');
+        console.log("4.");
         const generator = await pipeline(
             "text-generation",
             "HuggingFaceTB/SmolLM2-1.7B-Instruct",
         );
+        console.log("5.");
 
         const messages = [
             { role: "system", content: system_content },
             { role: "user", content: userPrompt },
         ];
-
+        console.log("6.");
         const output = await generator(messages, { max_new_tokens: 128 });
-
+        console.log("7.");
         if (output) {
             return { status: 200, message: output[0].generated_text.at(-1).content } 
         } 
-
+        console.log("8.");
         return { status: 500, error: "Failed to retrieve response from SmolLM2." };
     }
 }
@@ -40,10 +44,11 @@ exports.chatWithModel = async (req, res) => {
     // console.log(`system content\n ${system_content}`);
     // console.log("Response Status Code:", res.statusCode);
     // console.log("Response Headers Sent:", res.headersSent);
-
+    console.log("1.");
     let userPrompt = req.body.message;
 
     try {
+         console.log("2.");
         const chatbotResponse = await MyClassificationPipeline.getInstance(userPrompt);
         if (chatbotResponse) {
             return { status: 200, message: chatbotResponse.message }
