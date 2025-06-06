@@ -15,7 +15,6 @@ import { ProfileExperience } from "./components/profile experience/ProfileExperi
 import { ProfileProjects } from "./components/profile projects/ProfileProjects.jsx";
 import { ProfileContact } from "./components/profile contact/ProfileContact.jsx";
 import { MouseTrail } from "./components/mouse trail/MouseTrail.jsx";
-import { ProfileChatBot } from "./components/profile chatbot/ProfileChatBot.jsx";
 import { ProfileChatBotAI } from "./components/profile chatbot ai/ProfileChatBotAI.jsx";
 import { Spotify } from "./components/spotify/spotify.jsx";
 import { GithubContributions } from "./components/github contributions/GithubContributions.jsx";

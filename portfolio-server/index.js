@@ -7,7 +7,7 @@ const rateLimit = require('express-rate-limit');
 
 const limiter = rateLimit({
     windowMs: 60_000,      
-    max: 10,               
+    max: 5,               
     message: {
         error: 'Too many requests, please try again after a minute.'
     }
@@ -28,7 +28,7 @@ if (!process.env.CORS_ORIGINS) {
 const corsOrigins = process.env.CORS_ORIGINS.split(',').map((o) => o.trim());
 app.use(helmet());
 app.use(cors({ origin: corsOrigins, credentials: true }));
-app.use(express.json()); // IMPORTANT: Add this for JSON parsing
+app.use(express.json({ limit: '15kb' }));
 app.use(cookieParser());
 app.use(limiter);
 app.use('', spotifyRoutes);

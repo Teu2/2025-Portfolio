@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
+import { useEffect, useState } from "react"
+import axios from "axios";
 import "./Spotify.scss"
 
 import { FaArrowsRotate } from "react-icons/fa6";
@@ -8,7 +8,7 @@ import setIcon from "../../assets/test.png"
 
 export const Spotify = () => {
 
-    const API_KEY = import.meta.env.VITE_SPOTIFY_URI;
+    const SPOTIFY_URI = import.meta.env.VITE_SPOTIFY_URI;
     const SECRET = import.meta.env.VITE_SPOTIFY_API_SECRET;
 
     const [track, setTrack] = useState(null);
@@ -19,11 +19,11 @@ export const Spotify = () => {
 
     const fetchSpotifyData = async () => {
         try {
-            const res = await axios.get(API_KEY, {
+            const res = await axios.get(SPOTIFY_URI, {
                 withCredentials: true,
                 headers: {
-                    'Content-Type': 'application/json',
-                    'X-Spotify-Secret': SECRET
+                    "content-Type": "application/json",
+                    "x-Spotify-Secret": SECRET
                 }
             });
 
@@ -61,17 +61,17 @@ export const Spotify = () => {
     };
 
     const formatArtists = (artists) => {
-        if (!artists || artists.length === 0) return 'Unknown Artist';
-        return artists.join(', ');
+        if (!artists || artists.length === 0) return "Unknown Artist";
+        return artists.join(", ");
     };
 
     const getStatusText = () => {
         if (isCurrentlyPlaying) {
-            return 'Listening';
+            return "Listening";
         } else if (track) {
-            return 'Last played';
+            return "Last played";
         } else {
-            return 'No recent activity';
+            return "No recent activity";
         }
     };
 
@@ -79,11 +79,11 @@ export const Spotify = () => {
         <div className="spotify-parent">
             {/* sub header */}
             <div className="top">
-                <h5>{isCurrentlyPlaying ? '🎧 NOW LISTENING' : '🎧 LAST LISTENED SONG'}</h5>
+                <h5>{isCurrentlyPlaying ? "🎧 NOW LISTENING" : "🎧 LAST LISTENED SONG"}</h5>
                 <div className="link-refresh">
-                    <button onClick={refreshSpotify} disabled={isRefreshing} className={isRefreshing ? 'refreshing' : ''}>
-                        <FaArrowsRotate className={isRefreshing ? 'spinning' : ''} />
-                        {isRefreshing ? 'Refreshing...' : 'Refresh'}
+                    <button onClick={refreshSpotify} disabled={isRefreshing} className={isRefreshing ? "refreshing" : ""}>
+                        <FaArrowsRotate className={isRefreshing ? "spinning" : ""} />
+                        {isRefreshing ? "Refreshing..." : "Refresh"}
                     </button>
                 </div>
             </div>
@@ -92,7 +92,7 @@ export const Spotify = () => {
             <div className="spotify-content">
                 {/* left section*/}
                 <div className="left">
-                    <img src={track?.image || setIcon} alt="Album cover" className='song-cover' onError={(e) => { e.target.src = setIcon; }} />
+                    <img src={track?.image || setIcon} alt="Album cover" className="song-cover" onError={(e) => { e.target.src = setIcon; }} />
                     <div className="song-info">
                         {isLoading ? (
                             <p>Loading... Render waking up from sleep...</p>

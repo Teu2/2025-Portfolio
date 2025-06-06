@@ -44,7 +44,7 @@ exports.getCurrentlyPlaying = async () => {
         });
 
         if (!response.data || !response.data.item){
-            return { status: 'recent' };
+            return { status: "recent" };
         } 
 
         return {
@@ -62,14 +62,14 @@ exports.getCurrentlyPlaying = async () => {
             }
         };
     } catch (err) {
-        if (err.response?.status === 401) return { status: 'refresh' };
-        return { statusCode: 500, body: { error: 'Failed to fetch current track' } };
+        if (err.response?.status === 401) return { status: "refresh" };
+        return { statusCode: 500, body: { error: "Failed to fetch current track" } };
     }
 };
 
 exports.getRecentlyPlayed = async () => {
-    if (!OWNER_TOKENS.access_token) return { status: 503, body: { error: 'Not authenticated' } };
-    if (Date.now() >= OWNER_TOKENS.expires_at) return { status: 'refresh' };
+    if (!OWNER_TOKENS.access_token) return { status: 503, body: { error: "Not authenticated" } };
+    if (Date.now() >= OWNER_TOKENS.expires_at) return { status: "refresh" };
 
     try {
         const response = await axios.get('https://api.spotify.com/v1/me/player/recently-played?limit=10', {
@@ -90,8 +90,8 @@ exports.getRecentlyPlayed = async () => {
             }
         };
     } catch (err) {
-        if (err.response?.status === 401) return { status: 'refresh' };
-        return { statusCode: 500, body: { error: 'Failed to fetch recently played tracks' } };
+        if (err.response?.status === 401) return { status: "refresh" };
+        return { statusCode: 500, body: { error: "Failed to fetch recently played tracks" } };
     }
 };
 
@@ -121,6 +121,6 @@ exports.refreshOwnerTokenAndRetry = async (res, endpoint) => {
         return res.redirect(`/spotify/${endpoint}`);
     } catch (err) {
         console.error("Token refresh failed", err.message);
-        return res.status(503).json({ error: 'Failed to refresh token' });
+        return res.status(503).json({ error: "Failed to refresh token" });
     }
 };

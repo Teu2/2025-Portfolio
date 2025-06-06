@@ -52,7 +52,7 @@ export const ProfileProjects = () => {
 
     const handleProjectClick = (e, project) => {
         e.preventDefault(); // prevent the link navigation
-        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
         setSelectedProject(project);
     };
 

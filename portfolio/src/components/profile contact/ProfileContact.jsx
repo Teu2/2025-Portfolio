@@ -1,5 +1,5 @@
-import React, { useRef, useState } from 'react';
-import emailjs from '@emailjs/browser';
+import React, { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 import "./ProfileContact.scss"
 
 // icons
@@ -11,13 +11,13 @@ export const ProfileContact = () => {
 
     // email stuffs
     const form = useRef();
-    const [toast, setToast] = useState({ visible: false, message: '', type: 'success' });
+    const [toast, setToast] = useState({ visible: false, message: "", type: "success" });
     const RATE_LIMIT_SECONDS = 60;
 
-    const showToast = (message, type = 'success') => {
+    const showToast = (message, type = "success") => {
         setToast({ visible: true, message, type });
         setTimeout(() => {
-            setToast({ visible: false, message: '', type: 'success' });
+            setToast({ visible: false, message: "", type: "success" });
         }, 3000);
     };
 
@@ -29,7 +29,7 @@ export const ProfileContact = () => {
         const now = Date.now();
 
         if (lastSent && now - lastSent < RATE_LIMIT_SECONDS * 1000) {
-            showToast(`Please wait ${RATE_LIMIT_SECONDS} seconds my inbox has feeling too...`, 'error');
+            showToast(`Please wait ${RATE_LIMIT_SECONDS} seconds my inbox has feeling too...`, "error");
             return;
         }
 
@@ -40,12 +40,12 @@ export const ProfileContact = () => {
             import.meta.env.VITE_EMAILJS_PUBLIC_KEY
         ).then(() => {
             console.log("1");
-            showToast('Email sent successfully! ', 'success');
+            showToast("Email sent successfully! ", "success");
             form.current.reset();
             localStorage.setItem("lastMessageTime", now);
         }, () => {
             console.log("2");
-            showToast(`Email failed to send.`, 'error');
+            showToast(`Email failed to send.`, "error");
         });
     };
 
@@ -54,7 +54,7 @@ export const ProfileContact = () => {
             {/* intro header */}
             <div className="content" data-aos="fade-left" data-aos-duration="300">
                 <h1>Contact me</h1>
-                <p>If you have any questions or if you'd like to discuss a project, please feel free to reach out! 🫶</p>
+                <p>If you have any questions or if you"d like to discuss a project, please feel free to reach out! 🫶</p>
             </div>
 
             {/* form section */}
@@ -71,7 +71,7 @@ export const ProfileContact = () => {
             <div className="social-links" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
                 <FaGithub />
                 <FaLinkedin />
-                <a href="https://docs.google.com/document/d/166OcttudOVXttP_xZkmQsdDz1T79xYyUgCw3zb3Op0g/edit?usp=sharing" target='_blank' className='about-link'><LuDownload /> {"Resume"}</a>
+                <a href="https://docs.google.com/document/d/166OcttudOVXttP_xZkmQsdDz1T79xYyUgCw3zb3Op0g/edit?usp=sharing" target="_blank" className="about-link"><LuDownload /> {"Resume"}</a>
             </div>
             
             {/* custom toast */}

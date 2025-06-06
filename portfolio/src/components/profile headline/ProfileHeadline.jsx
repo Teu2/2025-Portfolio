@@ -8,7 +8,7 @@ import axios from 'axios';
 export const ProfileHeadline = () => {
 
     const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
-    const cache_key = 'melbourneWeatherCache';
+    const cache_key = "melbourneWeatherCache";
     const cache_ttl = 5 * 60 * 1000;
     const titles = ["Junior Software Engineer.", "Problem Solver.", "Tech Enthusiast."];
 
