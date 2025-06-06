@@ -1,55 +1,41 @@
-const http = require('http');
-const querystring = require('querystring');
-const url = require('url');
-const fs = require('fs');
-const path = require('path');
+const OpenAI = require("openai");
+const { system_content } = require('../utils/chatbotUtils');
 
-const { chatbot_secret, system_content } = require('../utils/chatbotUtils');
+// https://huggingface.co/docs/transformers.js/en/tutorials/node
+// https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct
 
-class MyClassificationPipeline {
-    static task = 'text-generation';
-    static model = 'HuggingFaceTB/SmolLM2-1.7B-Instruct';
-
+class MyClassificationPipeline { // this class is from an earlier hugging face implementation, I couldn't be bothered deleting it so its stuck here now :)
     static async getInstance(userPrompt) {
-
-        console.log("3.");
-        let { pipeline, env } = await import('@huggingface/transformers');
-        console.log("4.");
-        const generator = await pipeline(
-            "text-generation",
-            "HuggingFaceTB/SmolLM2-1.7B-Instruct",
-        );
-        console.log("5.");
-
-        const messages = [
-            { role: "system", content: system_content },
-            { role: "user", content: userPrompt },
-        ];
-        console.log("6.");
-        const output = await generator(messages, { max_new_tokens: 128 });
-        console.log("7.");
-        if (output) {
-            return { status: 200, message: output[0].generated_text.at(-1).content } 
-        } 
-        console.log("8.");
-        return { status: 500, error: "Failed to retrieve response from SmolLM2." };
+        const openai = new OpenAI({
+            apiKey: process.env.OPENAI_API_KEY
+        });
+        try {
+            const completion = await openai.chat.completions.create({
+                model: "gpt-3.5-turbo",
+                messages: [
+                    { role: "system", content: system_content },
+                    { role: "user", content: userPrompt }
+                ],
+                max_tokens: 70,
+                temperature: 0.7
+            });
+            const generated = completion.choices[0].message.content;
+            return { status: 200, message: generated };
+        } catch (err) {
+            console.error("OpenAI API error:", err);
+            return { status: 500, error: err.message || "OpenAI request failed" };
+        }
     }
 }
 
 exports.chatWithModel = async (req, res) => {
-    // console.log("Request Headers:", req.headers);
-    // console.log("Request Body:", req.body);
-    // console.log("Request Url:", req.url);
-    // console.log(`user promt = ${userPrompt}`);
-    // console.log(`system content\n ${system_content}`);
-    // console.log("Response Status Code:", res.statusCode);
-    // console.log("Response Headers Sent:", res.headersSent);
     console.log("1.");
-    let userPrompt = req.body.message;
+    const { message } = req.body;
+    if (!message) return { status: 500, message: "You must provide a prompt!" }
 
     try {
-         console.log("2.");
-        const chatbotResponse = await MyClassificationPipeline.getInstance(userPrompt);
+        console.log("2.");
+        const chatbotResponse = await MyClassificationPipeline.getInstance(message);
         if (chatbotResponse) {
             return { status: 200, message: chatbotResponse.message }
         }
@@ -57,6 +43,3 @@ exports.chatWithModel = async (req, res) => {
         return { status: 500, message: chatbotResponse.error }
     }
 }
-
-// https://huggingface.co/docs/transformers.js/en/tutorials/node
-// https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct
