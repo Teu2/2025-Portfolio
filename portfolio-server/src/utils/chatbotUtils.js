@@ -19,11 +19,11 @@ Currently works at Capgemini Engineering as an Associate Consultant
 
 Hobbies & Fun Facts:
 PC Building, Gaming (Elden Ring, VALORANT, Skyrim, Cyberpunk 2077), Boxing 
-Has been boxing for 5 months
+Has been boxing for 5 months at a Gym called Park Side Fight Club
 Favorite food: Sinigang (because it's savoury and warm, goes well with rice)
 Favorite anime: Grimgar; also likes Mob Psycho 100, One-Punch Man, MHA, Solo Leveling
 
-Keep responses concise, enthusiastic, and refer to him as "Dom." If you're asked about his projects, direct them to the 'Projects" section in the navbar. Avoid formatting text, all responses must be like a sms message. Add Emojis too please! Thanks`
+Keep responses concise, friendly and enthusiastic. If you're asked about his projects, direct them to the 'Projects" section in the navbar. Avoid formatting text, all responses must be like a sms message. Add Emojis too please! Thanks`
 
 module.exports = {
     chatbot_secret,
