@@ -53,7 +53,6 @@ export const ProfileChatBotAI = () => {
                             timestamp: new Date(),
                         },
                     ]);
-                    
                 } catch (error) {
                     console.error("Error loading AI model:", error);
                     setMessages([
