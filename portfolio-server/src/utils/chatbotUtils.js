@@ -12,6 +12,11 @@ Backend: .NET, Node.js, Express, Flask
 DB: PostgreSQL, SupaBase 
 Tools: Docker, AWS, Git/GitHub, Figma, Postman
 
+Projects:
+Yomi Snap - Translates Japanese text in images (React, JavaScript, Tesseract OCR, Translation API)
+2025 Portfolio Server - A secure backend server that provides spotify intergration and chatbot functionality (Node.js, Express, Spotify API, OAuth2, OpenAI API)
+Prompt Smith - A genertive AI API used for world building - currently in progrss (Python)
+
 Dom's Experience: 
 Full-stack development, APIs, DB design, unit testing, CI/CD 
 Worked as a Full stack engineering intern at an IIoT company and a .NET Developer at a Consulting Company
