@@ -1,0 +1,49 @@
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.particle {
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-color: rgb(110, 110, 110);
+  // opacity: var(--opacity);
+  border-radius: 50%;
+  will-change: transform, opacity;
+  animation:
+    float var(--duration) ease-in-out infinite;
+    // glow var(--glow-duration) ease-in-out infinite var(--delay);
+  
+  // Add smooth transition for mouse interactions
+  transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  
+  // Combine both floating animation and mouse response
+  transform: translate(
+    calc(var(--drift-x) + var(--mouse-x, 0px)), 
+    calc(var(--drift-y) + var(--mouse-y, 0px))
+  );
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(
+      calc(0px + var(--mouse-x, 0px)), 
+      calc(0px + var(--mouse-y, 0px))
+    );
+  }
+  50% {
+    transform: translate(
+      calc(var(--drift-x) + var(--mouse-x, 0px)), 
+      calc(var(--drift-y) + var(--mouse-y, 0px))
+    );
+  }
+}
+
+@keyframes glow {
+  0%, 100% { opacity: var(--opacity); }
+  50%      { opacity: calc(var(--opacity) * 0.4); }
+}

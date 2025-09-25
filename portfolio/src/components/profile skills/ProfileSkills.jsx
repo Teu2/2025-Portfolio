@@ -20,7 +20,11 @@ import awsSvg from "../../assets/tech stack icons/aws.svg"
 import scssSvg from "../../assets/tech stack icons/scss.svg"
 import tailSvg from "../../assets/tech stack icons/tailwind.svg"
 import supaBase from "../../assets/tech stack icons/supabase-icon.svg"
-import huggingFace from "../../assets/tech stack icons/hugging-face.png"
+import azureSvg from "../../assets/tech stack icons/microsoft-azure.svg"
+import redisSvg from "../../assets/tech stack icons/redis.svg"
+import mongodbSvg from "../../assets/tech stack icons/mongodb-icon.svg"
+import kubernetesSvg from "../../assets/tech stack icons/kubernetes.svg"
+import langg from "../../assets/tech stack icons/langgraph-color.png"
 
 export const ProfileSkills = () => {
     return (
@@ -41,6 +45,7 @@ export const ProfileSkills = () => {
                     <div className="skill"><img src={expressSvg} alt="express" className="skill-icon"/><p>Express</p></div>
                     <div className="skill"><img src={psqlSvg} alt="psql" className="skill-icon"/><p>PostgreSQL</p></div>
                     <div className="skill"><img src={supaBase} alt="psql" className="skill-icon"/><p>SupaBase</p></div>
+                    <div className="skill"><img src={redisSvg} alt="aws" className="skill-icon"/><p>Redis</p></div>
                     <div className="skill"><img src={poSvg} alt="po" className="skill-icon"/><p>Postman</p></div>
                     <div className="skill"><img src={doSvg} alt="do" className="skill-icon"/><p>Docker</p></div>
                     <div className="skill"><img src={awsSvg} alt="aws" className="skill-icon"/><p>AWS</p></div>

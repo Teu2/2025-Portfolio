@@ -16,12 +16,17 @@ import { ProfileProjects } from "./components/profile projects/ProfileProjects.j
 import { ProfileContact } from "./components/profile contact/ProfileContact.jsx";
 import { MouseTrail } from "./components/mouse trail/MouseTrail.jsx";
 import { ProfileChatBotAI } from "./components/profile chatbot ai/ProfileChatBotAI.jsx";
-import { Spotify } from "./components/spotify/spotify.jsx";
+import { Spotify } from "./components/spotify/Spotify.jsx";
 import { GithubContributions } from "./components/github contributions/GithubContributions.jsx";
+import { ProfileGuestBook } from "./components/profile guestbook/ProfileGuestBook.jsx";
+
+// Fixed import path for your Meteors component
+import { Particles } from "./components/magicui/Particles";
 
 const Layout = ({ children }) => {
     return (
         <>
+            {/* <Particles /> */}
             {/* <MouseTrail /> */}
             {children}
             {/* <ProfileChatBot /> */}
@@ -94,6 +99,20 @@ function App() {
                         <Navbar />
                         <div className="content">
                             <ProfileContact />
+                        </div>
+                        <Footer />
+                    </div>
+                </Layout>
+            )
+        },
+        {
+            path: "/guestbook",
+            element: (
+                <Layout>
+                    <div className="app-container">
+                        <Navbar />
+                        <div className="content">
+                            <ProfileGuestBook />
                         </div>
                         <Footer />
                     </div>

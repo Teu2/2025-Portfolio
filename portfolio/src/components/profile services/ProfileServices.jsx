@@ -19,7 +19,7 @@ export const ProfileServices = () => {
                         </div>
                         <div className="right">
                             <h4>Front-End</h4>
-                            <p>I develop responsive interfaces and bring designs to life with modern web technologies.</p>
+                            <p>I have developed responsive interfaces and brought designs to life with modern web technologies.</p>
                         </div>
                     </div>
                     <div className="card">
@@ -28,7 +28,7 @@ export const ProfileServices = () => {
                         </div>
                         <div className="right">
                             <h4>Back-End</h4>
-                            <p>I build robust server-side logic, APIs, and databases to power scalable and secure applications.</p>
+                            <p>I have experience building robust server-side logic, APIs, and databases to power scalable and secure applications.</p>
                         </div>
                     </div>
                     <div className="card">
@@ -37,7 +37,7 @@ export const ProfileServices = () => {
                         </div>
                         <div className="right">
                             <h4>Consulting</h4>
-                            <p>I deliver expert advice and tailored solutions to solve real-world technology problems for clients.</p>
+                            <p>I can deliver expert advice and tailored solutions to solve real-world technology problems for clients.</p>
                         </div>
                     </div>
                     <div className="card">
@@ -45,8 +45,8 @@ export const ProfileServices = () => {
                             <div className="icon green"><HiChip /></div>
                         </div>
                         <div className="right">
-                            <h4>IoT Programming</h4>
-                            <p>I program connected systems that integrate hardware and software efficiently using Go and MQTT.</p>
+                            <h4>AI & ML</h4>
+                            <p>I'm currently expanding my expertise in AI and ML, exploring machine learning and AI fundamentals.</p>
                         </div>
                     </div>
                 </div>

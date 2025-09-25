@@ -31,20 +31,14 @@ export const ProfileAbout = () => {
                     <div className="about-links">
                     <div className={copied ? "about-copied" : "about-link"} onClick={handleCopy}><LuCopy /> {copied ? "Copied!" : "Email"}</div>
                 </div>
-                <p>I'm a Junior Software Engineer with a love for creating useful software solutions using .NET, Python, and JavaScript!
+                <p>I'm a Junior Full-Stack Software Engineer with a love for creating useful software solutions using .NET, Python, and JavaScript!
                 I love programming, enjoy learning new technologies, video editing, and boxing! - basically, I spend most of my time in front of a screen, and occasionaly get punched in the face.</p> 
                 
                 {/* hobbies section */}
                 <div className="hobbies">
-                    <p>My other hobbies include:</p>
-                    <div className="hobby">
-                        <p>PC Building</p>
-                        <p>Gaming</p>
-                        <p>Fitness</p>
-                        <p>Homelabs</p>
-                        <p>Pentesting</p>
-                    </div>
+                    <p>My other hobbies include PC Building, Gaming, Fitness, Esports, AI and Machine Learning!</p>
                 </div>
+                
                 <p>Feel free to connect with me on {' '}
                     <span span className="green hover" onMouseEnter={() => setTooltipVisibleLinkedIn(true)} onMouseLeave={() => setTooltipVisibleLinkedIn(false)} onMouseMove={handleMouseMove}><a href="https://www.linkedin.com/in/dominic-y-6376b2277/" target='_blank' className='link'>{"{LinkedIn}"}</a></span>
                     {' '} or {' '}

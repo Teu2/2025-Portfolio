@@ -68,11 +68,11 @@ export const ProfileContact = () => {
             </div>
 
             {/* socials */}
-            <div className="social-links" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
+            {/* <div className="social-links" data-aos="fade-up" data-aos-delay="400" data-aos-duration="300">
                 <FaGithub />
                 <FaLinkedin />
                 <a href="https://docs.google.com/document/d/166OcttudOVXttP_xZkmQsdDz1T79xYyUgCw3zb3Op0g/edit?usp=sharing" target="_blank" className="about-link"><LuDownload /> {"Resume"}</a>
-            </div>
+            </div> */}
             
             {/* custom toast */}
             {toast.visible && (

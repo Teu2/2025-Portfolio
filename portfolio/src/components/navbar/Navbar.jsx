@@ -11,11 +11,14 @@ import { FaFolderClosed } from "react-icons/fa6";
 import { IoDocumentText } from "react-icons/io5";
 import { FaSpotify } from "react-icons/fa";
 import { FaFolder } from "react-icons/fa";
-import { PiCertificateFill } from "react-icons/pi";
 import { FiSun } from "react-icons/fi";
 import { RiGithubLine } from "react-icons/ri";
 import { FaLinkedin } from "react-icons/fa";
 import { FaHouse } from "react-icons/fa6";
+import { FaPenToSquare } from "react-icons/fa6";
+import { FaMobile } from "react-icons/fa6";
+import { RiQuillPenAiFill } from "react-icons/ri";
+import { FaAddressBook } from "react-icons/fa";
 
 export const Navbar = () => {
     return (
@@ -26,7 +29,7 @@ export const Navbar = () => {
                 <Link to="/"><FaHouse/><p>Home</p></Link>
                 <Link to="/experience"><FaBriefcase/><p>Experience</p></Link>
                 <Link to="/projects"><FaFolderClosed/><p>Projects</p></Link>
-                <Link to="/contact"><FaEnvelope/><p>Contact</p></Link>
+                <Link to="/guestbook"><FaAddressBook/><p>Guestbook</p></Link>
             </div>
 
             {/* navbar utilities */}
@@ -34,6 +37,7 @@ export const Navbar = () => {
                 <a href=""><FiSun/></a>
                 <a href="https://github.com/Teu2" target='_blank'><RiGithubLine/></a>
                 <a href="https://www.linkedin.com/in/domklcy/" target='_blank'><FaLinkedin/></a>
+                {/* <Link to="/contact"><FaEnvelope/></Link> */}
             </div>
         </div>
     )

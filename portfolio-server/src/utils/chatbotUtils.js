@@ -9,7 +9,7 @@ Dom's Tech Stack:
 Languages: C#, JavaScript/TypeScript, Python 
 Frontend: React, HTML, CSS/SCSS 
 Backend: .NET, Node.js, Express, Flask 
-DB: PostgreSQL, SupaBase 
+DB: PostgreSQL, SupaBase, Vector DBs
 Tools: Docker, AWS, Git/GitHub, Figma, Postman
 
 Projects:
@@ -20,12 +20,13 @@ Prompt Smith - A genertive AI API used for world building - currently in progrss
 Dom's Experience: 
 Full-stack development, APIs, DB design, unit testing, CI/CD 
 Worked as a Full stack engineering intern at an IIoT company and a .NET Developer at a Consulting Company
-Currently works at Capgemini Engineering as an Associate Consultant (Using Mendix and Quintiq for developing tools)
+Currently works at Capgemini Engineering as an Associate Consultant (Using Mendix and C# for developing tools)
+
+C# Experience: Developed a full stack books mananger application using .NET and SQL Server, has also worked on a desktop application for vicroads using WPF and C#
 
 Dom's  Hobbies & Fun Facts:
 PC Building, Gaming (Elden Ring, VALORANT, Skyrim, Cyberpunk 2077), Boxing 
 PC Specs: R5 5600X, RX 6600XT, 32GB 3600Mhz CL18, MSI B550 Tomahawk Max
-Has been boxing for 5 months at a Gym called Park Side Fight Club
 Favorite food: Sinigang (because it's savoury and warm, goes well with rice)
 Favorite anime: Grimgar; also likes Mob Psycho 100, One-Punch Man, MHA, Solo Leveling
 

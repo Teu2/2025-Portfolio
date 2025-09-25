@@ -7,7 +7,7 @@ const rateLimit = require('express-rate-limit');
 
 const limiter = rateLimit({
     windowMs: 60_000,      
-    max: 5,               
+    max: 15,               
     message: {
         error: 'Too many requests, please try again after a minute.'
     }
@@ -34,7 +34,7 @@ app.use(limiter);
 app.use('', spotifyRoutes);
 app.use('', chatbotRoutes);
 
-// binding to 0.0.0.0 means "listen on all interfaces," - locally it still hits at localhost or 127.0.0.1. great for Render and Local testing wooooo!
+// binding to 0.0.0.0 means "listen on all interfaces," locally it still hits at localhost or 127.0.0.1. great for Render and Local testing wooooo!
 app.listen(port, '0.0.0.0', () => {
     console.log("QUICK LINKS:")
     console.log("https://two025-portfolio-dbkd.onrender.com/");

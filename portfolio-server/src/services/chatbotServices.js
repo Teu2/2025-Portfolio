@@ -90,8 +90,7 @@ exports.chatWithModel = async (req, res) => {
     if(!inputSanitization(message)) {
         return {
             status: 400,
-            message:
-            "Invalid or unsafe message. Please remove angle brackets or control characters.",
+            message: "Invalid or unsafe message. Please remove angle brackets or control characters.",
         };
     }
 

@@ -49,7 +49,7 @@ export const ProfileChatBotAI = () => {
                         {
                             type: "bot",
                             content:
-                                "Hello! I'm Dom's AI assistant powered by a real language model! 🤖 Ask me anything about his skills, experience, or projects!",
+                                "Hello! I'm Dom's AI assistant powered by a real language model! What would you like to know? 😊",
                             timestamp: new Date(),
                         },
                     ]);

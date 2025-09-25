@@ -7,6 +7,7 @@ import scorpLogo from "../../assets/work logos/scorptec.png"
 import ellenexLogo from "../../assets/work logos/ellenex.png"
 import brykLogo from "../../assets/work logos/bryk.png"
 import deakinLogo from "../../assets/work logos/deakin.png"
+import microsoftLogo from "../../assets/work logos/microsoft.png"
 
 export const ProfileExperience = () => {
 
@@ -37,12 +38,13 @@ export const ProfileExperience = () => {
 
                 {/* experience section */}
                 <div className="experience-section" data-aos="fade-left" data-aos-delay="200" data-aos-duration="300">
+                    
                     <div className="experience">
                         <div className="green-dot"></div>
                         <div className="top">
                             <img src={capLogo} alt="Capgemini Engineering" />
                             <div className="right">
-                                <h4>Associate Software Consultant {"(DCM)"}</h4>
+                                <h4>Associate Software Engineer {"- DCM"}</h4>
                                 <p>Capgemini Engineering - Melbourne, Victoria, Aus</p>
                                 <p className='date'>Mar 2025 - Present</p>
                             </div>
@@ -50,8 +52,11 @@ export const ProfileExperience = () => {
                         <div className="bottom">
                             <div className="skill">Consulting</div>
                             <div className="skill">Mendix</div>
-                            <div className="skill">Quintiq</div>
                             <div className="skill">Python</div>
+                            <div className="skill">AutoGen</div>
+                            <div className="skill">LangGraph</div>
+                            <div className="skill">LangChain</div>
+                            <div className="skill">C#</div>
                         </div>
                     </div>
                     <div className="experience">
