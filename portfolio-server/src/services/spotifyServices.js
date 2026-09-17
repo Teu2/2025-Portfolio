@@ -62,6 +62,7 @@ exports.getCurrentlyPlaying = async () => {
             }
         };
     } catch (err) {
+        console.log(`Error fetching currently playing track: ${err.message}`);
         if (err.response?.status === 401) return { status: "refresh" };
         return { statusCode: 500, body: { error: `Failed to fetch current track, Don't worry, this is a temporary issue! Dom will fix it soon!` } };
     }
@@ -90,6 +91,7 @@ exports.getRecentlyPlayed = async () => {
             }
         };
     } catch (err) {
+        console.log(`Error fetching currently playing track: ${err.message}`);
         if (err.response?.status === 401) return { status: "refresh" };
         return { statusCode: 500, body: { error: "Failed to fetch recently played tracks" } };
     }
