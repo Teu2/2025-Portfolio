@@ -43,7 +43,6 @@ class MyClassificationPipeline {
                 model: "gpt-5-nano",
                 messages: chatHistory,
                 max_completion_tokens: 70,
-                temperature: 0.7
             });
 
             const generated = completion.choices[0].message.content;
@@ -126,7 +125,6 @@ exports.health = async (req, res) => {
             model: "gpt-5-nano",
             messages: [{ role: "user", content: "test" }],
             max_completion_tokens: 1,
-            temperature: 0
         });
 
         if (testCompletion) {
