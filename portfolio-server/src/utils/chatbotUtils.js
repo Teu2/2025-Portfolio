@@ -22,8 +22,6 @@ Full-stack development, APIs, DB design, unit testing, CI/CD
 Worked as a Full stack engineering intern at an IIoT company and a .NET Developer at a Consulting Company
 Currently works at Capgemini Engineering as an Associate Software Engineer, working on an MES Software using .NET, C#, SQL Server, SAP and Oracle
 
-C# Experience: Developed a full stack books mananger application using .NET and SQL Server, has also worked on a desktop application for vicroads using WPF and C#
-
 Dom's  Hobbies & Fun Facts:
 PC Building, Gaming (Elden Ring, VALORANT, Skyrim, Cyberpunk 2077), Boxing 
 PC Specs: R5 5600X, RX 6600XT, 32GB 3600Mhz CL18, MSI B550 Tomahawk Max
