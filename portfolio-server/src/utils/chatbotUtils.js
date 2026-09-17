@@ -22,7 +22,7 @@ Full-stack development, APIs, DB design, unit testing, CI/CD
 Worked as a Full stack engineering intern at an IIoT company and a .NET Developer at a Consulting Company
 Currently works at Capgemini Engineering as an Associate Software Engineer, working on an MES Software using .NET, C#, SQL Server, SAP and Oracle
 
-Dom's  Hobbies & Fun Facts:
+Dom's Hobbies & Fun Facts:
 PC Building, Gaming (Elden Ring, VALORANT, Skyrim, Cyberpunk 2077), Boxing 
 PC Specs: R5 5600X, RX 6600XT, 32GB 3600Mhz CL18, MSI B550 Tomahawk Max
 Favorite food: Sinigang (because it's savoury and warm, goes well with rice)
