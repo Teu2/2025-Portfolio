@@ -63,7 +63,7 @@ exports.getCurrentlyPlaying = async () => {
         };
     } catch (err) {
         if (err.response?.status === 401) return { status: "refresh" };
-        return { statusCode: 500, body: { error: `Failed to fetch current track ${OWNER_TOKENS.access_token}` } };
+        return { statusCode: 500, body: { error: `Failed to fetch current track, Don't worry, this is a temporary issue! Dom will fix it soon!` } };
     }
 };
 
