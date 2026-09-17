@@ -124,7 +124,7 @@ exports.health = async (req, res) => {
         const testCompletion = await openai.chat.completions.create({
             model: "gpt-5-nano",
             messages: [{ role: "user", content: "test" }],
-            max_completion_tokens: 1,
+            max_completion_tokens: 10,
         });
 
         if (testCompletion) {
