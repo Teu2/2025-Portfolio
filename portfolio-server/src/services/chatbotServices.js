@@ -40,9 +40,10 @@ class MyClassificationPipeline {
             console.log(`Chat history length for session ${sessionId}: ${chatHistory.length}`);
 
             const completion = await openai.chat.completions.create({
-                model: "gpt-5-nano",
+                model: "gpt-3.5-turbo",
                 messages: chatHistory,
-                max_completion_tokens: 70,
+                max_tokens: 70,
+                temperature: 0.7
             });
 
             const generated = completion.choices[0].message.content;
@@ -122,9 +123,10 @@ exports.health = async (req, res) => {
         });
 
         const testCompletion = await openai.chat.completions.create({
-            model: "gpt-5-nano",
+            model: "gpt-3.5-turbo",
             messages: [{ role: "user", content: "test" }],
-            max_completion_tokens: 10,
+            max_tokens: 1,
+            temperature: 0
         });
 
         if (testCompletion) {
