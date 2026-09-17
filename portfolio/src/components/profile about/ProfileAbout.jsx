@@ -36,7 +36,7 @@ export const ProfileAbout = () => {
                 
                 {/* hobbies section */}
                 <div className="hobbies">
-                    <p>My other hobbies include PC Building, Gaming, Fitness, Esports, AI and Machine Learning!</p>
+                    <p>My other hobbies include PC Building, Gaming, Fitness, Esports, AI and Game Development!</p>
                 </div>
                 
                 <p>Feel free to connect with me on {' '}

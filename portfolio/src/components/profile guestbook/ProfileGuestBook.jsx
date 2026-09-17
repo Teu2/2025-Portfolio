@@ -45,7 +45,7 @@ export const ProfileGuestBook = () => {
 	const signInWithGoogle = async () => {
 		await supabase.auth.signInWithOAuth({
 		provider: "google",
-		options: { redirectTo: "http://localhost:5173/guestbook" },
+		options: { redirectTo: "https://dominicyeoh.netlify.app/guestbook" },
 		});
 	};
 
@@ -128,7 +128,7 @@ export const ProfileGuestBook = () => {
 					<div className="messages-from-peeps">
 						<h5>💚 MESSAGE BOARD</h5>
 						<div className="messages-list">
-							{messages.length === 0 && <p className="empty">No messages yet ✨</p>}
+							{messages.length === 0 && <p className="empty">No messages yet</p>}
 							{messages.map((msg) => (
 								<Message key={msg.id} userName={msg.user_name} avatarUrl={msg.user_avatar_url} time={formatDate(msg.created_at)} text={msg.message}/>
 							))}

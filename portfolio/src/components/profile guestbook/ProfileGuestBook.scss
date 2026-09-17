@@ -371,3 +371,19 @@
     align-items: center;
     gap: 0.3rem;
 }
+
+.submit-btn{
+    background-color: #44c86b;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 0.5rem 1rem;
+
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.empty{
+    font-size: 14px;
+}

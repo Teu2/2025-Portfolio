@@ -44,19 +44,49 @@ export const ProfileExperience = () => {
                         <div className="top">
                             <img src={capLogo} alt="Capgemini Engineering" />
                             <div className="right">
-                                <h4>Associate Software Engineer {"- DCM"}</h4>
+                                {/* <h4>Digital Continuity & Manufacturing Engineer</h4> */}
+                                <h4>MES Software Engineer</h4>
                                 <p>Capgemini Engineering - Melbourne, Victoria, Aus</p>
-                                <p className='date'>Mar 2025 - Present</p>
+                                <p className='date'>Mar 2026 - Present</p>
                             </div>
                         </div>
                         <div className="bottom">
-                            <div className="skill">Consulting</div>
-                            <div className="skill">Mendix</div>
+                            <div className="skill">C#</div>
+                            <div className="skill">.NET</div>
+                            <div className="skill">MES</div>
+                            <div className="skill">AWS</div>
+                            <div className="skill">Docker</div>
+                            <div className="skill">Azure DevOps</div>
+                            <div className="skill">ERP</div>
+                            <div className="skill">SAP</div>
+                            <div className="skill">Oracle</div>
+                        </div>
+                    </div>
+                    <div className="experience">
+                        <div className="green-dot"></div>
+                        <div className="top">
+                            <img src={capLogo} alt="Capgemini Engineering" />
+                            <div className="right">
+                                <h4>Associate Software Engineer</h4>
+                                <p>Capgemini Engineering - Melbourne, Victoria, Aus</p>
+                                <p className='date'>Mar 2025 - Mar 2026</p>
+                            </div>
+                        </div>
+                        <div className="bottom">
+                            <div className="skill">C#</div>
+                            <div className="skill">.NET</div>
+                            <div className="skill">MES</div>
+                            <div className="skill">Hyper-V</div>
+                            <div className="skill">Kubernetes</div>
+                            <div className="skill">Docker</div>
+                            <div className="skill">Azure DevOps</div>
+                            <div className="skill">ERP</div>
+                            <div className="skill">SAP</div>
+                            <div className="skill">Oracle</div>
                             <div className="skill">Python</div>
                             <div className="skill">AutoGen</div>
-                            <div className="skill">LangGraph</div>
-                            <div className="skill">LangChain</div>
-                            <div className="skill">C#</div>
+                            <div className="skill">Unity</div>
+                            <div className="skill">Mendix</div>
                         </div>
                     </div>
                     <div className="experience">

@@ -19,7 +19,7 @@ const chatbotRoutes = require('./src/routes/chatbot');
 const app = express();
 app.set('trust proxy', 1); // render
 const port = process.env.PORT || 8888;
-const url = process.env.URL 
+const url = process.env.URL;
 
 if (!process.env.CORS_ORIGINS) {
     throw new Error('CORS_ORIGINS must be set in .env');
@@ -34,7 +34,7 @@ app.use(limiter);
 app.use('', spotifyRoutes);
 app.use('', chatbotRoutes);
 
-// binding to 0.0.0.0 means "listen on all interfaces," locally it still hits at localhost or 127.0.0.1. great for Render and Local testing wooooo!
+// binding to 0.0.0.0 means "listen on all interfaces," locally it still hits at localhost or 127.0.0.1
 app.listen(port, '0.0.0.0', () => {
     console.log("QUICK LINKS:")
     console.log("https://two025-portfolio-dbkd.onrender.com/");

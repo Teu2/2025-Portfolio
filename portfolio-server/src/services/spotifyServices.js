@@ -34,7 +34,7 @@ exports.exchangeCodeForToken = async (code) => {
 };
 
 exports.getCurrentlyPlaying = async () => {
-    console.log("1. Here")
+    
     if (!OWNER_TOKENS.access_token) return { status: 503, body: { error: 'Not authenticated' } };
     if (Date.now() >= OWNER_TOKENS.expires_at) return { status: 'refresh' };
 
@@ -63,7 +63,7 @@ exports.getCurrentlyPlaying = async () => {
         };
     } catch (err) {
         if (err.response?.status === 401) return { status: "refresh" };
-        return { statusCode: 500, body: { error: "Failed to fetch current track" } };
+        return { statusCode: 500, body: { error: `Failed to fetch current track ${OWNER_TOKENS.access_token}` } };
     }
 };
 

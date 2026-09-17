@@ -8,11 +8,9 @@ import { FaDiceD6 } from "react-icons/fa";
 import { FaPaintBrush } from "react-icons/fa";
 import { FaServer } from "react-icons/fa";
 import { FiArrowUpRight } from "react-icons/fi";
-import { ImPacman } from "react-icons/im";
-import { FaUnlock } from "react-icons/fa";
 import { FaShareNodes } from "react-icons/fa6";
 import { RiRobot2Fill } from "react-icons/ri";
-import { FaCodeBranch } from "react-icons/fa6";
+import { IoGameController } from "react-icons/io5";
 
 // components
 import { ProfileProjectPage } from '../profile project page/ProfileProjectPage';
@@ -40,11 +38,9 @@ export const ProfileProjects = () => {
         { label: "Front-End", value: "frontend", icon: <FaPaintBrush /> },
         { label: "Back-End", value: "backend", icon: <FaServer /> },
         { label: "Full-Stack", value: "fullstack", icon: <FaDiceD6 /> },
-        { label: "Algorithms", value: "algorithms", icon: <FaShareNodes /> },
+        { label: "AI & ML", value: "ai & ml", icon: <FaShareNodes /> },
         { label: "Bots", value: "bots", icon: <RiRobot2Fill /> },
-        { label: "Machine Learning", value: "machinelearning", icon: <FaCodeBranch /> },
-        { label: "Pentesting / Hacking", value: "pentesting", icon: <FaUnlock /> },
-        
+        { label: "Games", value: "gamedev", icon: <IoGameController /> },
     ];
 
     const [activeFilter, setActiveFilter] = useState("all");

@@ -74,7 +74,7 @@ export const ProfileChatBotAI = () => {
         }
     }, [isOpen, model, isModelLoading, messages.length]);
 
-    // fallback responses for when AI isn"t available
+    // fallback responses for when AI isn't available
     const getFallbackResponse = (userMessage) => {
         const message = userMessage.toLowerCase().trim();
     };

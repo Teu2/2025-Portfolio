@@ -148,7 +148,7 @@ export const projects = [
         github: "https://github.com/Teu2/Discord-Twitter-Bot"
     },
     {
-        title: "Tic Tac Toe - AI Bot",
+        title: "Tic Tac Foe - A Minimax Bot",
         inProgress: false,
         tech: "bots",
         techStack: [
@@ -170,7 +170,7 @@ export const projects = [
     {
         title: "Inference Engine",
         inProgress: false,
-        tech: "algorithms",
+        tech: "ai & ml",
         techStack: [
             "C#",
             ".NET",
@@ -192,7 +192,7 @@ export const projects = [
     {
         title: "Maze Navigation App",
         inProgress: false,
-        tech: "algorithms",
+        tech: "ai & ml",
         techStack: [
             "C#",
             ".NET",

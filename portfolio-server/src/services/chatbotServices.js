@@ -137,7 +137,7 @@ exports.health = async (req, res) => {
             };
         }
     } catch (err) {
-        console.log("health check failed");
+        console.log(`health check failed: ${err.message}`);
         return { 
             status: 503, 
             message: "Service temporarily unavailable"
