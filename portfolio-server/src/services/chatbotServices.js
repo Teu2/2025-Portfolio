@@ -42,7 +42,7 @@ class MyClassificationPipeline {
             const completion = await openai.chat.completions.create({
                 model: "gpt-5-nano",
                 messages: chatHistory,
-                max_tokens: 70,
+                max_completion_tokens: 70,
                 temperature: 0.7
             });
 
@@ -125,7 +125,7 @@ exports.health = async (req, res) => {
         const testCompletion = await openai.chat.completions.create({
             model: "gpt-5-nano",
             messages: [{ role: "user", content: "test" }],
-            max_tokens: 1,
+            max_completion_tokens: 1,
             temperature: 0
         });
 
